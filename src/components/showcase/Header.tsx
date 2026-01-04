@@ -111,13 +111,13 @@ export function Header() {
           </div>
         </div>
       </div>
-      <div className="relative h-64 lg:h-80 w-full">
+      <div className="relative h-48 lg:h-64 w-full">
         <Image
-          src="https://images.unsplash.com/photo-1551554781-c46200ea959d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYXJibGUlMjB0ZXh0dXJlfGVufDB8fHx8MTc2NzUzMzg0NXww&ixlib=rb-4.1.0&q=80&w=1080"
-          alt="Marble texture background"
+          src="https://images.unsplash.com/photo-1561633857-705b6b3a0fb8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0cmF2ZXJ0aW5lJTIwaXZvcnl8ZW58MHx8fHwxNzE4MTMxMTM0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+          alt="Ivory travertine texture background"
           fill
           className="object-cover"
-          data-ai-hint="black marble"
+          data-ai-hint="travertine ivory"
           priority
         />
         <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
