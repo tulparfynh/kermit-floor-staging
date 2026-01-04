@@ -21,20 +21,20 @@
     {
       "id": "kermit-thumb-2",
       "description": "Marble White thumbnail",
-      "imageUrl": "https://images.unsplash.com/photo-1706629506571-a6d86798916b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtYXJibGUlMjBwYW5lbHxlbnwwfHx8fDE3Njc1MzM4NDV8MA&ixlib=rb-4.1.0&q=80&w=200",
+      "imageUrl": "https://storage.googleapis.com/aifirebase-hosted-content/project-123/images/kermit-prod-2.jpg",
       "imageHint": "marble texture"
     },
     {
       "id": "kermit-prod-2",
       "description": "Marble White product detail",
-      "imageUrl": "https://images.unsplash.com/photo-1706629506571-a6d86798916b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtYXJibGUlMjBwYW5lbHxlbnwwfHx8fDE3Njc1MzM4NDV8MA&ixlib=rb-4.1.0&q=80&w=600",
+      "imageUrl": "https://storage.googleapis.com/aifirebase-hosted-content/project-123/images/kermit-prod-2.jpg",
       "imageHint": "marble panel"
     },
     {
       "id": "kermit-app-2",
       "description": "Marble White application",
-      "imageUrl": "https://images.unsplash.com/photo-1643949719317-4342d8d4031e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxiYXRocm9vbSUyMGludGVyaW9yfGVufDB8fHx8MTc2NzUzMzg0NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "bathroom interior"
+      "imageUrl": "https://storage.googleapis.com/aifirebase-hosted-content/project-123/images/kermit-app-2.jpg",
+      "imageHint": "modern living room"
     },
     {
       "id": "kermit-thumb-3",
