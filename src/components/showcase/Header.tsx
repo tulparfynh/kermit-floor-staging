@@ -20,10 +20,33 @@ const navLinks = [
 
 function Logo() {
   return (
-    <div className="text-2xl font-bold tracking-tighter text-primary">
-      <span className="font-headline">KERMIT</span>
-      <span className="text-xs font-light tracking-widest text-foreground/80 block -mt-1">FLOOR</span>
-    </div>
+    <svg
+      className="h-10 w-auto"
+      viewBox="0 0 160 38"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <text
+        x="0"
+        y="22"
+        fontFamily="Montserrat, sans-serif"
+        fontSize="24"
+        fontWeight="bold"
+        className="fill-primary"
+      >
+        KERMIT
+      </text>
+      <text
+        x="0"
+        y="36"
+        fontFamily="Inter, sans-serif"
+        fontSize="10"
+        letterSpacing="0.2em"
+        className="fill-foreground/80"
+      >
+        FLOOR
+      </text>
+    </svg>
   );
 }
 
