@@ -1,3 +1,76 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "kermit-thumb-1",
+      "description": "Natural Oak thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1525947088131-b701cd0f6dc3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d29vZCUyMHRleHR1cmV8ZW58MHx8fHwxNzY3NDUzMTk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "wood texture"
+    },
+    {
+      "id": "kermit-prod-1",
+      "description": "Natural Oak product detail",
+      "imageUrl": "https://images.unsplash.com/photo-1599635492191-094d4ff14123?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3b29kJTIwcGFuZWx8ZW58MHx8fHwxNzY3NTMzODQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "wood panel"
+    },
+    {
+      "id": "kermit-app-1",
+      "description": "Natural Oak application",
+      "imageUrl": "https://images.unsplash.com/photo-1632829882891-5047ccc421bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bGl2aW5nJTIwcm9vbXxlbnwwfHx8fDE3Njc1MTE2MTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "living room"
+    },
+    {
+      "id": "kermit-thumb-2",
+      "description": "Marble White thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1551554781-c46200ea959d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYXJibGUlMjB0ZXh0dXJlfGVufDB8fHx8MTc2NzUzMzg0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "marble texture"
+    },
+    {
+      "id": "kermit-prod-2",
+      "description": "Marble White product detail",
+      "imageUrl": "https://images.unsplash.com/photo-1706629506571-a6d86798916b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtYXJibGUlMjBwYW5lbHxlbnwwfHx8fDE3Njc1MzM4NDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "marble panel"
+    },
+    {
+      "id": "kermit-app-2",
+      "description": "Marble White application",
+      "imageUrl": "https://images.unsplash.com/photo-1643949719317-4342d8d4031e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxiYXRocm9vbSUyMGludGVyaW9yfGVufDB8fHx8MTc2NzUzMzg0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "bathroom interior"
+    },
+    {
+      "id": "kermit-thumb-3",
+      "description": "Concrete Grey thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1604147706283-d7119b5b822c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb25jcmV0ZSUyMHRleHR1cmV8ZW58MHx8fHwxNzY3NTMzODQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "concrete texture"
+    },
+    {
+      "id": "kermit-prod-3",
+      "description": "Concrete Grey product detail",
+      "imageUrl": "https://images.unsplash.com/photo-1629437277363-877bcae8e157?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb25jcmV0ZSUyMHBhbmVsfGVufDB8fHx8MTc2NzUzMzg0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "concrete panel"
+    },
+    {
+      "id": "kermit-app-3",
+      "description": "Concrete Grey application",
+      "imageUrl": "https://images.unsplash.com/photo-1623177623442-979c1e42c255?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2Rlcm4lMjBvZmZpY2V8ZW58MHx8fHwxNzY3NDkwNjQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern office"
+    },
+    {
+      "id": "kermit-thumb-4",
+      "description": "Charcoal Slate thumbnail",
+      "imageUrl": "https://images.unsplash.com/photo-1635789146064-ffa7966c32e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzbGF0ZSUyMHRleHR1cmV8ZW58MHx8fHwxNzY3NTMzODQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "slate texture"
+    },
+    {
+      "id": "kermit-prod-4",
+      "description": "Charcoal Slate product detail",
+      "imageUrl": "https://images.unsplash.com/photo-1750286747612-f65a1048b748?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzbGF0ZSUyMHBhbmVsfGVufDB8fHx8MTc2NzUzMzg0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "slate panel"
+    },
+    {
+      "id": "kermit-app-4",
+      "description": "Charcoal Slate application",
+      "imageUrl": "https://images.unsplash.com/photo-1759924574053-39478a7ee9d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxmZWF0dXJlJTIwd2FsbHxlbnwwfHx8fDE3Njc1MzM4NDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "feature wall"
+    }
+  ]
 }
