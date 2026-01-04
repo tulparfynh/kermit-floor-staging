@@ -36,11 +36,11 @@ type ProductDetailsProps = {
 
 function FeatureColumn({ features }: { features: typeof allFeatures }) {
     return (
-        <div className="flex flex-col justify-center items-center gap-8 py-8 px-4 bg-muted h-full">
+        <div className="flex flex-col justify-center items-center gap-6 py-6 px-2 bg-muted h-full">
             {features.map((feature) => (
-                <div key={feature.text} className="flex flex-col items-center gap-2 text-center w-24">
-                    <feature.icon className="h-8 w-8 text-secondary" />
-                    <span className="text-xs font-medium text-foreground/80">{feature.text}</span>
+                <div key={feature.text} className="flex flex-col items-center gap-2 text-center w-20">
+                    <feature.icon className="h-7 w-7 text-secondary" />
+                    <span className="text-xs font-medium text-foreground/80 leading-tight">{feature.text}</span>
                 </div>
             ))}
         </div>
@@ -49,13 +49,13 @@ function FeatureColumn({ features }: { features: typeof allFeatures }) {
 
 export function ProductDetails({ panel }: ProductDetailsProps) {
   return (
-    <Card className="shadow-lg rounded-xl overflow-hidden border">
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] lg:grid-cols-[200px_auto_200px]">
+    <Card className="shadow-lg rounded-xl overflow-hidden border-none">
+      <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr_auto]">
         <div className="hidden lg:flex">
             <FeatureColumn features={leftFeatures} />
         </div>
 
-        <CardContent className="p-0">
+        <CardContent className="p-0 bg-card">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="relative p-8">
               <Badge variant="outline" className="absolute top-4 left-4 bg-white/80 backdrop-blur-sm">{panel.name}</Badge>
@@ -85,12 +85,12 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
             <FeatureColumn features={rightFeatures} />
         </div>
 
-        <div className="lg:hidden md:col-span-3 px-8 py-4 border-t">
+        <div className="lg:hidden col-span-1 bg-muted px-4 py-6 border-t">
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-4 text-center">
               {allFeatures.map((feature) => (
                 <div key={feature.text} className="flex flex-col items-center gap-2">
                   <feature.icon className="h-6 w-6 text-secondary" />
-                  <span className="text-xs font-medium text-foreground/80">{feature.text}</span>
+                  <span className="text-[10px] font-medium text-foreground/80 leading-tight">{feature.text}</span>
                 </div>
               ))}
             </div>
