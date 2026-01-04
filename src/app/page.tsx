@@ -3,14 +3,14 @@ import { Showcase } from '@/components/showcase/Showcase';
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen flex flex-col bg-background">
       <Header />
-      <div className="flex-grow">
+      <div className="flex-grow py-12 lg:py-16">
         <Showcase />
       </div>
       <footer className="py-8 mt-12 lg:mt-16 bg-muted">
         <div className="container mx-auto px-4 text-center text-muted-foreground text-sm">
-          <p>&copy; {new Date().getFullYear()} Kermit Wall Panels. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Kermit Floor. All rights reserved.</p>
         </div>
       </footer>
     </main>
