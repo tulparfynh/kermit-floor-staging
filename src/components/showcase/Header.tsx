@@ -113,11 +113,11 @@ export function Header() {
       </div>
       <div className="relative h-48 lg:h-64 w-full">
         <Image
-          src="https://images.unsplash.com/photo-1612303527503-f3b8a13543b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0cmF2ZXJ0aW5lJTIwaXZvcnl8ZW58MHx8fHwxNzY3NTQ0MzYyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+          src="https://images.unsplash.com/photo-1594499699929-c884a29a3493?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0cmF2ZXJ0aW5lJTIwdGV4dHVyZXxlbnwwfHx8fDE3NjgxNTMyODh8MA&ixlib=rb-4.1.0&q=80&w=1080"
           alt="Ivory travertine texture background"
           fill
           className="object-cover"
-          data-ai-hint="travertine ivory"
+          data-ai-hint="travertine texture"
           priority
         />
         <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
