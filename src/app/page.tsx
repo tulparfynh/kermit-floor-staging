@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col bg-background">
       <Header />
-      <div className="flex-grow py-12 lg:py-16">
+      <div className="flex-grow">
         <Showcase />
       </div>
       <footer className="py-8 mt-12 lg:mt-16 bg-muted">
