@@ -49,17 +49,20 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
           </div>
           <div className="p-8 bg-background/50 flex flex-col justify-center">
             <ul className="space-y-3 text-sm">
-              {specs.map((spec, index) => (
+              {specs.map((spec) => (
                 <li key={spec.label} className="flex justify-between items-center border-b border-border/70 pb-3">
                   <span className="font-semibold text-foreground/70">{spec.label}:</span>
                   <span className="font-medium text-foreground">{spec.value}</span>
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
 
-            <Separator className="my-6" />
+        <Separator />
 
-            <div className="grid grid-cols-3 sm:grid-cols-4 gap-4 text-center">
+        <div className="p-8">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-4 text-center">
               {features.map((feature) => (
                 <div key={feature.text} className="flex flex-col items-center gap-2">
                   <feature.icon className="h-6 w-6 text-secondary" />
@@ -67,7 +70,6 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
                 </div>
               ))}
             </div>
-          </div>
         </div>
       </CardContent>
     </Card>
