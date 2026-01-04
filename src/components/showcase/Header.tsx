@@ -8,20 +8,18 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 const navLinks = [
-  { href: '#', label: 'Home' },
-  { href: '#', label: 'About' },
-  { href: '#', label: 'SPC Skirting Boards' },
-  { href: '#', label: 'SPC Flooring' },
-  { href: '#', label: 'SPC Wall Panels', active: true },
-  { href: '#', label: 'SPC 3D Wall Panels' },
-  { href: '#', label: 'Downloads' },
-  { href: '#', label: 'Contact' },
+  { href: '#', label: 'FLOORS' },
+  { href: '#', label: 'WALLS', active: true },
+  { href: '#', label: 'SKIRTINGS' },
+  { href: '#', label: 'DOWNLOAD' },
+  { href: '#', label: 'ABOUT' },
+  { href: '#', label: 'CONTACT' },
 ];
 
 function Logo() {
   return (
     <svg
-      className="h-20 w-auto"
+      className="h-24 w-auto"
       viewBox="0 0 160 38"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -54,8 +52,8 @@ function NavMenu({ isMobile = false }) {
   return (
     <nav
       className={cn(
-        'flex items-center gap-4 lg:gap-6',
-        isMobile ? 'flex-col items-start space-y-4 p-6' : 'hidden lg:flex'
+        'flex items-center gap-4 lg:gap-8',
+        isMobile ? 'flex-col items-start space-y-4 p-6' : 'hidden md:flex'
       )}
     >
       {navLinks.map((link) => (
@@ -63,11 +61,11 @@ function NavMenu({ isMobile = false }) {
           key={link.label}
           href={link.href}
           className={cn(
-            'text-lg font-medium transition-colors hover:text-primary whitespace-nowrap',
+            'text-lg font-semibold tracking-wider transition-colors hover:text-primary whitespace-nowrap',
             link.active
               ? 'text-primary'
               : 'text-foreground/70',
-            isMobile && 'text-xl'
+            isMobile && 'text-2xl'
           )}
         >
           {link.label}
@@ -85,11 +83,13 @@ export function Header() {
       <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex h-28 items-center justify-between">
-            <Logo />
-            <div className="hidden lg:flex items-center gap-6">
+            <div className="flex items-center gap-8">
+                <Logo />
+            </div>
+            <div className="hidden md:flex items-center gap-6">
               <NavMenu />
             </div>
-            <div className="lg:hidden">
+            <div className="md:hidden">
               <Sheet open={isMenuOpen} onOpenChange={setMenuOpen}>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon">
