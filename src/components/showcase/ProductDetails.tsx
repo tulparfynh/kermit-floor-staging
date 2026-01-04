@@ -37,7 +37,7 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
       <CardContent className="p-0">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="relative p-8">
-            <Badge variant="outline" className="absolute top-4 left-4 bg-white/80 backdrop-blur-sm">WALLPANELS</Badge>
+            <Badge variant="outline" className="absolute top-4 left-4 bg-white/80 backdrop-blur-sm">{panel.name}</Badge>
             <Image
               src={panel.productImageUrl}
               alt={panel.name}
