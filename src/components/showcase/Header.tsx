@@ -21,7 +21,7 @@ const navLinks = [
 function Logo() {
   return (
     <svg
-      className="h-16 w-auto"
+      className="h-20 w-auto"
       viewBox="0 0 160 38"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
