@@ -1,12 +1,9 @@
 'use client';
 
-import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { MobileMenu } from './MobileMenu';
+import dynamic from 'next/dynamic';
 
 const navLinks = [
   { href: '#', label: 'FLOORS' },
@@ -16,6 +13,11 @@ const navLinks = [
   { href: '#', label: 'ABOUT' },
   { href: '#', label: 'CONTACT' },
 ];
+
+const DynamicMobileMenu = dynamic(
+  () => import('./MobileMenu').then((mod) => mod.MobileMenu),
+  { ssr: false }
+);
 
 export function Logo() {
   return (
@@ -69,7 +71,7 @@ export function Header() {
               <NavMenu />
             </div>
             <div className="md:hidden">
-              <MobileMenu />
+              <DynamicMobileMenu />
             </div>
           </div>
         </div>
