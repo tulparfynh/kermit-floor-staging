@@ -70,12 +70,12 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
                     />
                 </div>
             </div>
-            <div className="p-8 bg-background/50 flex flex-col justify-center">
+            <div className="p-8 bg-background/50">
               <ul className="space-y-4">
                 {specs.map((spec) => (
                   <li key={spec.label} className="flex justify-between items-center border-b border-border/70 pb-3">
                     <span className="font-bold text-foreground text-sm tracking-wide">{spec.label}:</span>
-                    <span className="font-medium text-foreground text-base">{spec.value}</span>
+                    <span className="font-medium text-foreground text-base text-right">{spec.value}</span>
                   </li>
                 ))}
               </ul>
