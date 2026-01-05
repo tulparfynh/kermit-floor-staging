@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { MobileMenu } from './MobileMenu';
 
 const navLinks = [
   { href: '#', label: 'FLOORS' },
@@ -16,7 +17,7 @@ const navLinks = [
   { href: '#', label: 'CONTACT' },
 ];
 
-function Logo() {
+export function Logo() {
   return (
     <Image
       src="https://www.kermitfloor.com/wp-content/uploads/2022/11/Kermit-Floor-Logo-PNG-2-3-1-1024x347.png"
@@ -28,7 +29,7 @@ function Logo() {
   );
 }
 
-function NavMenu({ isMobile = false }) {
+export function NavMenu({ isMobile = false }) {
   return (
     <nav
       className={cn(
@@ -56,8 +57,6 @@ function NavMenu({ isMobile = false }) {
 }
 
 export function Header() {
-  const [isMenuOpen, setMenuOpen] = useState(false);
-
   return (
     <>
       <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm shadow-sm">
@@ -70,25 +69,7 @@ export function Header() {
               <NavMenu />
             </div>
             <div className="md:hidden">
-              <Sheet open={isMenuOpen} onOpenChange={setMenuOpen}>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                    <Menu className="h-8 w-8" />
-                    <span className="sr-only">Open menu</span>
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="left" className="w-full max-w-sm">
-                  <div className="p-6">
-                    <div className="flex justify-between items-center mb-8">
-                       <Logo />
-                       <Button variant="ghost" size="icon" onClick={() => setMenuOpen(false)}>
-                          <X className="h-6 w-6" />
-                       </Button>
-                    </div>
-                    <NavMenu isMobile />
-                  </div>
-                </SheetContent>
-              </Sheet>
+              <MobileMenu />
             </div>
           </div>
         </div>
