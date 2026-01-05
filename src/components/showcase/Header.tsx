@@ -84,7 +84,7 @@ export function Header() {
           priority
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <h1 className="font-headline text-4xl lg:text-5xl font-bold tracking-tight text-white">
+          <h1 className="font-headline text-4xl lg:text-5xl font-bold tracking-tight text-white text-center">
             SPC WALL PANEL COLLECTION
           </h1>
         </div>
