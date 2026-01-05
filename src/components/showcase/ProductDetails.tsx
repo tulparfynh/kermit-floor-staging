@@ -13,7 +13,7 @@ const specs = [
   { label: 'INSTALLATION', value: 'Glue Down' },
   { label: 'UTILITY CLASS', value: '23 / 31' },
   { label: 'USAGE AREA', value: 'Interior Wall & Floor' },
-  { label: 'MATERIAL', value: 'SPC ( Stone Polymer Composite )' },
+  { label: 'MATERIAL', value: 'SPC (Stone Polymer Composite)' },
 ];
 
 const allFeatures = [
