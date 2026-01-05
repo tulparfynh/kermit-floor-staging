@@ -58,8 +58,8 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
         <CardContent className="p-0 bg-card">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="p-8 flex items-center justify-center">
-                <div className="relative">
-                    <Badge variant="outline" className="absolute top-4 left-4 bg-white/80 backdrop-blur-sm z-10">{panel.name}</Badge>
+                <div className="flex flex-col items-center gap-4 text-center">
+                    <h2 className="text-2xl font-bold font-headline text-primary tracking-wide">{panel.name}</h2>
                     <Image
                         src={panel.productImageUrl}
                         alt={panel.name}
