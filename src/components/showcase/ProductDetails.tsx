@@ -26,8 +26,8 @@ const allFeatures = [
   { icon: Leaf, text: 'Phthalate Free' },
 ];
 
-const leftFeatures = allFeatures.slice(0, 3);
-const rightFeatures = allFeatures.slice(3);
+const leftFeatures = allFeatures.slice(0, 4);
+const rightFeatures = allFeatures.slice(4);
 
 
 type ProductDetailsProps = {
@@ -56,8 +56,8 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
         </div>
 
         <CardContent className="p-0 bg-card">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="p-8 flex items-center justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[600px]">
+            <div className="p-8 flex flex-col items-center justify-center h-full">
                 <div className="flex flex-col items-center gap-4 text-center">
                     <h2 className="text-2xl font-bold font-headline text-primary tracking-wide">{panel.name}</h2>
                     <Image
@@ -70,7 +70,7 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
                     />
                 </div>
             </div>
-            <div className="p-8 bg-background/50 flex flex-col justify-center">
+            <div className="p-8 bg-background/50 flex flex-col justify-center h-full">
               <ul className="space-y-4">
                 {specs.map((spec) => (
                   <li key={spec.label} className="flex justify-between items-center border-b border-border/70 pb-3">
