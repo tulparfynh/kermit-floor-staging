@@ -6,7 +6,6 @@ export type Panel = {
   id: string;
   name: string;
   thumbnailUrl: string;
-  thumbnailHint: string;
   productImageUrl: string;
   productImageHint: string;
   applicationImageUrl: string;
@@ -34,10 +33,9 @@ async function getPanelFromDirectory(dirName: string): Promise<Panel | null> {
         return {
             id: dirName,
             name: name,
-            thumbnailUrl: `${baseImagePath}/thumbnail.jpg`,
+            thumbnailUrl: `${baseImagePath}/product.jpg`, // Use product image for thumbnail
             productImageUrl: `${baseImagePath}/product.jpg`,
             applicationImageUrl: `${baseImagePath}/application.jpg`,
-            thumbnailHint: `${name} thumbnail`,
             productImageHint: `${name} product view`,
             applicationImageHint: `${name} in a room`,
         };
