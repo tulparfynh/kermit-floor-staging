@@ -58,19 +58,19 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
         <CardContent className="p-0 bg-card">
           <div className="p-4 md:p-8">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-headline text-primary tracking-wide text-center mb-6">{panel.name}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:items-stretch">
-              <div className="flex items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-1 gap-8">
+              <div className="h-full">
                 <Image
                   src={panel.productImageUrl}
                   alt={panel.name}
                   width={600}
                   height={600}
-                  className="w-full h-auto max-w-md object-cover aspect-square rounded-lg shadow-md"
+                  className="w-full h-full object-cover aspect-square rounded-lg shadow-md"
                   data-ai-hint={panel.productImageHint}
                 />
               </div>
-              <div className="flex flex-col justify-center h-full">
-                  <ul className="space-y-4 lg:space-y-5 p-6 md:p-0">
+              <div className="flex flex-col h-full">
+                  <ul className="flex-grow flex flex-col justify-center space-y-4 lg:space-y-5 p-6 md:p-0">
                       {specs.map((spec) => (
                           <li key={spec.label} className="flex justify-between items-center border-b border-border/70 pb-3">
                               <span className="font-bold text-foreground text-xs md:text-sm tracking-wide">{spec.label}:</span>
