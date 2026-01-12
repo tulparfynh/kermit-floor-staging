@@ -50,14 +50,14 @@ export function Showcase({ initialPanels }: ShowcaseProps) {
 
       <div className="container mx-auto px-4">
          <section id="application-photo" className="scroll-mt-20">
-            <Card className="overflow-hidden shadow-lg border-none bg-background/50">
+            <Card className="overflow-hidden shadow-lg border-none bg-background/50 relative aspect-[16/9]">
                 <Image
                   src={selectedPanel.applicationImageUrl}
                   alt={`Application photo for ${selectedPanel.name}`}
-                  width={1920}
-                  height={1080}
-                  className="w-full h-auto"
+                  fill
+                  className="object-cover"
                   data-ai-hint={selectedPanel.applicationImageHint}
+                  sizes="(max-width: 768px) 100vw, 80vw"
                 />
             </Card>
         </section>
