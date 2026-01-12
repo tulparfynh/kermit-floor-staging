@@ -14,6 +14,7 @@ import {
   Dialog,
   DialogContent,
   DialogTrigger,
+  DialogTitle,
 } from "@/components/ui/dialog"
 
 type ShowcaseProps = {
@@ -69,6 +70,7 @@ export function Showcase({ initialPanels }: ShowcaseProps) {
                 </Card>
               </DialogTrigger>
               <DialogContent className="max-w-4xl p-0 bg-transparent border-none">
+                <DialogTitle className="sr-only">{`Enlarged view of ${selectedPanel.name} application photo`}</DialogTitle>
                 <div className="relative aspect-[16/9]">
                    <Image
                     src={selectedPanel.applicationImageUrl}
