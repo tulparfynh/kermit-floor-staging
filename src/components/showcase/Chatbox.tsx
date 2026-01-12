@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
@@ -85,7 +86,7 @@ export function Chatbox() {
                 className="rounded-full w-auto h-auto p-4 shadow-xl"
                 onClick={() => setIsOpen(true)}
               >
-                <MessageSquare className="h-8 w-8" />
+                <MessageSquare className="h-9 w-9" />
                 <span className="ml-3 text-lg font-semibold">Chat with us!</span>
               </Button>
             </motion.div>
