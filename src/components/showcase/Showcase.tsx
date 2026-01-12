@@ -40,7 +40,7 @@ export function Showcase() {
         </section>
       </div>
       
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 pb-12 lg:pb-16">
         <Separator className="my-12 lg:my-16" />
 
         <section id="inquiry" className="scroll-mt-20">
