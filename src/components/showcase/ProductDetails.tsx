@@ -93,8 +93,8 @@ export function ProductDetails({ panel, panels, onPanelSelect }: ProductDetailsP
                           sizes="(max-width: 768px) 100vw, 50vw"
                           data-ai-hint={panel.productImageHint}
                           />
-                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 rounded-lg transition-opacity duration-300">
-                              <ZoomIn className="h-16 w-16 text-white drop-shadow-lg" />
+                          <div className="absolute inset-0 flex items-start justify-end p-4 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity duration-300">
+                              <ZoomIn className="h-12 w-12 text-white drop-shadow-lg" />
                           </div>
                       </div>
                   </DialogTrigger>
@@ -120,7 +120,7 @@ export function ProductDetails({ panel, panels, onPanelSelect }: ProductDetailsP
                 <Button
                   variant="outline"
                   size="icon"
-                  className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-black/30 hover:bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-black/30 hover:bg-black/50 text-white border-white/50 hover:border-white opacity-0 group-hover:opacity-100 transition-opacity"
                   onClick={handlePrevious}
                 >
                   <ChevronLeft className="h-6 w-6" />
@@ -128,7 +128,7 @@ export function ProductDetails({ panel, panels, onPanelSelect }: ProductDetailsP
                 <Button
                   variant="outline"
                   size="icon"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-black/30 hover:bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-black/30 hover:bg-black/50 text-white border-white/50 hover:border-white opacity-0 group-hover:opacity-100 transition-opacity"
                   onClick={handleNext}
                 >
                   <ChevronRight className="h-6 w-6" />
