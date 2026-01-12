@@ -9,6 +9,7 @@ import {
     DialogContent,
     DialogTrigger,
     DialogTitle,
+    DialogClose,
   } from "@/components/ui/dialog"
 import { Button } from '../ui/button';
 
@@ -108,6 +109,12 @@ export function ProductDetails({ panel, panels, onPanelSelect }: ProductDetailsP
                           data-ai-hint={panel.productImageHint}
                       />
                       </div>
+                      <DialogClose asChild>
+                        <Button variant="ghost" size="icon" className="absolute top-[-1rem] right-[-1rem] bg-black/20 hover:bg-black/40 rounded-full h-9 w-9 text-white">
+                            <X className="h-5 w-5" />
+                            <span className="sr-only">Close</span>
+                        </Button>
+                      </DialogClose>
                   </DialogContent>
                 </Dialog>
                 <Button
