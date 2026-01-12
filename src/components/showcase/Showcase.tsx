@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -55,7 +56,7 @@ export function Showcase({ initialPanels }: ShowcaseProps) {
                   src={selectedPanel.applicationImageUrl}
                   alt={`Application photo for ${selectedPanel.name}`}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   data-ai-hint={selectedPanel.applicationImageHint}
                 />
               </div>
