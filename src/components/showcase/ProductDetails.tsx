@@ -36,11 +36,11 @@ type ProductDetailsProps = {
 
 function FeatureColumn({ features }: { features: typeof allFeatures }) {
     return (
-        <div className="flex flex-col justify-center items-center gap-4 py-4 px-1 bg-muted h-full">
+        <div className="flex flex-col justify-center items-center gap-4 py-4 px-1 lg:px-4 bg-muted h-full">
             {features.map((feature) => (
-                <div key={feature.text} className="flex flex-col items-center gap-1.5 text-center w-20">
-                    <feature.icon className="h-6 w-6 text-secondary" />
-                    <span className="text-[11px] font-medium text-foreground/80 leading-tight">{feature.text}</span>
+                <div key={feature.text} className="flex flex-col items-center gap-1.5 text-center w-20 lg:w-24">
+                    <feature.icon className="h-6 w-6 lg:h-8 lg:w-8 text-secondary" />
+                    <span className="text-xs lg:text-sm font-medium text-foreground/80 leading-tight">{feature.text}</span>
                 </div>
             ))}
         </div>
@@ -56,8 +56,8 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
         </div>
 
         <CardContent className="p-0 bg-card">
-          <div className="p-8">
-            <h2 className="text-2xl font-bold font-headline text-primary tracking-wide text-center mb-6">{panel.name}</h2>
+          <div className="p-4 md:p-8">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-headline text-primary tracking-wide text-center mb-6">{panel.name}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col justify-center">
                 <Image
@@ -69,12 +69,12 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
                   data-ai-hint={panel.productImageHint}
                 />
               </div>
-              <div className="bg-background/50 md:bg-transparent rounded-lg flex flex-col justify-center">
-                  <ul className="space-y-4 p-6 md:p-0">
+              <div className="flex flex-col justify-center">
+                  <ul className="space-y-4 lg:space-y-5 p-6 md:p-0">
                       {specs.map((spec) => (
                           <li key={spec.label} className="flex justify-between items-center border-b border-border/70 pb-3">
-                              <span className="font-bold text-foreground text-sm tracking-wide">{spec.label}:</span>
-                              <span className="font-medium text-foreground text-base text-right">{spec.value}</span>
+                              <span className="font-bold text-foreground text-sm md:text-base tracking-wide">{spec.label}:</span>
+                              <span className="font-medium text-foreground text-base md:text-lg text-right">{spec.value}</span>
                           </li>
                       ))}
                   </ul>
@@ -92,7 +92,7 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
               {allFeatures.map((feature) => (
                 <div key={feature.text} className="flex flex-col items-center gap-2">
                   <feature.icon className="h-6 w-6 text-secondary" />
-                  <span className="text-[10px] font-medium text-foreground/80 leading-tight">{feature.text}</span>
+                  <span className="text-xs font-medium text-foreground/80 leading-tight">{feature.text}</span>
                 </div>
               ))}
             </div>
