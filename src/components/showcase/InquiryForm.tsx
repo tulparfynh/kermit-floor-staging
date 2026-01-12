@@ -1,3 +1,4 @@
+
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -67,20 +68,20 @@ export function InquiryForm({ panel }: InquiryFormProps) {
 
   return (
     <Card className="w-full max-w-3xl mx-auto shadow-lg border-none">
-      <CardHeader className="text-center">
-        <div className="flex items-center justify-center gap-4 mb-2">
-          <Mail className="h-7 w-7 text-primary"/>
-          <CardTitle className="font-headline text-3xl">Send an Inquiry</CardTitle>
+      <CardHeader className="text-center p-4">
+        <div className="flex items-center justify-center gap-3 mb-1">
+          <Mail className="h-6 w-6 text-primary"/>
+          <CardTitle className="font-headline text-2xl">Send an Inquiry</CardTitle>
         </div>
-        <CardDescription className="text-lg">
-          Interested in the <span className="font-semibold text-primary">{panel.name}</span> panel? Fill out the form and we'll get back to you.
+        <CardDescription className="text-base">
+          Interested in the <span className="font-semibold text-primary">{panel.name}</span> panel? Fill out the form below.
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="p-4">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <input type="hidden" {...form.register('panelName')} />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <FormField
                 control={form.control}
                 name="name"
@@ -117,7 +118,7 @@ export function InquiryForm({ panel }: InquiryFormProps) {
                   <FormControl>
                     <Textarea
                       placeholder="I'd like to know more about pricing and availability..."
-                      className="min-h-[120px] bg-card text-base"
+                      className="min-h-[100px] bg-card text-base"
                       {...field}
                     />
                   </FormControl>
@@ -125,7 +126,7 @@ export function InquiryForm({ panel }: InquiryFormProps) {
                 </FormItem>
               )}
             />
-            <div className="flex justify-center">
+            <div className="flex justify-center pt-2">
                 <Button type="submit" size="lg" disabled={form.formState.isSubmitting} className="w-full md:w-auto">
                 {form.formState.isSubmitting ? 'Sending...' : 'Send Inquiry'}
                 </Button>

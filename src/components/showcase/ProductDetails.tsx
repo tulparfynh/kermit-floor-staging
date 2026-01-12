@@ -56,9 +56,9 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
         </div>
 
         <CardContent className="p-0 bg-card">
-          <div className="p-4 md:p-6">
+          <div className="p-4 md:p-4">
             <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary tracking-wide text-center mb-4">{panel.name}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
               <div className="relative aspect-square w-full">
                 <Image
                   src={panel.productImageUrl}
@@ -70,9 +70,9 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
                 />
               </div>
               <div className="flex flex-col h-full">
-                  <ul className="h-full flex flex-col justify-center space-y-2 lg:space-y-3">
+                  <ul className="h-full flex flex-col justify-center space-y-2 lg:space-y-2">
                       {specs.map((spec) => (
-                          <li key={spec.label} className="flex justify-between items-center border-b border-border/70 pb-2">
+                          <li key={spec.label} className="flex justify-between items-center border-b border-border/70 pb-1.5">
                               <span className="font-semibold text-foreground text-xs md:text-sm tracking-wide">{spec.label}:</span>
                               <span className="font-medium text-foreground/90 text-sm md:text-base text-right">{spec.value}</span>
                           </li>

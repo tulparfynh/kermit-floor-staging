@@ -37,7 +37,7 @@ export function Showcase({ initialPanels }: ShowcaseProps) {
 
   if (!selectedPanel) {
     return (
-      <div className="container mx-auto px-4 mt-8 lg:mt-12 space-y-8">
+      <div className="container mx-auto px-4 mt-6 lg:mt-8 space-y-6">
         <Skeleton className="h-[50vh] w-full" />
         <Skeleton className="h-[20vh] w-full" />
         <p className="text-center text-lg text-muted-foreground">Loading panel data... If this persists, please check the 'public/panels' directory for product folders.</p>
@@ -46,8 +46,8 @@ export function Showcase({ initialPanels }: ShowcaseProps) {
   }
 
   return (
-    <div className="space-y-8 lg:space-y-12">
-      <div className="container mx-auto px-4 mt-8 lg:mt-12">
+    <div className="space-y-6 lg:space-y-8">
+      <div className="container mx-auto px-4 mt-6 lg:mt-8">
         <ProductDetails panel={selectedPanel} />
       </div>
       
@@ -97,8 +97,8 @@ export function Showcase({ initialPanels }: ShowcaseProps) {
         </section>
       </div>
       
-      <div className="container mx-auto px-4 pb-8 lg:pb-12">
-        <Separator className="my-8 lg:my-12" />
+      <div className="container mx-auto px-4 pb-6 lg:pb-8">
+        <Separator className="my-6 lg:my-8" />
 
         <section id="inquiry" className="scroll-mt-20">
           <InquiryForm panel={selectedPanel} />
