@@ -9,9 +9,11 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from '@/components/ui/carousel';
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import { useEffect, useState } from 'react';
 
 type ColorPickerProps = {
   panels: Panel[];
@@ -24,10 +26,44 @@ export function ColorPicker({
   selectedPanel,
   onPanelSelect,
 }: ColorPickerProps) {
+  const [api, setApi] = useState<CarouselApi>();
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    const selectedIndex = panels.findIndex(
+      (panel) => panel.id === selectedPanel.id
+    );
+    if (selectedIndex !== -1 && api.selectedScrollSnap() !== selectedIndex) {
+      api.scrollTo(selectedIndex);
+    }
+  }, [api, selectedPanel, panels]);
+
+  const handleCarouselSelect = () => {
+    if (!api) return;
+    const selectedIndex = api.selectedScrollSnap();
+    if (panels[selectedIndex].id !== selectedPanel.id) {
+        onPanelSelect(panels[selectedIndex]);
+    }
+  };
+
+  useEffect(() => {
+    if (!api) return;
+    api.on('select', handleCarouselSelect);
+    return () => {
+      api.off('select', handleCarouselSelect);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [api, onPanelSelect, panels, selectedPanel]);
+
+
   return (
     <div className="bg-muted py-6">
       <div className="container mx-auto px-4">
         <Carousel
+          setApi={setApi}
           opts={{
             align: 'start',
             loop: true,
