@@ -23,9 +23,6 @@ export function MobileMenu() {
         <div className="p-6">
           <div className="flex justify-between items-center mb-8">
             <Logo />
-            <Button variant="ghost" onClick={() => setMenuOpen(false)}>
-              <X className="h-6 w-6" />
-            </Button>
           </div>
           <NavMenu isMobile />
         </div>
