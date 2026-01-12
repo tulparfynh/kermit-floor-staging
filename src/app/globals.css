@@ -11,7 +11,7 @@
     --card-foreground: 0 0% 10%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
-    --primary: 82 41% 41%; /* leaf green #76933c */
+    --primary: 130 18% 22%; /* deep forest green #2d422f */
     --primary-foreground: 0 0% 98%;
     --secondary: 128 16% 61%; /* soft green #89ad8c */
     --secondary-foreground: 0 0% 10%;
@@ -39,7 +39,7 @@
     --card-foreground: 0 0% 98%;
     --popover: 128 18% 10%;
     --popover-foreground: 0 0% 98%;
-    --primary: 82 41% 41%; /* leaf green */
+    --primary: 130 18% 22%; /* deep forest green */
     --primary-foreground: 0 0% 98%;
     --secondary: 128 18% 22%; /* forest green */
     --secondary-foreground: 0 0% 98%;
@@ -51,7 +51,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 128 18% 15%;
     --input: 128 18% 15%;
-    --ring: 82 41% 41%;
+    --ring: 130 18% 22%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
