@@ -14,7 +14,7 @@ export function MobileMenu() {
     <Sheet open={isMenuOpen} onOpenChange={setMenuOpen}>
       <SheetTrigger asChild>
         <Button variant="ghost" className="h-auto w-auto p-2">
-          <Menu className="h-24 w-24" />
+          <Menu className="h-96 w-96" />
           <span className="sr-only">Open menu</span>
         </Button>
       </SheetTrigger>
