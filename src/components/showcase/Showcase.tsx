@@ -15,7 +15,10 @@ import {
   DialogContent,
   DialogTrigger,
   DialogTitle,
+  DialogClose,
 } from "@/components/ui/dialog"
+import { ZoomIn, X } from 'lucide-react';
+import { Button } from '../ui/button';
 
 type ShowcaseProps = {
   initialPanels: Panel[];
@@ -58,15 +61,18 @@ export function Showcase({ initialPanels }: ShowcaseProps) {
          <section id="application-photo" className="scroll-mt-20">
             <Dialog>
               <DialogTrigger asChild>
-                <Card className="overflow-hidden shadow-lg border-none bg-background/50 relative aspect-[16/9] cursor-pointer hover:opacity-90 transition-opacity">
+                <Card className="group overflow-hidden shadow-lg border-none bg-background/50 relative aspect-[16/9] cursor-pointer transition-opacity">
                     <Image
                       src={selectedPanel.applicationImageUrl}
                       alt={`Application photo for ${selectedPanel.name}`}
                       fill
-                      className="object-cover"
+                      className="object-cover group-hover:opacity-90 transition-opacity"
                       data-ai-hint={selectedPanel.applicationImageHint}
                       sizes="(max-width: 768px) 100vw, 80vw"
                     />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <ZoomIn className="h-16 w-16 text-white" />
+                    </div>
                 </Card>
               </DialogTrigger>
               <DialogContent className="max-w-4xl p-0 bg-transparent border-none">
@@ -80,6 +86,12 @@ export function Showcase({ initialPanels }: ShowcaseProps) {
                     data-ai-hint={selectedPanel.applicationImageHint}
                   />
                 </div>
+                <DialogClose asChild>
+                  <Button variant="ghost" size="icon" className="absolute top-[-1rem] right-[-1rem] bg-background/50 hover:bg-background/80 rounded-full h-9 w-9">
+                      <X className="h-5 w-5" />
+                      <span className="sr-only">Close</span>
+                  </Button>
+                </DialogClose>
               </DialogContent>
             </Dialog>
         </section>
