@@ -15,50 +15,54 @@ export type Panel = {
 
 const PANELS_DIR = path.join(process.cwd(), 'public/images/spc-wall-panels');
 
-function formatPanelName(dirName: string): string {
-  return dirName
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-}
+async function getPanelFromDirectory(dirName: string): Promise<Panel | null> {
+    const panelDirPath = path.join(PANELS_DIR, dirName);
+    const detailsPath = path.join(panelDirPath, 'details.json');
 
-async function getPanelFromDirectory(dirName: string): Promise<Panel> {
-  const name = formatPanelName(dirName);
-  
-  const baseImagePath = `/images/spc-wall-panels/${dirName}`;
-  
-  return {
-    id: dirName,
-    name: name,
-    thumbnailUrl: `${baseImagePath}/thumbnail.jpg`,
-    productImageUrl: `${baseImagePath}/product.jpg`,
-    applicationImageUrl: `${baseImagePath}/application.jpg`,
-    thumbnailHint: `${name} thumbnail`,
-    productImageHint: `${name} product view`,
-    applicationImageHint: `${name} in a room`,
-  };
+    try {
+        const detailsContent = await fs.readFile(detailsPath, 'utf-8');
+        const details = JSON.parse(detailsContent);
+        const name = details.name;
+
+        if (!name) {
+            console.warn(`Skipping panel in '${dirName}' due to missing 'name' in details.json`);
+            return null;
+        }
+
+        const baseImagePath = `/images/spc-wall-panels/${dirName}`;
+        
+        return {
+            id: dirName,
+            name: name,
+            thumbnailUrl: `${baseImagePath}/thumbnail.jpg`,
+            productImageUrl: `${baseImagePath}/product.jpg`,
+            applicationImageUrl: `${baseImagePath}/application.jpg`,
+            thumbnailHint: `${name} thumbnail`,
+            productImageHint: `${name} product view`,
+            applicationImageHint: `${name} in a room`,
+        };
+    } catch (error) {
+        console.warn(`Could not process panel in '${dirName}'. Is details.json present and correct?`, error);
+        return null;
+    }
 }
 
 export async function getPanels(): Promise<Panel[]> {
   try {
-    // Ensure the directory exists before trying to read it
     await fs.access(PANELS_DIR);
 
     const panelDirs = await fs.readdir(PANELS_DIR);
     const panelPromises = panelDirs.map(dirName => {
-        // Basic check to ensure it's a directory we're interested in, not system files like .DS_Store
         if (!dirName.startsWith('.')) {
             return getPanelFromDirectory(dirName);
         }
-        return null;
-    }).filter(p => p !== null) as Promise<Panel>[];
+        return Promise.resolve(null);
+    });
     
-    const panels = await Promise.all(panelPromises);
+    const panels = (await Promise.all(panelPromises)).filter((p): p is Panel => p !== null);
     return panels;
   } catch (error) {
-    console.error("Failed to read panel data from 'public/images/spc-wall-panels'. Does the directory exist?", error);
-    // If the directory doesn't exist or is empty, return an empty array
-    // so the page can still build.
+    console.warn("Could not read panel data from 'public/images/spc-wall-panels'. Does the directory exist?", error);
     return [];
   }
 }
