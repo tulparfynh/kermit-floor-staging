@@ -25,7 +25,7 @@ export function ColorPicker({
   onPanelSelect,
 }: ColorPickerProps) {
   return (
-    <div className="bg-muted py-8">
+    <div className="bg-muted py-6">
       <div className="container mx-auto px-4">
         <Carousel
           opts={{

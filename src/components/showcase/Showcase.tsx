@@ -37,7 +37,7 @@ export function Showcase({ initialPanels }: ShowcaseProps) {
 
   if (!selectedPanel) {
     return (
-      <div className="container mx-auto px-4 mt-12 lg:mt-16 space-y-8">
+      <div className="container mx-auto px-4 mt-8 lg:mt-12 space-y-8">
         <Skeleton className="h-[50vh] w-full" />
         <Skeleton className="h-[20vh] w-full" />
         <p className="text-center text-lg text-muted-foreground">Loading panel data... If this persists, please check the 'public/panels' directory for product folders.</p>
@@ -46,8 +46,8 @@ export function Showcase({ initialPanels }: ShowcaseProps) {
   }
 
   return (
-    <div className="space-y-12 lg:space-y-16">
-      <div className="container mx-auto px-4 mt-12 lg:mt-16">
+    <div className="space-y-8 lg:space-y-12">
+      <div className="container mx-auto px-4 mt-8 lg:mt-12">
         <ProductDetails panel={selectedPanel} />
       </div>
       
@@ -61,7 +61,7 @@ export function Showcase({ initialPanels }: ShowcaseProps) {
          <section id="application-photo" className="scroll-mt-20">
             <Dialog>
               <DialogTrigger asChild>
-                <Card className="group overflow-hidden shadow-lg border-none bg-background/50 relative aspect-[16/9] cursor-pointer transition-opacity">
+                <Card className="group overflow-hidden shadow-lg border-none bg-background/50 relative aspect-[16/9] cursor-pointer">
                     <Image
                       src={selectedPanel.applicationImageUrl}
                       alt={`Application photo for ${selectedPanel.name}`}
@@ -97,8 +97,8 @@ export function Showcase({ initialPanels }: ShowcaseProps) {
         </section>
       </div>
       
-      <div className="container mx-auto px-4 pb-12 lg:pb-16">
-        <Separator className="my-12 lg:my-16" />
+      <div className="container mx-auto px-4 pb-8 lg:pb-12">
+        <Separator className="my-8 lg:my-12" />
 
         <section id="inquiry" className="scroll-mt-20">
           <InquiryForm panel={selectedPanel} />

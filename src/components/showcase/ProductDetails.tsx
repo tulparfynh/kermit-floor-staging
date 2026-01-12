@@ -36,11 +36,11 @@ type ProductDetailsProps = {
 
 function FeatureColumn({ features }: { features: typeof allFeatures }) {
     return (
-        <div className="flex flex-col justify-center items-center gap-4 py-4 px-1 lg:px-4 bg-muted h-full">
+        <div className="flex flex-col justify-center items-center gap-3 py-4 px-1 lg:px-4 bg-muted h-full">
             {features.map((feature) => (
                 <div key={feature.text} className="flex flex-col items-center gap-1.5 text-center w-20 lg:w-24">
-                    <feature.icon className="h-6 w-6 lg:h-8 lg:w-8 text-secondary" />
-                    <span className="text-xs lg:text-sm font-medium text-foreground/80 leading-tight">{feature.text}</span>
+                    <feature.icon className="h-6 w-6 lg:h-7 lg:w-7 text-secondary" />
+                    <span className="text-xs font-medium text-foreground/80 leading-tight">{feature.text}</span>
                 </div>
             ))}
         </div>
@@ -56,9 +56,9 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
         </div>
 
         <CardContent className="p-0 bg-card">
-          <div className="p-4 md:p-8">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-headline text-primary tracking-wide text-center mb-6">{panel.name}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div className="p-4 md:p-6">
+            <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary tracking-wide text-center mb-4">{panel.name}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
               <div className="relative aspect-square w-full">
                 <Image
                   src={panel.productImageUrl}
@@ -70,9 +70,9 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
                 />
               </div>
               <div className="flex flex-col h-full">
-                  <ul className="h-full flex flex-col justify-center space-y-3 lg:space-y-4">
+                  <ul className="h-full flex flex-col justify-center space-y-2 lg:space-y-3">
                       {specs.map((spec) => (
-                          <li key={spec.label} className="flex justify-between items-center border-b border-border/70 pb-3">
+                          <li key={spec.label} className="flex justify-between items-center border-b border-border/70 pb-2">
                               <span className="font-semibold text-foreground text-xs md:text-sm tracking-wide">{spec.label}:</span>
                               <span className="font-medium text-foreground/90 text-sm md:text-base text-right">{spec.value}</span>
                           </li>
@@ -87,7 +87,7 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
             <FeatureColumn features={rightFeatures} />
         </div>
 
-        <div className="lg:hidden col-span-1 bg-muted px-4 py-6 border-t">
+        <div className="lg:hidden col-span-1 bg-muted px-4 py-4 border-t">
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-4 text-center">
               {allFeatures.map((feature) => (
                 <div key={feature.text} className="flex flex-col items-center gap-2">
