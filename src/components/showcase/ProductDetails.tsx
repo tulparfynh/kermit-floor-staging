@@ -58,7 +58,7 @@ export function ProductDetails({ panel }: ProductDetailsProps) {
         <CardContent className="p-0 bg-card">
           <div className="p-4 md:p-4">
             <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary tracking-wide text-center mb-4">{panel.name}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start max-w-6xl mx-auto">
               <div className="relative aspect-square w-full">
                 <Image
                   src={panel.productImageUrl}
