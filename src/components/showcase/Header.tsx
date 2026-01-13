@@ -43,7 +43,7 @@ export function NavMenu({ isMobile = false }) {
   return (
     <nav
       className={cn(
-        'flex items-center gap-4 lg:gap-8',
+        'flex items-center gap-4 lg:gap-6',
         isMobile ? 'flex-col items-start space-y-4 p-6' : 'hidden md:flex'
       )}
     >
@@ -99,7 +99,7 @@ export function Header() {
         <div className="container mx-auto px-4">
           <div className="flex h-28 items-center justify-between">
             <Logo />
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-4">
               <NavMenu />
               <div className="hidden md:flex">
                 <LanguageSwitcher />
