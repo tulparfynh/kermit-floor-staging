@@ -15,6 +15,7 @@ import { MessageSquare, Send, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { ScrollArea } from '../ui/scroll-area';
+import { useTranslations } from 'next-intl';
 
 type Message = {
   id: number;
@@ -23,11 +24,12 @@ type Message = {
 };
 
 export function Chatbox() {
+  const t = useTranslations('Chatbox');
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Hello! How can I help you with our SPC wall panels today?",
+      text: t('greeting'),
       sender: 'agent',
     },
   ]);
@@ -51,7 +53,7 @@ export function Chatbox() {
 
       const agentResponse: Message = {
           id: Date.now() + 1,
-          text: "I've opened WhatsApp for you. Please send your message there!",
+          text: t('whatsappRedirect'),
           sender: 'agent',
       };
 
@@ -87,7 +89,7 @@ export function Chatbox() {
                 onClick={() => setIsOpen(true)}
               >
                 <MessageSquare className="h-9 w-9" />
-                <span className="ml-3 text-lg font-semibold">Chat with us!</span>
+                <span className="ml-3 text-lg font-semibold">{t('prompt')}</span>
               </Button>
             </motion.div>
           )}
@@ -148,7 +150,7 @@ export function Chatbox() {
                 <div className="flex w-full items-center space-x-2">
                   <Input
                     type="text"
-                    placeholder="Type your message..."
+                    placeholder={t('placeholder')}
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}

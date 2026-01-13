@@ -23,12 +23,14 @@ import { inquirySchema } from '@/lib/schema';
 import type { Panel } from '@/lib/panel-data';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 type InquiryFormProps = {
   panel: Panel;
 };
 
 export function InquiryForm({ panel }: InquiryFormProps) {
+  const t = useTranslations('InquiryForm');
   const { toast } = useToast();
   const form = useForm<z.infer<typeof inquirySchema>>({
     resolver: zodResolver(inquirySchema),
@@ -48,8 +50,8 @@ export function InquiryForm({ panel }: InquiryFormProps) {
     const result = await submitInquiry(values);
     if (result.success) {
       toast({
-        title: 'Inquiry Sent!',
-        description: result.message,
+        title: t('successTitle'),
+        description: t('successDescription', { name: values.name, panelName: values.panelName }),
       });
       form.reset({
         name: '',
@@ -60,8 +62,8 @@ export function InquiryForm({ panel }: InquiryFormProps) {
     } else {
       toast({
         variant: 'destructive',
-        title: 'Something went wrong',
-        description: result.message,
+        title: t('errorTitle'),
+        description: result.message === 'An unexpected error occurred. Please try again.' ? t('errorMessage') : result.message,
       });
     }
   }
@@ -71,10 +73,13 @@ export function InquiryForm({ panel }: InquiryFormProps) {
       <CardHeader className="text-center p-4">
         <div className="flex items-center justify-center gap-3 mb-1">
           <Mail className="h-6 w-6 text-primary"/>
-          <CardTitle className="font-headline text-2xl">Send an Inquiry</CardTitle>
+          <CardTitle className="font-headline text-2xl">{t('title')}</CardTitle>
         </div>
         <CardDescription className="text-base">
-          Interested in the <span className="font-semibold text-primary">{panel.name}</span> panel? Fill out the form below.
+          {t.rich('description', {
+            panelName: panel.name,
+            span: (chunks) => <span className="font-semibold text-primary">{chunks}</span>
+          })}
         </CardDescription>
       </CardHeader>
       <CardContent className="p-4">
@@ -87,9 +92,9 @@ export function InquiryForm({ panel }: InquiryFormProps) {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Full Name</FormLabel>
+                    <FormLabel>{t('nameLabel')}</FormLabel>
                     <FormControl>
-                      <Input placeholder="John Doe" {...field} className="bg-card text-base" />
+                      <Input placeholder={t('namePlaceholder')} {...field} className="bg-card text-base" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -100,9 +105,9 @@ export function InquiryForm({ panel }: InquiryFormProps) {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email Address</FormLabel>
+                    <FormLabel>{t('emailLabel')}</FormLabel>
                     <FormControl>
-                      <Input type="email" placeholder="you@example.com" {...field} className="bg-card text-base" />
+                      <Input type="email" placeholder={t('emailPlaceholder')} {...field} className="bg-card text-base" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -114,10 +119,10 @@ export function InquiryForm({ panel }: InquiryFormProps) {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Your Message</FormLabel>
+                  <FormLabel>{t('messageLabel')}</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="I'd like to know more about pricing and availability..."
+                      placeholder={t('messagePlaceholder')}
                       className="min-h-[100px] bg-card text-base"
                       {...field}
                     />
@@ -128,7 +133,7 @@ export function InquiryForm({ panel }: InquiryFormProps) {
             />
             <div className="flex justify-center pt-2">
                 <Button type="submit" size="lg" disabled={form.formState.isSubmitting} className="w-full md:w-auto">
-                {form.formState.isSubmitting ? 'Sending...' : 'Send Inquiry'}
+                {form.formState.isSubmitting ? t('submittingButton') : t('submitButton')}
                 </Button>
             </div>
           </form>

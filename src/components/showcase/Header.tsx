@@ -7,15 +7,7 @@ import { MobileMenu } from './MobileMenu';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-const navLinks = [
-  { href: '#', label: 'FLOORS' },
-  { href: '/spc-wall-panels', label: 'WALLS' },
-  { href: '#', label: 'SKIRTINGS' },
-  { href: '#', label: 'DOWNLOAD' },
-  { href: '#', label: 'ABOUT' },
-  { href: '#', label: 'CONTACT' },
-];
+import { useTranslations } from 'next-intl';
 
 const DynamicMobileMenu = dynamic(
   () => import('./MobileMenu').then((mod) => mod.MobileMenu),
@@ -38,7 +30,17 @@ export function Logo() {
 
 export function NavMenu({ isMobile = false }) {
   const pathname = usePathname();
+  const t = useTranslations('Header');
   
+  const navLinks = [
+    { href: '#', label: t('navFloors') },
+    { href: '/spc-wall-panels', label: t('navWalls') },
+    { href: '#', label: t('navSkirtings') },
+    { href: '#', label: t('navDownload') },
+    { href: '#', label: t('navAbout') },
+    { href: '#', label: t('navContact') },
+  ];
+
   return (
     <nav
       className={cn(
@@ -70,6 +72,7 @@ export function NavMenu({ isMobile = false }) {
 
 export function Header() {
   const pathname = usePathname();
+  const t = useTranslations('Header');
   const isWallPanelPage = pathname.includes('/spc-wall-panels');
   const is3DPage = pathname.includes('/spc-3d-wall-panels');
 
@@ -78,11 +81,11 @@ export function Header() {
   let heroImageHint;
 
   if (is3DPage) {
-    pageTitle = 'SPC 3D WALL PANEL COLLECTION';
+    pageTitle = t('heroTitle3d');
     heroImage = '/images/placeholder-3d-hero.jpg';
     heroImageHint = '3d wall panel texture';
   } else if (isWallPanelPage) {
-    pageTitle = 'SPC WALL PANEL COLLECTION';
+    pageTitle = t('heroTitleSpc');
     heroImage = '/images/Marble-Statuario-w23138-product-image.png';
     heroImageHint = 'marble texture';
   }

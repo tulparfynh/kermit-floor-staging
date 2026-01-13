@@ -1,11 +1,18 @@
 import type {Metadata} from 'next';
 import '../globals.css';
 import { Toaster } from "@/components/ui/toaster";
-
-export const metadata: Metadata = {
-  title: 'Kermit Wall Panel Showcase',
-  description: 'High-quality SPC Wall Panels for modern interiors.',
-};
+import {getMessages} from 'next-intl/server';
+import {NextIntlClientProvider, useMessages} from 'next-intl';
+ 
+export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
+  const messages = await getMessages({locale});
+  const t = (key: string) => (messages.Metadata as any)[key] as string;
+ 
+  return {
+    title: t('title'),
+    description: t('description')
+  };
+}
 
 export default function RootLayout({
   children,
@@ -14,6 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
   params: {locale: string};
 }>) {
+  const messages = useMessages();
   return (
     <html lang={locale} className="scroll-smooth">
       <head>
@@ -23,8 +31,10 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
-        {children}
-        <Toaster />
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          {children}
+          <Toaster />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

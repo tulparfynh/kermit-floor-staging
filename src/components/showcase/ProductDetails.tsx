@@ -21,31 +21,7 @@ import {
   CarouselItem,
   type CarouselApi,
 } from '@/components/ui/carousel';
-
-const specs = [
-  { label: 'THICKNESS', value: '4 mm' },
-  { label: 'WEAR LAYER', value: '0,30 mm' },
-  { label: 'DIMENSIONS', value: '960mm X 2800mm' },
-  { label: 'EDGE', value: 'Micro Bevel' },
-  { label: 'INSTALLATION', value: 'Glue Down' },
-  { label: 'UTILITY CLASS', value: '23 / 31' },
-  { label: 'USAGE AREA', value: 'Interior Wall & Floor' },
-  { label: 'MATERIAL', value: 'SPC (Stone Polymer Composite)' },
-];
-
-const allFeatures = [
-  { icon: Droplets, text: 'Water Proof' },
-  { icon: ShieldCheck, text: 'Anti Bacterial' },
-  { icon: Zap, text: 'Quick Installation' },
-  { icon: Hammer, text: 'Impact Resistant' },
-  { icon: Star, text: 'Ultimate Shield Coating' },
-  { icon: Volume2, text: 'Sound Absorbtion' },
-  { icon: Leaf, text: 'Phthalate Free' },
-];
-
-const leftFeatures = allFeatures.slice(0, 4);
-const rightFeatures = allFeatures.slice(4);
-
+import { useTranslations } from 'next-intl';
 
 type ProductDetailsProps = {
   panel: Panel;
@@ -53,7 +29,7 @@ type ProductDetailsProps = {
   onPanelSelect: (panel: Panel) => void;
 };
 
-function FeatureColumn({ features }: { features: typeof allFeatures }) {
+function FeatureColumn({ features }: { features: {icon: React.ElementType, text: string}[] }) {
     return (
         <div className="flex flex-col justify-center items-center gap-3 py-4 px-1 lg:px-4 bg-muted h-full">
             {features.map((feature) => (
@@ -67,7 +43,32 @@ function FeatureColumn({ features }: { features: typeof allFeatures }) {
 }
 
 export function ProductDetails({ panel, panels, onPanelSelect }: ProductDetailsProps) {
+  const t = useTranslations('ProductDetails');
   const [api, setApi] = useState<CarouselApi>();
+
+  const specs = [
+    { label: t('specThickness'), value: '4 mm' },
+    { label: t('specWearLayer'), value: '0,30 mm' },
+    { label: t('specDimensions'), value: '960mm X 2800mm' },
+    { label: t('specEdge'), value: 'Micro Bevel' },
+    { label: t('specInstallation'), value: 'Glue Down' },
+    { label: t('specUtilityClass'), value: '23 / 31' },
+    { label: t('specUsageArea'), value: 'Interior Wall & Floor' },
+    { label: t('specMaterial'), value: 'SPC (Stone Polymer Composite)' },
+  ];
+
+  const allFeatures = [
+    { icon: Droplets, text: t('featureWaterProof') },
+    { icon: ShieldCheck, text: t('featureAntiBacterial') },
+    { icon: Zap, text: t('featureQuickInstallation') },
+    { icon: Hammer, text: t('featureImpactResistant') },
+    { icon: Star, text: t('featureUltimateShield') },
+    { icon: Volume2, text: t('featureSoundAbsorbtion') },
+    { icon: Leaf, text: t('featurePhthalateFree') },
+  ];
+  
+  const leftFeatures = allFeatures.slice(0, 4);
+  const rightFeatures = allFeatures.slice(4);
 
   useEffect(() => {
     if (!api) {

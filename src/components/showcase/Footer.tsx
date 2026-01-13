@@ -5,21 +5,24 @@ import { Logo } from './Header';
 import { Separator } from '@/components/ui/separator';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
-
-const productLinks = [
-    { href: '#', label: 'SPC Flooring' },
-    { href: '#', label: 'SPC Skirting Boards' },
-    { href: '#', label: 'SPC Wall Panels' },
-    { href: '#', label: 'SPC 3D Wall Panels' },
-  ];
-  
-  const supportLinks = [
-    { href: '#', label: 'Download Catalogue' },
-    { href: '#', label: 'Installation Guide' },
-    { href: '#', label: 'Technical Data Sheets' },
-  ];
+import { useTranslations } from 'next-intl';
 
 export function Footer() {
+  const t = useTranslations('Footer');
+
+  const productLinks = [
+      { href: '#', label: t('productFlooring') },
+      { href: '#', label: t('productSkirting') },
+      { href: '/spc-wall-panels', label: t('productWallPanels') },
+      { href: '#', label: t('product3dWallPanels') },
+    ];
+    
+    const supportLinks = [
+      { href: '#', label: t('supportCatalogue') },
+      { href: '#', label: t('supportInstallation') },
+      { href: '#', label: t('supportTechnical') },
+    ];
+
   return (
     <footer className="bg-muted text-muted-foreground">
         <div className="container mx-auto px-4 py-12 lg:py-16">
@@ -29,13 +32,13 @@ export function Footer() {
             <div className="space-y-4">
                 <Logo />
                 <p className="text-sm leading-relaxed">
-                Premium SPC flooring and wall panel solutions for modern interiors.
+                  {t('tagline')}
                 </p>
             </div>
             
             {/* Products */}
             <div className="space-y-4">
-                <h3 className="font-headline text-lg font-semibold text-foreground">Products</h3>
+                <h3 className="font-headline text-lg font-semibold text-foreground">{t('productsTitle')}</h3>
                 <ul className="space-y-2">
                 {productLinks.map((link) => (
                     <li key={link.label}>
@@ -49,7 +52,7 @@ export function Footer() {
             
             {/* Support */}
             <div className="space-y-4">
-                <h3 className="font-headline text-lg font-semibold text-foreground">Support</h3>
+                <h3 className="font-headline text-lg font-semibold text-foreground">{t('supportTitle')}</h3>
                 <ul className="space-y-2">
                 {supportLinks.map((link) => (
                     <li key={link.label}>
@@ -63,11 +66,11 @@ export function Footer() {
             
             {/* Contact */}
             <div className="space-y-4">
-                <h3 className="font-headline text-lg font-semibold text-foreground">Contact</h3>
+                <h3 className="font-headline text-lg font-semibold text-foreground">{t('contactTitle')}</h3>
                 <ul className="space-y-3 text-sm">
                 <li className="flex items-start">
                     <MapPin className="h-5 w-5 mt-0.5 text-secondary flex-shrink-0 mr-3 -ml-8" />
-                    <span>123 Kermit Street, Floor City, 16000, Turkey</span>
+                    <span>{t('address')}</span>
                 </li>
                 <li className="flex items-start">
                     <Phone className="h-5 w-5 mt-0.5 text-secondary flex-shrink-0 mr-3 -ml-8" />
@@ -89,15 +92,15 @@ export function Footer() {
             <Separator className="mb-4 bg-border/50" />
             <div className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-4">
                 <p className="text-xs text-muted-foreground">
-                &copy; {new Date().getFullYear()} Kermit Floor. All rights reserved.
+                {t('copyright', {year: new Date().getFullYear()})}
                 </p>
                 <div className="flex items-center gap-4">
                 <Link href="#" className="text-xs hover:text-primary transition-colors">
-                    Privacy Policy
+                    {t('privacyPolicy')}
                 </Link>
                 <Separator orientation="vertical" className="h-4" />
                 <Link href="#" className="text-xs hover:text-primary transition-colors">
-                    Terms of Service
+                    {t('termsOfService')}
                 </Link>
                 </div>
             </div>
