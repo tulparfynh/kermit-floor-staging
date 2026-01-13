@@ -75,7 +75,7 @@ export function Header() {
   const t = useTranslations('Header');
   
   // Check if the current path corresponds to the wall panels page
-  const isWallPanelPage = pathname === '/spc-wall-panels';
+  const isWallPanelPage = pathname.endsWith('/spc-wall-panels') || pathname.endsWith('/spc-duvar-panelleri');
   
   const is3DPage = pathname.includes('/spc-3d-wall-panels');
 
@@ -98,15 +98,21 @@ export function Header() {
       <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex h-28 items-center justify-between">
-            <div className="flex items-center gap-8">
+            <div className="flex-1 flex justify-start">
                 <Logo />
             </div>
-            <div className="hidden md:flex items-center gap-6">
+            
+            <div className="hidden md:flex flex-2 justify-center">
               <NavMenu />
-              <LanguageSwitcher />
             </div>
-            <div className="md:hidden">
-              <MobileMenu />
+            
+            <div className="flex-1 flex justify-end items-center">
+              <div className="hidden md:flex">
+                <LanguageSwitcher />
+              </div>
+              <div className="md:hidden">
+                <MobileMenu />
+              </div>
             </div>
           </div>
         </div>
