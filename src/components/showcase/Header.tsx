@@ -98,21 +98,15 @@ export function Header() {
       <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex h-28 items-center justify-between">
-            <div className="flex-1 flex justify-start">
-                <Logo />
-            </div>
-            
-            <div className="hidden md:flex flex-2 justify-center">
+            <Logo />
+            <div className="flex items-center gap-8">
               <NavMenu />
-            </div>
-            
-            <div className="flex-1 flex justify-end items-center">
               <div className="hidden md:flex">
                 <LanguageSwitcher />
               </div>
-              <div className="md:hidden">
-                <MobileMenu />
-              </div>
+            </div>
+            <div className="md:hidden">
+              <MobileMenu />
             </div>
           </div>
         </div>
