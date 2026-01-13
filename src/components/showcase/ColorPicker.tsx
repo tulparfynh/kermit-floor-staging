@@ -97,7 +97,7 @@ export function ColorPicker({
                       <div className="relative aspect-square">
                         <Image
                           src={panel.productImageUrl}
-                          alt={panel.name}
+                          alt={`SPC Wall Panel ${panel.name} Color`}
                           fill
                           className="w-full h-full object-cover"
                           data-ai-hint={panel.productImageHint}

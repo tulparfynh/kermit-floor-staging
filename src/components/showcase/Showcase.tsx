@@ -68,7 +68,7 @@ export function Showcase({ initialPanels }: ShowcaseProps) {
                 <Card className="group overflow-hidden shadow-lg border-none bg-background/50 relative aspect-[16/9] cursor-pointer">
                     <Image
                       src={selectedPanel.applicationImageUrl}
-                      alt={`Application photo for ${selectedPanel.name}`}
+                      alt={`Application of SPC Wall Panel ${selectedPanel.name}`}
                       fill
                       className="object-cover"
                       data-ai-hint={selectedPanel.applicationImageHint}
@@ -80,11 +80,11 @@ export function Showcase({ initialPanels }: ShowcaseProps) {
                 </Card>
               </DialogTrigger>
               <DialogContent className="max-w-4xl p-0 bg-transparent border-none">
-                <DialogTitle className="sr-only">{`Enlarged view of ${selectedPanel.name} application photo`}</DialogTitle>
+                <DialogTitle className="sr-only">{`Enlarged application view of SPC Wall Panel ${selectedPanel.name}`}</DialogTitle>
                 <div className="relative aspect-[16/9]">
                    <Image
                     src={selectedPanel.applicationImageUrl}
-                    alt={`Application photo for ${selectedPanel.name}`}
+                    alt={`Enlarged application view of SPC Wall Panel ${selectedPanel.name}`}
                     fill
                     className="object-contain rounded-lg"
                     data-ai-hint={selectedPanel.applicationImageHint}

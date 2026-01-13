@@ -125,7 +125,7 @@ export function ProductDetails({ panel, panels, onPanelSelect }: ProductDetailsP
                                     <div className="relative aspect-[1920/1298] w-full group cursor-pointer">
                                         <Image
                                         src={p.productImageUrl}
-                                        alt={p.name}
+                                        alt={`SPC Wall Panel ${p.name} Color`}
                                         fill
                                         className="object-cover rounded-lg shadow-md"
                                         sizes="(max-width: 768px) 100vw, 50vw"
@@ -141,7 +141,7 @@ export function ProductDetails({ panel, panels, onPanelSelect }: ProductDetailsP
                                     <div className="relative aspect-[1920/1298]">
                                     <Image
                                         src={p.productImageUrl}
-                                        alt={`Enlarged view of ${p.name}`}
+                                        alt={`Enlarged view of SPC Wall Panel ${p.name} Color`}
                                         fill
                                         className="object-contain rounded-lg"
                                         data-ai-hint={p.productImageHint}
