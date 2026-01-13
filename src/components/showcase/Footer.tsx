@@ -4,12 +4,11 @@
 import { Logo } from './Header';
 import { Separator } from '@/components/ui/separator';
 import { MapPin, Phone, Mail } from 'lucide-react';
-import Link from 'next/link';
-import { useTranslations, useLocale } from 'next-intl';
+import { Link } from '@/navigation';
+import { useTranslations } from 'next-intl';
 
 export function Footer() {
   const t = useTranslations('Footer');
-  const locale = useLocale();
 
   const productLinks = [
       { href: '#', label: t('productFlooring') },
@@ -41,16 +40,13 @@ export function Footer() {
             <div className="space-y-4">
                 <h3 className="font-headline text-lg font-semibold text-foreground">{t('productsTitle')}</h3>
                 <ul className="space-y-2">
-                {productLinks.map((link) => {
-                  const localizedHref = link.href.startsWith('/') ? `/${locale}${link.href}` : link.href;
-                  return (
+                {productLinks.map((link) => (
                     <li key={link.label}>
-                      <Link href={localizedHref} className="text-sm hover:text-primary transition-colors">
+                      <Link href={link.href} className="text-sm hover:text-primary transition-colors">
                           {link.label}
                       </Link>
                     </li>
-                  );
-                })}
+                  ))}
                 </ul>
             </div>
             

@@ -4,9 +4,8 @@
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
+import { Link, usePathname } from '@/navigation';
 
 // Dynamically import components that cause hydration issues
 const LanguageSwitcher = dynamic(() => import('./LanguageSwitcher').then(mod => mod.LanguageSwitcher), { ssr: false });
@@ -16,7 +15,7 @@ const MobileMenu = dynamic(() => import('./MobileMenu').then(mod => mod.MobileMe
 export function Logo() {
   const locale = useLocale();
   return (
-    <Link href={`/${locale}`}>
+    <Link href={`/`}>
       <Image
         src="https://www.kermitfloor.com/wp-content/uploads/2022/11/Kermit-Floor-Logo-PNG-2-3-1-1024x347.png"
         alt="Kermit Floor Logo"
@@ -31,7 +30,6 @@ export function Logo() {
 export function NavMenu({ isMobile = false }) {
   const pathname = usePathname();
   const t = useTranslations('Header');
-  const locale = useLocale();
   
   const navLinks = [
     { href: '#', label: t('navFloors') },
@@ -50,8 +48,8 @@ export function NavMenu({ isMobile = false }) {
       )}
     >
       {navLinks.map((link) => {
-        const localizedHref = link.href.startsWith('/') ? `/${locale}${link.href}` : link.href;
-        const isActive = pathname.endsWith(link.href) && link.href !== '#';
+        const localizedHref = link.href; // The Link component from next-intl will handle localization
+        const isActive = pathname === link.href;
         return (
           <Link
             key={link.label}
@@ -75,7 +73,10 @@ export function NavMenu({ isMobile = false }) {
 export function Header() {
   const pathname = usePathname();
   const t = useTranslations('Header');
-  const isWallPanelPage = pathname.includes('/spc-wall-panels');
+  
+  // Check if the current path corresponds to the wall panels page
+  const isWallPanelPage = pathname === '/spc-wall-panels';
+  
   const is3DPage = pathname.includes('/spc-3d-wall-panels');
 
   let pageTitle;

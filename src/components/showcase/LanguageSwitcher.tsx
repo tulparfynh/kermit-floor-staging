@@ -10,7 +10,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Languages, Check } from 'lucide-react';
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter } from '@/navigation';
 
 export function LanguageSwitcher() {
   const locale = useLocale();
@@ -18,16 +18,8 @@ export function LanguageSwitcher() {
   const pathname = usePathname();
 
   const handleLanguageChange = (newLocale: string) => {
-    // Remove the current locale from the pathname
-    const newPath = pathname.startsWith(`/${locale}`)
-      ? pathname.substring(locale.length + 1)
-      : pathname;
-    
-    // The root path needs a special case.
-    const finalPath = newPath === '' ? '/' : newPath;
-
     // This will replace the current entry in the history stack
-    router.replace(`/${newLocale}${finalPath}`);
+    router.replace(pathname, {locale: newLocale});
   };
 
   const languages = [

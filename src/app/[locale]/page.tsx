@@ -1,22 +1,21 @@
 
-import Link from 'next/link';
+import { Link } from '@/navigation';
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/showcase/Header';
 import { Footer } from '@/components/showcase/Footer';
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 export default function Home() {
   const t = useTranslations('HomePage');
-  const locale = useLocale();
 
   const collections = [
     {
       name: t('spcWallPanelsTitle'),
       description: t('spcWallPanelsDescription'),
-      href: `/${locale}/spc-wall-panels`,
+      href: '/spc-wall-panels',
       imageUrl: '/images/Marble-Statuario-w23138-2-application-photo.jpg',
       imageHint: 'modern kitchen with marble panels'
     },

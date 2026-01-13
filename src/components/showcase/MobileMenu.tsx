@@ -6,14 +6,12 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Logo, NavMenu } from './Header';
-import Link from 'next/link';
-import { useLocale } from 'next-intl';
+import { Link } from '@/navigation';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { Separator } from '../ui/separator';
 
 export function MobileMenu() {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const locale = useLocale();
 
   return (
     <Sheet open={isMenuOpen} onOpenChange={setMenuOpen}>
@@ -27,7 +25,7 @@ export function MobileMenu() {
         <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
         <div className="flex flex-col h-full">
           <div className="p-6 border-b">
-            <Link href={`/${locale}`} onClick={() => setMenuOpen(false)}>
+            <Link href={`/`} onClick={() => setMenuOpen(false)}>
               <Logo />
             </Link>
           </div>
