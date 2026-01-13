@@ -18,8 +18,16 @@ export function LanguageSwitcher() {
   const pathname = usePathname();
 
   const handleLanguageChange = (newLocale: string) => {
+    // Remove the current locale from the pathname
+    const newPath = pathname.startsWith(`/${locale}`)
+      ? pathname.substring(locale.length + 1)
+      : pathname;
+    
+    // The root path needs a special case.
+    const finalPath = newPath === '' ? '/' : newPath;
+
     // This will replace the current entry in the history stack
-    router.replace(`/${newLocale}${pathname}`);
+    router.replace(`/${newLocale}${finalPath}`);
   };
 
   const languages = [
@@ -41,6 +49,7 @@ export function LanguageSwitcher() {
             key={lang.code}
             onClick={() => handleLanguageChange(lang.code)}
             className="flex justify-between items-center"
+            disabled={locale === lang.code}
           >
             <span>{lang.name}</span>
             {locale === lang.code && <Check className="h-4 w-4" />}
