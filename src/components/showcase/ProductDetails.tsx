@@ -49,7 +49,7 @@ export function ProductDetails({ panel, panels, onPanelSelect }: ProductDetailsP
   const specs = [
     { label: t('specThickness'), value: '4 mm' },
     { label: t('specWearLayer'), value: '0,30 mm' },
-    { label: t('specDimensions'), value: '960mm X 2800mm / 960mm X 1400mm' },
+    { label: t('specDimensions'), value: ['960mm X 2800mm', '960mm X 1400mm'] },
     { label: t('specEdge'), value: 'Micro Bevel' },
     { label: t('specInstallation'), value: 'Glue Down' },
     { label: t('specUtilityClass'), value: '23 / 31' },
@@ -180,9 +180,17 @@ export function ProductDetails({ panel, panels, onPanelSelect }: ProductDetailsP
               <div className="flex flex-col h-full">
                   <ul className="h-full flex flex-col justify-center space-y-2 lg:space-y-2">
                       {specs.map((spec) => (
-                          <li key={spec.label} className="flex justify-between items-center border-b border-border/70 pb-1.5">
-                              <span className="font-semibold text-foreground text-xs md:text-sm tracking-wide">{spec.label}:</span>
-                              <span className="font-medium text-foreground/90 text-sm md:text-base text-right">{spec.value}</span>
+                          <li key={spec.label} className="flex justify-between items-start border-b border-border/70 pb-1.5">
+                              <span className="font-semibold text-foreground text-xs md:text-sm tracking-wide pt-1">{spec.label}:</span>
+                              {Array.isArray(spec.value) ? (
+                                <div className="text-right">
+                                  {spec.value.map((val, index) => (
+                                    <span key={index} className="font-medium text-foreground/90 text-sm md:text-base block">{val}</span>
+                                  ))}
+                                </div>
+                              ) : (
+                                <span className="font-medium text-foreground/90 text-sm md:text-base text-right pt-1">{spec.value}</span>
+                              )}
                           </li>
                       ))}
                   </ul>
