@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-export default function CollectionsPage() {
+export default function WallsPage() {
   const t = useTranslations('HomePage');
 
   const collections = [

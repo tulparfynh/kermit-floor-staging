@@ -33,7 +33,7 @@ export function NavMenu({ isMobile = false }) {
   const t = useTranslations('Header');
   
   const navLinks = [
-    { href: '/collections', label: t('navWalls') },
+    { href: '/walls', label: t('navWalls') },
     { href: '#', label: t('navFloors') },
     { href: '#', label: t('navSkirtings') },
     { href: '#', label: t('navDownload') },
