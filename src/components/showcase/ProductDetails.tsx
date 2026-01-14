@@ -180,8 +180,8 @@ export function ProductDetails({ panel, panels, onPanelSelect }: ProductDetailsP
               <div className="flex flex-col h-full">
                   <ul className="h-full flex flex-col justify-center space-y-2 lg:space-y-2">
                       {specs.map((spec) => (
-                          <li key={spec.label} className="flex justify-between items-start border-b border-border/70 pb-1.5">
-                              <span className="font-semibold text-foreground text-xs md:text-sm tracking-wide pt-1">{spec.label}:</span>
+                          <li key={spec.label} className="flex justify-between items-center border-b border-border/70 pb-1.5">
+                              <span className="font-semibold text-foreground text-xs md:text-sm tracking-wide">{spec.label}:</span>
                               {Array.isArray(spec.value) ? (
                                 <div className="text-right">
                                   {spec.value.map((val, index) => (
@@ -189,7 +189,7 @@ export function ProductDetails({ panel, panels, onPanelSelect }: ProductDetailsP
                                   ))}
                                 </div>
                               ) : (
-                                <span className="font-medium text-foreground/90 text-sm md:text-base text-right pt-1">{spec.value}</span>
+                                <span className="font-medium text-foreground/90 text-sm md:text-base text-right">{spec.value}</span>
                               )}
                           </li>
                       ))}
