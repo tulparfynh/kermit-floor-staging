@@ -31,20 +31,24 @@ type InquiryFormProps = {
 
 export function InquiryForm({ panel }: InquiryFormProps) {
   const t = useTranslations('InquiryForm');
+  const tPanelNames = useTranslations('PanelNames');
+  const panelName = tPanelNames(panel.nameKey);
   const { toast } = useToast();
+  
   const form = useForm<z.infer<typeof inquirySchema>>({
     resolver: zodResolver(inquirySchema),
     defaultValues: {
       name: '',
       email: '',
       message: '',
-      panelName: panel.name,
+      panelName: panelName,
     },
   });
 
   React.useEffect(() => {
-    form.setValue('panelName', panel.name);
-  }, [panel, form]);
+    const newPanelName = tPanelNames(panel.nameKey);
+    form.setValue('panelName', newPanelName);
+  }, [panel, form, tPanelNames]);
 
   async function onSubmit(values: z.infer<typeof inquirySchema>) {
     const result = await submitInquiry(values);
@@ -57,7 +61,7 @@ export function InquiryForm({ panel }: InquiryFormProps) {
         name: '',
         email: '',
         message: '',
-        panelName: panel.name,
+        panelName: tPanelNames(panel.nameKey),
       });
     } else {
       toast({
@@ -77,7 +81,7 @@ export function InquiryForm({ panel }: InquiryFormProps) {
         </div>
         <CardDescription className="text-base">
           {t.rich('description', {
-            panelName: panel.name,
+            panelName: panelName,
             span: (chunks) => <span className="font-semibold text-primary">{chunks}</span>
           })}
         </CardDescription>

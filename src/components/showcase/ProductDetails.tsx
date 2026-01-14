@@ -44,6 +44,7 @@ function FeatureColumn({ features }: { features: {icon: React.ElementType, text:
 
 export function ProductDetails({ panel, panels, onPanelSelect }: ProductDetailsProps) {
   const t = useTranslations('ProductDetails');
+  const tPanelNames = useTranslations('PanelNames');
   const [api, setApi] = useState<CarouselApi>();
 
   const specs = [
@@ -113,7 +114,7 @@ export function ProductDetails({ panel, panels, onPanelSelect }: ProductDetailsP
 
         <CardContent className="p-0 bg-card">
           <div className="p-4 md:p-4 md:pb-8">
-            <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary tracking-wide text-center mb-4">{panel.name}</h2>
+            <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary tracking-wide text-center mb-4">{tPanelNames(panel.nameKey)}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start max-w-6xl mx-auto">
               <div className="relative group">
                 <Carousel setApi={setApi} opts={{loop: true}}>
@@ -125,7 +126,7 @@ export function ProductDetails({ panel, panels, onPanelSelect }: ProductDetailsP
                                     <div className="relative aspect-[1920/1298] w-full group cursor-pointer">
                                         <Image
                                         src={p.productImageUrl}
-                                        alt={`SPC Wall Panel ${p.name} Color`}
+                                        alt={`SPC Wall Panel ${tPanelNames(p.nameKey)} Color`}
                                         fill
                                         className="object-cover rounded-lg shadow-md"
                                         sizes="(max-width: 768px) 100vw, 50vw"
@@ -137,11 +138,11 @@ export function ProductDetails({ panel, panels, onPanelSelect }: ProductDetailsP
                                     </div>
                                 </DialogTrigger>
                                 <DialogContent className="max-w-4xl p-0 bg-transparent border-none">
-                                    <DialogTitle className="sr-only">{`Enlarged view of ${p.name} product photo`}</DialogTitle>
+                                    <DialogTitle className="sr-only">{`Enlarged view of ${tPanelNames(p.nameKey)} product photo`}</DialogTitle>
                                     <div className="relative aspect-[1920/1298]">
                                     <Image
                                         src={p.productImageUrl}
-                                        alt={`Enlarged view of SPC Wall Panel ${p.name} Color`}
+                                        alt={`Enlarged view of SPC Wall Panel ${tPanelNames(p.nameKey)} Color`}
                                         fill
                                         className="object-contain rounded-lg"
                                         data-ai-hint={p.productImageHint}

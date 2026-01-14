@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/dialog"
 import { ZoomIn, X } from 'lucide-react';
 import { Button } from '../ui/button';
+import { useTranslations } from 'next-intl';
 
 type ShowcaseProps = {
   initialPanels: Panel[];
@@ -27,6 +28,7 @@ type ShowcaseProps = {
 export function Showcase({ initialPanels }: ShowcaseProps) {
   const [panels, setPanels] = useState<Panel[]>(initialPanels);
   const [selectedPanel, setSelectedPanel] = useState<Panel | null>(initialPanels.length > 0 ? initialPanels[0] : null);
+  const tPanelNames = useTranslations('PanelNames');
 
   useEffect(() => {
     setPanels(initialPanels);
@@ -68,7 +70,7 @@ export function Showcase({ initialPanels }: ShowcaseProps) {
                 <Card className="group overflow-hidden shadow-lg border-none bg-background/50 relative aspect-[16/9] cursor-pointer">
                     <Image
                       src={selectedPanel.applicationImageUrl}
-                      alt={`Application of SPC Wall Panel ${selectedPanel.name}`}
+                      alt={`Application of SPC Wall Panel ${tPanelNames(selectedPanel.nameKey)}`}
                       fill
                       className="object-cover"
                       data-ai-hint={selectedPanel.applicationImageHint}
@@ -80,11 +82,11 @@ export function Showcase({ initialPanels }: ShowcaseProps) {
                 </Card>
               </DialogTrigger>
               <DialogContent className="max-w-4xl p-0 bg-transparent border-none">
-                <DialogTitle className="sr-only">{`Enlarged application view of SPC Wall Panel ${selectedPanel.name}`}</DialogTitle>
+                <DialogTitle className="sr-only">{`Enlarged application view of SPC Wall Panel ${tPanelNames(selectedPanel.nameKey)}`}</DialogTitle>
                 <div className="relative aspect-[16/9]">
                    <Image
                     src={selectedPanel.applicationImageUrl}
-                    alt={`Enlarged application view of SPC Wall Panel ${selectedPanel.name}`}
+                    alt={`Enlarged application view of SPC Wall Panel ${tPanelNames(selectedPanel.nameKey)}`}
                     fill
                     className="object-contain rounded-lg"
                     data-ai-hint={selectedPanel.applicationImageHint}

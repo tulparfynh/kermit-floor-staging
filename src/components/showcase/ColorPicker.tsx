@@ -14,6 +14,7 @@ import {
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 type ColorPickerProps = {
   panels: Panel[];
@@ -27,6 +28,7 @@ export function ColorPicker({
   onPanelSelect,
 }: ColorPickerProps) {
   const [api, setApi] = useState<CarouselApi>();
+  const t = useTranslations('PanelNames');
 
   useEffect(() => {
     if (!api) {
@@ -97,13 +99,13 @@ export function ColorPicker({
                       <div className="relative aspect-square">
                         <Image
                           src={panel.productImageUrl}
-                          alt={`SPC Wall Panel ${panel.name} Color`}
+                          alt={`SPC Wall Panel ${t(panel.nameKey)} Color`}
                           fill
                           className="w-full h-full object-cover"
                           data-ai-hint={panel.productImageHint}
                         />
                          <div className="absolute inset-0 flex items-end justify-center p-2">
-                           <p className="bg-black/40 px-2 py-1 rounded-md text-white text-sm font-bold text-center" style={{textShadow: '0 1px 2px rgba(0,0,0,0.7)'}}>{panel.name}</p>
+                           <p className="bg-black/40 px-2 py-1 rounded-md text-white text-sm font-bold text-center" style={{textShadow: '0 1px 2px rgba(0,0,0,0.7)'}}>{t(panel.nameKey)}</p>
                          </div>
                       </div>
                     </Card>
