@@ -42,26 +42,29 @@ async function getPanelFromDirectory(dirName: string): Promise<Panel | null> {
 }
 
 export async function getPanels(): Promise<Panel[]> {
-  try {
-    await fs.access(PANELS_DIR);
+  const manifestPath = path.join(PANELS_DIR, 'products.json');
 
-    const panelDirs = await fs.readdir(PANELS_DIR);
-    const panelPromises = panelDirs.map(dirName => {
-        // Ignore hidden files like .DS_Store
-        if (!dirName.startsWith('.')) {
-            return getPanelFromDirectory(dirName);
-        }
-        return Promise.resolve(null);
-    });
+  try {
+    const manifestContent = await fs.readFile(manifestPath, 'utf-8');
+    const productKeys: string[] = JSON.parse(manifestContent);
+    
+    if (!Array.isArray(productKeys)) {
+        throw new Error('products.json is not a valid JSON array.');
+    }
+
+    const panelPromises = productKeys.map(key => getPanelFromDirectory(key));
     
     const panels = (await Promise.all(panelPromises)).filter((p): p is Panel => p !== null);
     
-    // Sort panels to ensure a consistent order
-    panels.sort((a, b) => a.nameKey.localeCompare(b.nameKey));
-    
     return panels;
   } catch (error) {
-    console.warn("Could not read panel data from 'public/images/spc-wall-panels'. Does the directory exist?", error);
+    if (error instanceof SyntaxError) {
+        console.error("Error: Malformed JSON in 'products.json'.", error);
+    } else if (error && (error as NodeJS.ErrnoException).code === 'ENOENT') {
+        console.error("Error: 'public/images/spc-wall-panels/products.json' manifest file not found.", error);
+    } else {
+        console.error("Could not read or process panel data from 'products.json'.", error);
+    }
     return [];
   }
 }
