@@ -74,11 +74,12 @@ export function NavMenu({ isMobile = false }) {
 export function Header() {
   const pathname = usePathname();
   const t = useTranslations('Header');
+  const tHome = useTranslations('HomePage');
   
   // Check if the current path corresponds to the wall panels page
   const isWallPanelPage = pathname.endsWith('/spc-wall-panels') || pathname.endsWith('/spc-duvar-panelleri');
-  
   const is3DPage = pathname.includes('/spc-3d-wall-panels');
+  const isWallsPage = pathname.endsWith('/walls') || pathname.endsWith('/duvarlar');
 
   let pageTitle;
   let heroImage;
@@ -92,7 +93,12 @@ export function Header() {
     pageTitle = t('heroTitleSpc');
     heroImage = '/images/Marble-Statuario-w23138-product-image.png';
     heroImageHint = 'marble texture';
+  } else if (isWallsPage) {
+    pageTitle = tHome('collectionsTitle');
+    heroImage = 'https://picsum.photos/seed/collections/1920/1080';
+    heroImageHint = 'various wall textures';
   }
+
 
   return (
     <>
