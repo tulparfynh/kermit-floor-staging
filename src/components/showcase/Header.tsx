@@ -95,8 +95,8 @@ export function Header() {
     heroImageHint = 'marble texture';
   } else if (isWallsPage) {
     pageTitle = tHome('collectionsTitle');
-    heroImage = 'https://picsum.photos/seed/collections/1920/1080';
-    heroImageHint = 'various wall textures';
+    heroImage = '/images/Marble-Statuario-w23138-2-application-photo.jpg';
+    heroImageHint = 'modern kitchen with marble panels';
   }
 
 
