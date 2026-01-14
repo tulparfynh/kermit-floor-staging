@@ -27,6 +27,12 @@
     "spc3dWallPanelsModelBDescription": "Fluid, wavy patterns that create a sense of movement and organic style.",
     "viewCollection": "View Collection"
   },
+  "PanelNames": {
+    "16041-4": "Anthracite Concrete",
+    "16045-1": "Silver Concrete",
+    "W23138": "Marble Statuario",
+    "W23139": "Grey Emperador Marble"
+  },
   "ProductDetails": {
     "specThickness": "THICKNESS",
     "specWearLayer": "WEAR LAYER",
@@ -87,5 +93,3 @@
     "termsOfService": "Terms of Service"
   }
 }
-
-    

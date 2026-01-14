@@ -27,6 +27,12 @@
     "spc3dWallPanelsModelBDescription": "Hareket ve organik bir stil hissi yaratan akıcı, dalgalı desenler.",
     "viewCollection": "Koleksiyonu Görüntüle"
   },
+  "PanelNames": {
+    "16041-4": "Antrasit Beton",
+    "16045-1": "Gümüş Beton",
+    "W23138": "Mermer Statuario",
+    "W23139": "Gri Emperador Mermer"
+  },
   "ProductDetails": {
     "specThickness": "KALINLIK",
     "specWearLayer": "AŞINMA TABAKASI",
@@ -87,5 +93,3 @@
     "termsOfService": "Hizmet Şartları"
   }
 }
-
-    
