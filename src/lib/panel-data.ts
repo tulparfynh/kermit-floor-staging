@@ -4,7 +4,7 @@ import path from 'path';
 
 export type Panel = {
   id: string;
-  name: string;
+  nameKey: string;
   thumbnailUrl: string;
   productImageUrl: string;
   productImageHint: string;
