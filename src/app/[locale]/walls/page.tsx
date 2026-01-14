@@ -36,7 +36,7 @@ export default function WallsPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <Header />
+      <Header pageType="walls" />
       <main className="flex-grow">
         {/* Collections Section */}
         <div className="py-12 lg:py-20 bg-muted/50">

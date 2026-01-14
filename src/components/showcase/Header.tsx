@@ -49,12 +49,11 @@ export function NavMenu({ isMobile = false }) {
       )}
     >
       {navLinks.map((link) => {
-        const localizedHref = link.href; // The Link component from next-intl will handle localization
         const isActive = pathname === link.href;
         return (
           <Link
             key={link.label}
-            href={localizedHref}
+            href={link.href}
             className={cn(
               'font-semibold tracking-wider transition-colors hover:text-primary whitespace-nowrap text-sm md:text-base lg:text-lg',
               isActive
@@ -71,29 +70,27 @@ export function NavMenu({ isMobile = false }) {
   );
 }
 
-export function Header() {
-  const pathname = usePathname();
+type HeaderProps = {
+  pageType?: 'spc-wall-panels' | 'spc-3d-wall-panels' | 'walls';
+}
+
+export function Header({ pageType }: HeaderProps) {
   const t = useTranslations('Header');
   const tHome = useTranslations('HomePage');
   
-  // Check if the current path corresponds to the wall panels page
-  const isWallPanelPage = pathname.endsWith('/spc-wall-panels') || pathname.endsWith('/spc-duvar-panelleri');
-  const is3DPage = pathname.includes('/spc-3d-wall-panels');
-  const isWallsPage = pathname.endsWith('/walls') || pathname.endsWith('/duvarlar');
-
   let pageTitle;
   let heroImage;
   let heroImageHint;
 
-  if (is3DPage) {
+  if (pageType === 'spc-3d-wall-panels') {
     pageTitle = t('heroTitle3d');
     heroImage = '/images/placeholder-3d-hero.jpg';
     heroImageHint = '3d wall panel texture';
-  } else if (isWallPanelPage) {
+  } else if (pageType === 'spc-wall-panels') {
     pageTitle = t('heroTitleSpc');
     heroImage = '/images/Marble-Statuario-w23138-product-image.png';
     heroImageHint = 'marble texture';
-  } else if (isWallsPage) {
+  } else if (pageType === 'walls') {
     pageTitle = tHome('collectionsTitle');
     heroImage = '/images/Marble-Statuario-w23138-2-application-photo.jpg';
     heroImageHint = 'modern kitchen with marble panels';
