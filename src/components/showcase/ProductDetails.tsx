@@ -45,7 +45,10 @@ function FeatureColumn({ features }: { features: {icon: React.ElementType, text:
 
 export function ProductDetails({ panel, panels, onPanelSelect, collectionType }: ProductDetailsProps) {
   const t = useTranslations('ProductDetails');
-  const tPanelNames = useTranslations('PanelNames');
+  const tSpcPanelNames = useTranslations('PanelNames');
+  const t3dPanelNames = useTranslations('3DModelAPanelNames');
+  const tPanelNames = (key: string) => collectionType === 'spc-3d-wall-panels-model-a' ? t3dPanelNames(key) : tSpcPanelNames(key);
+
   const [api, setApi] = useState<CarouselApi>();
 
   let specs: { label: string; value: string | string[]; icon?: React.ElementType }[];

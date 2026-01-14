@@ -51,7 +51,9 @@
     "29098-2": "European Oak",
     "29115-18": "Sand Oak",
     "29150-4": "Weathered Oak",
-    "29074-1": "Nordic Oak",
+    "29074-1": "Nordic Oak"
+  },
+  "3DModelAPanelNames": {
     "3DA-001": "Geometric Peak",
     "3DA-002": "Linear Flow",
     "3DA-003": "Diamond Weave"

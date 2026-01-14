@@ -20,15 +20,19 @@ type ColorPickerProps = {
   panels: Panel[];
   selectedPanel: Panel;
   onPanelSelect: (panel: Panel) => void;
+  collectionType: 'spc-wall-panels' | 'spc-3d-wall-panels-model-a';
 };
 
 export function ColorPicker({
   panels,
   selectedPanel,
   onPanelSelect,
+  collectionType
 }: ColorPickerProps) {
   const [api, setApi] = useState<CarouselApi>();
-  const t = useTranslations('PanelNames');
+  const tSpcPanelNames = useTranslations('PanelNames');
+  const t3dPanelNames = useTranslations('3DModelAPanelNames');
+  const tPanelNames = (key: string) => collectionType === 'spc-3d-wall-panels-model-a' ? t3dPanelNames(key) : tSpcPanelNames(key);
 
   useEffect(() => {
     if (!api) {
@@ -99,13 +103,13 @@ export function ColorPicker({
                       <div className="relative aspect-square">
                         <Image
                           src={panel.productImageUrl}
-                          alt={`SPC Wall Panel ${t(panel.nameKey)} Color`}
+                          alt={`SPC Wall Panel ${tPanelNames(panel.nameKey)} Color`}
                           fill
                           className="w-full h-full object-cover"
                           data-ai-hint={panel.productImageHint}
                         />
                          <div className="absolute inset-0 flex items-end justify-center p-2">
-                           <p className="bg-black/40 px-2 py-1 rounded-md text-white text-sm font-bold text-center" style={{textShadow: '0 1px 2px rgba(0,0,0,0.7)'}}>{panel.nameKey}</p>
+                           <p className="bg-black/40 px-2 py-1 rounded-md text-white text-sm font-bold text-center" style={{textShadow: '0 1px 2px rgba(0,0,0,0.7)'}}>{tPanelNames(panel.nameKey)}</p>
                          </div>
                       </div>
                     </Card>
