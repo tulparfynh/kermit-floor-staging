@@ -10,10 +10,6 @@ export const pathnames = {
   '/spc-wall-panels': {
     en: '/spc-wall-panels',
     tr: '/spc-duvar-panelleri',
-  },
-  '/walls': {
-    en: '/walls',
-    tr: '/duvarlar',
   }
 } satisfies Pathnames<typeof locales>;
 

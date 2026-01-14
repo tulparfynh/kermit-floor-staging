@@ -13,7 +13,7 @@ export function Footer() {
   const productLinks = [
       { href: '#', label: t('productFlooring') },
       { href: '#', label: t('productSkirting') },
-      { href: '/walls', label: t('productWallPanels') },
+      { href: '/spc-wall-panels', label: t('productWallPanels') },
       { href: '#', label: t('product3dWallPanels') },
     ];
     

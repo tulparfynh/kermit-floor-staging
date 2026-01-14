@@ -32,7 +32,7 @@ export default function Home() {
               {t('heroSubtitle')}
             </p>
             <Button asChild size="lg" className="mt-8">
-              <Link href="/walls">
+              <Link href="/spc-wall-panels">
                 {t('collectionsTitle')}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
