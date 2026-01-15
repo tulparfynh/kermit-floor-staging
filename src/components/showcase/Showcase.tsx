@@ -31,8 +31,8 @@ function CollectionNav() {
     { 
       name: t('spcWallPanelsTitle'), 
       href: '/spc-wall-panels', 
-      imageUrl: '/images/Marble-Statuario-w23138-product-image.png',
-      imageHint: 'marble texture'
+      imageUrl: '/images/spc-wall-panels/23137-6/product.jpg',
+      imageHint: 'travertine texture'
     },
     { 
       name: t('spc3dWallPanelsModelATitle'), 
