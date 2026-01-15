@@ -31,7 +31,7 @@ function CollectionNav() {
     { 
       name: t('spcWallPanelsTitle'), 
       href: '/spc-wall-panels', 
-      imageUrl: '/images/spc-wall-panels/23137-6/product.jpg',
+      imageUrl: '/images/spc-wall-panels/23047-8/product.jpg',
       imageHint: 'travertine texture'
     },
     { 
