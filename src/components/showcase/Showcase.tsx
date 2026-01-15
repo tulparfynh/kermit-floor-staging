@@ -170,6 +170,9 @@ export function Showcase({ initialPanels, collectionType }: ShowcaseProps) {
   const tSpcPanelNames = useTranslations('PanelNames');
   const t3dModelAPanelNames = useTranslations('3DModelAPanelNames');
   const t3dModelBPanelNames = useTranslations('3DModelBPanelNames');
+  const tSpcParquetNaturalCollectionPanelNames = useTranslations('SpcParquetNaturalCollectionPanelNames');
+  const tSpcParquetStoneCollectionPanelNames = useTranslations('SpcParquetStoneCollectionPanelNames');
+  const tFullNaturalCollectionPanelNames = useTranslations('FullNaturalCollectionPanelNames');
 
   const tPanelNames = (key: string) => {
     switch (collectionType) {
@@ -177,6 +180,12 @@ export function Showcase({ initialPanels, collectionType }: ShowcaseProps) {
         return t3dModelAPanelNames(key);
       case 'spc-3d-wall-panels-model-b':
         return t3dModelBPanelNames(key);
+      case 'spc-parquet-natural-collection':
+        return tSpcParquetNaturalCollectionPanelNames(key);
+      case 'spc-parquet-stone-collection':
+        return tSpcParquetStoneCollectionPanelNames(key);
+      case 'full-natural-collection':
+        return tFullNaturalCollectionPanelNames(key);
       default:
         return tSpcPanelNames(key);
     }

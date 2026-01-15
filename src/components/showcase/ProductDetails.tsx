@@ -65,7 +65,30 @@ export function ProductDetails({ panel, panels, onPanelSelect, collectionType, t
           { label: t('specUsageArea'), value: "Interior" },
           { label: t('specMaterial'), value: t('specMaterialValue') },
       ];
-  } else {
+  } else if (collectionType === 'spc-parquet-natural-collection' || collectionType === 'spc-parquet-stone-collection') {
+      specs = [
+          { label: t('specThickness'), value: '5 mm' },
+          { label: t('specWearLayer'), value: '0,55 mm' },
+          { label: t('specDimensions'), value: '228 X 1219 mm' },
+          { label: t('specEdge'), value: t('specEdgeValue') },
+          { label: t('specInstallation'), value: t('specInstallationValueClick') },
+          { label: t('specUtilityClass'), value: '33' },
+          { label: t('specUsageArea'), value: t('specUsageAreaValue') },
+          { label: t('specMaterial'), value: t('specMaterialValue') },
+      ];
+  } else if (collectionType === 'full-natural-collection') {
+      specs = [
+          { label: t('specThickness'), value: '6 mm' },
+          { label: t('specWearLayer'), value: '0,70 mm' },
+          { label: t('specDimensions'), value: '295 X 1500 mm' },
+          { label: t('specEdge'), value: t('specEdgeValue') },
+          { label: t('specInstallation'), value: t('specInstallationValueClick') },
+          { label: t('specUtilityClass'), value: '34 / 43' },
+          { label: t('specUsageArea'), value: t('specUsageAreaValue') },
+          { label: t('specMaterial'), value: t('specMaterialValue') },
+      ];
+  }
+  else {
       specs = [
           { label: t('specThickness'), value: '4 mm' },
           { label: t('specWearLayer'), value: '0,30 mm' },

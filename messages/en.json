@@ -80,6 +80,20 @@
     "3D-23137-6": "Travertine Beige",
     "3D-23139-1": "Calacatta White"
   },
+  "SpcParquetNaturalCollectionPanelNames": {
+    "29053-7": "Hickory",
+    "29098-2": "European Oak",
+    "29115-18": "Sand Oak"
+  },
+  "SpcParquetStoneCollectionPanelNames": {
+    "23040-3": "Calacatta Bianco",
+    "23054-2": "Anthracite Concrete",
+    "23069-9": "Concrete Grey"
+  },
+  "FullNaturalCollectionPanelNames": {
+    "29074-1": "Nordic Oak",
+    "29150-4": "Weathered Oak"
+  },
   "ProductDetails": {
     "specThickness": "THICKNESS",
     "specWearLayer": "WEAR LAYER",
@@ -91,6 +105,7 @@
     "specMaterial": "MATERIAL",
     "specEdgeValue": "Micro Bevel",
     "specInstallationValue": "Glue Down",
+    "specInstallationValueClick": "Click System",
     "specUsageAreaValue": "Interior Wall & Floor",
     "specMaterialValue": "SPC (Stone Polymer Composite)",
     "featureWaterProof": "Water Proof",
