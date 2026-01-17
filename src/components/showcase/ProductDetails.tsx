@@ -64,13 +64,13 @@ export function ProductDetails({ panel, panels, onPanelSelect, collectionType, t
   ];
 
   const stoneFlooringSpecs = [
-    { label: t('specThickness'), value: '5 mm' },
-    { label: t('specWearLayer'), value: '0,30 mm' },
-    { label: t('specIxpeUnderlay'), value: '1 mm Included' },
+    { label: t('specThickness'), value: '5 mm / 7 mm' },
+    { label: t('specWearLayer'), value: '0,30 mm / 0,55 mm' },
+    { label: t('specIxpeUnderlay'), value: '1 mm / 1,5 mm Included' },
     { label: t('specDimensions'), value: '305 X 915 mm' },
     { label: t('specEdge'), value: t('specEdgeValue') },
-    { label: t('specLockingSystem'), value: 'UniClic' },
-    { label: t('specUtilityClass'), value: '23 / 31' },
+    { label: t('specLockingSystem'), value: 'I4F' },
+    { label: t('specUtilityClass'), value: '23 / 33' },
     { label: t('specUsageArea'), value: 'Interior' },
     { label: t('specMaterial'), value: t('specMaterialValue') },
   ];
