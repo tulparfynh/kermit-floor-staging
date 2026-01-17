@@ -51,7 +51,7 @@ export function ProductDetails({ panel, panels, onPanelSelect, collectionType, t
 
   let specs: { label: string; value: string | string[]; icon?: React.ElementType }[];
   
-  const flooringSpecs = [
+  const naturalFlooringSpecs = [
     { label: t('specThickness'), value: '5 mm / 7 mm' },
     { label: t('specWearLayer'), value: '0,30 mm / 0,55 mm' },
     { label: t('specIxpeUnderlay'), value: '1 mm / 1,5 mm Included' },
@@ -59,6 +59,18 @@ export function ProductDetails({ panel, panels, onPanelSelect, collectionType, t
     { label: t('specEdge'), value: t('specEdgeValue') },
     { label: t('specLockingSystem'), value: 'UniClic / I4F' },
     { label: t('specUtilityClass'), value: '23 / 33' },
+    { label: t('specUsageArea'), value: 'Interior' },
+    { label: t('specMaterial'), value: t('specMaterialValue') },
+  ];
+
+  const stoneFlooringSpecs = [
+    { label: t('specThickness'), value: '5 mm' },
+    { label: t('specWearLayer'), value: '0,30 mm' },
+    { label: t('specIxpeUnderlay'), value: '1 mm Included' },
+    { label: t('specDimensions'), value: '305 X 915 mm' },
+    { label: t('specEdge'), value: t('specEdgeValue') },
+    { label: t('specLockingSystem'), value: 'UniClic' },
+    { label: t('specUtilityClass'), value: '23 / 31' },
     { label: t('specUsageArea'), value: 'Interior' },
     { label: t('specMaterial'), value: t('specMaterialValue') },
   ];
@@ -77,8 +89,10 @@ export function ProductDetails({ panel, panels, onPanelSelect, collectionType, t
           { label: t('specUsageArea'), value: "Interior" },
           { label: t('specMaterial'), value: t('specMaterialValue') },
       ];
-  } else if (['spc-parquet-natural-collection', 'spc-parquet-stone-collection', 'full-natural-collection'].includes(collectionType)) {
-      specs = flooringSpecs;
+  } else if (collectionType === 'spc-parquet-stone-collection') {
+      specs = stoneFlooringSpecs;
+  } else if (['spc-parquet-natural-collection', 'full-natural-collection'].includes(collectionType)) {
+      specs = naturalFlooringSpecs;
   }
   else {
       specs = [
