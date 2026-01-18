@@ -32,11 +32,18 @@ export function NavMenu({ isMobile = false }) {
   const pathname = usePathname();
   const t = useTranslations('Header');
   
+  const getResourcesLink = () => {
+    if (pathname.includes('/skirting-boards')) return '/resources?tab=skirting';
+    if (pathname.includes('/spc-parquet') || pathname.includes('/full-natural-collection')) return '/resources?tab=flooring';
+    if (pathname.includes('/spc-wall-panels') || pathname.includes('/spc-3d-wall-panels')) return '/resources?tab=wall_panels';
+    return '/resources';
+  }
+  
   const navLinks = [
     { href: '/spc-wall-panels', label: t('navWalls') },
     { href: '/spc-parquet-natural-collection', label: t('navFloors') },
     { href: '/skirting-boards/optima-60-mm-skirting-board', label: t('navSkirtings') },
-    { href: '#', label: t('navDownload') },
+    { href: getResourcesLink(), label: t('navDownload') },
     { href: '#', label: t('navAbout') },
     { href: '#', label: t('navContact') },
   ];
@@ -49,7 +56,7 @@ export function NavMenu({ isMobile = false }) {
       )}
     >
       {navLinks.map((link) => {
-        const isActive = pathname.startsWith(link.href) && link.href !== '#';
+        const isActive = (pathname.startsWith(link.href) && link.href !== '#') || (link.href.startsWith('/resources') && pathname.startsWith('/resources'));
         return (
           <Link
             key={link.label}

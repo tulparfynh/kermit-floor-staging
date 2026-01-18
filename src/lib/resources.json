@@ -1,0 +1,192 @@
+{
+  "resources": [
+    {
+      "id": "pack-installer",
+      "productLine": "general",
+      "docType": "pack",
+      "audience": ["installer"],
+      "installationMethod": null,
+      "title": "Installer Starter Pack",
+      "title_tr": "Uygulamacı Başlangıç Paketi",
+      "summary": "Essential documents for professional installers, including installation guides and technical data sheets.",
+      "summary_tr": "Profesyonel uygulamacılar için montaj kılavuzları ve teknik veri sayfaları dahil olmak üzere temel belgeler.",
+      "bullets": [
+        "All Installation Guides",
+        "All Technical Data Sheets",
+        "Warranty & Claim Forms",
+        "Care & Maintenance Guides"
+      ],
+      "bullets_tr": [
+        "Tüm Montaj Kılavuzları",
+        "Tüm Teknik Veri Sayfaları",
+        "Garanti ve Talep Formları",
+        "Bakım ve Onarım Kılavuzları"
+      ],
+      "version": "2024.Q3",
+      "updatedAt": "2024-07-20",
+      "tags": ["pack", "installer"],
+      "files": {
+        "en": { "url": "/downloads/kermit-installer-pack-en.zip", "size": "45 MB", "format": "zip" },
+        "tr": { "url": "/downloads/kermit-installer-pack-tr.zip", "size": "45 MB", "format": "zip" }
+      },
+      "previewEnabled": false
+    },
+    {
+      "id": "pack-dealer",
+      "productLine": "general",
+      "docType": "pack",
+      "audience": ["dealer"],
+      "installationMethod": null,
+      "title": "Dealer Starter Pack",
+      "title_tr": "Bayi Başlangıç Paketi",
+      "summary": "A complete package for our dealers, including product catalogues, marketing materials, and price lists.",
+      "summary_tr": "Ürün katalogları, pazarlama materyalleri ve fiyat listeleri dahil olmak üzere bayilerimiz için eksiksiz bir paket.",
+      "bullets": [
+        "All Product Catalogues",
+        "Marketing & Display Guidelines",
+        "Current Price Lists",
+        "Warranty Information"
+      ],
+      "bullets_tr": [
+        "Tüm Ürün Katalogları",
+        "Pazarlama ve Teşhir Yönergeleri",
+        "Güncel Fiyat Listeleri",
+        "Garanti Bilgileri"
+      ],
+      "version": "2024.Q3",
+      "updatedAt": "2024-07-20",
+      "tags": ["pack", "dealer"],
+      "files": {
+        "en": { "url": "/downloads/kermit-dealer-pack-en.zip", "size": "120 MB", "format": "zip" },
+        "tr": { "url": "/downloads/kermit-dealer-pack-tr.zip", "size": "120 MB", "format": "zip" }
+      },
+      "previewEnabled": false
+    },
+    {
+      "id": "pack-architect",
+      "productLine": "general",
+      "docType": "pack",
+      "audience": ["architect"],
+      "installationMethod": null,
+      "title": "Architect & Specifier Pack",
+      "title_tr": "Mimar ve Tasarımcı Paketi",
+      "summary": "High-resolution textures, CAD files, and full specification documents for architects and specifiers.",
+      "summary_tr": "Mimarlar ve tasarımcılar için yüksek çözünürlüklü dokular, CAD dosyaları ve tam özellikli belgeler.",
+      "bullets": [
+        "All CAD & Drawings",
+        "High-Resolution Textures",
+        "Full Technical Data Sheets",
+        "Sustainability Certificates"
+      ],
+      "bullets_tr": [
+        "Tüm CAD ve Çizimler",
+        "Yüksek Çözünürlüklü Dokular",
+        "Tam Teknik Veri Sayfaları",
+        "Sürdürülebilirlik Sertifikaları"
+      ],
+      "version": "2024.Q3",
+      "updatedAt": "2024-07-20",
+      "tags": ["pack", "architect"],
+      "files": {
+        "en": { "url": "/downloads/kermit-architect-pack-en.zip", "size": "250 MB", "format": "zip" },
+        "tr": { "url": "/downloads/kermit-architect-pack-tr.zip", "size": "250 MB", "format": "zip" }
+      },
+      "previewEnabled": false
+    },
+    {
+      "id": "skirting-catalogue-2024",
+      "productLine": "skirting",
+      "docType": "catalogue",
+      "audience": ["all"],
+      "installationMethod": null,
+      "title": "SPC Skirting Boards Catalogue 2024",
+      "title_tr": "SPC Süpürgelik Kataloğu 2024",
+      "summary": "Explore our complete range of SPC skirting boards, including all models and color options.",
+      "summary_tr": "Tüm modelleri ve renk seçeneklerini içeren eksiksiz SPC süpürgelik serimizi keşfedin.",
+      "version": "v2.1",
+      "updatedAt": "2024-06-15",
+      "tags": ["catalogue", "skirting", "2024"],
+      "files": {
+        "en": { "url": "/downloads/skirting-catalogue-en.pdf", "size": "12 MB", "format": "pdf" },
+        "tr": { "url": "/downloads/skirting-catalogue-tr.pdf", "size": "12 MB", "format": "pdf" }
+      },
+      "previewEnabled": true
+    },
+    {
+      "id": "skirting-tds-optima",
+      "productLine": "skirting",
+      "docType": "tds",
+      "audience": ["all"],
+      "installationMethod": null,
+      "title": "Technical Data Sheet: Optima Series",
+      "title_tr": "Teknik Veri Sayfası: Optima Serisi",
+      "summary": "Detailed technical specifications for the Optima 60mm and 90mm skirting board series.",
+      "summary_tr": "Optima 60mm ve 90mm süpürgelik serileri için ayrıntılı teknik özellikler.",
+      "version": "v1.5",
+      "updatedAt": "2024-05-30",
+      "tags": ["tds", "skirting", "optima"],
+      "files": {
+        "en": { "url": "/downloads/tds-skirting-optima-en.pdf", "size": "1.2 MB", "format": "pdf" },
+        "tr": { "url": "/downloads/tds-skirting-optima-tr.pdf", "size": "1.2 MB", "format": "pdf" }
+      },
+      "previewEnabled": true
+    },
+    {
+      "id": "flooring-install-click",
+      "productLine": "flooring",
+      "docType": "installation",
+      "audience": ["installer", "all"],
+      "installationMethod": "clip",
+      "title": "SPC Flooring Installation Guide (Click System)",
+      "title_tr": "SPC Parke Montaj Kılavuzu (Kilit Sistem)",
+      "summary": "Step-by-step instructions for installing our SPC flooring with the click-lock system.",
+      "summary_tr": "Kilit sistemli SPC parkemizin montajı için adım adım talimatlar.",
+      "version": "v3.0",
+      "updatedAt": "2024-07-01",
+      "tags": ["installation", "flooring", "click-system"],
+      "files": {
+        "en": { "url": "/downloads/install-flooring-click-en.pdf", "size": "3.5 MB", "format": "pdf" },
+        "tr": { "url": "/downloads/install-flooring-click-tr.pdf", "size": "3.5 MB", "format": "pdf" }
+      },
+      "previewEnabled": true
+    },
+    {
+      "id": "wall-panel-cad-drawings",
+      "productLine": "wall_panels",
+      "docType": "cad",
+      "audience": ["architect"],
+      "installationMethod": null,
+      "title": "SPC Wall Panels - CAD Drawings",
+      "title_tr": "SPC Duvar Panelleri - CAD Çizimleri",
+      "summary": "A collection of DWG and DXF files for our standard SPC wall panel collection.",
+      "summary_tr": "Standart SPC duvar paneli koleksiyonumuz için DWG ve DXF dosyaları koleksiyonu.",
+      "version": "v1.0",
+      "updatedAt": "2024-04-10",
+      "tags": ["cad", "dwg", "dxf", "wall-panels"],
+      "files": {
+        "en": { "url": "/downloads/cad-wall-panels.zip", "size": "32 MB", "format": "zip" },
+        "tr": { "url": "/downloads/cad-wall-panels.zip", "size": "32 MB", "format": "zip" }
+      },
+      "previewEnabled": false
+    },
+    {
+      "id": "general-warranty",
+      "productLine": "general",
+      "docType": "warranty",
+      "audience": ["all"],
+      "installationMethod": null,
+      "title": "Kermit Floor Limited Warranty",
+      "title_tr": "Kermit Floor Sınırlı Garanti",
+      "summary": "Official warranty terms and conditions for all Kermit Floor SPC products.",
+      "summary_tr": "Tüm Kermit Floor SPC ürünleri için resmi garanti hüküm ve koşulları.",
+      "version": "2024",
+      "updatedAt": "2024-01-01",
+      "tags": ["warranty", "legal"],
+      "files": {
+        "en": { "url": "/downloads/kermit-warranty-en.pdf", "size": "0.5 MB", "format": "pdf" },
+        "tr": { "url": "/downloads/kermit-warranty-tr.pdf", "size": "0.5 MB", "format": "pdf" }
+      },
+      "previewEnabled": true
+    }
+  ]
+}
