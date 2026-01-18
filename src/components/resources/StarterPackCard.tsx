@@ -4,7 +4,7 @@ import type { Resource, Locale } from '@/lib/resources-data';
 import { useLocale, useTranslations } from 'next-intl';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Check, Download, Package, Eye, FileText, X } from 'lucide-react';
+import { Check, Download, Package, FileText, X } from 'lucide-react';
 import { Link } from '@/navigation';
 import {
   Dialog,
@@ -58,7 +58,7 @@ export default function StarterPackCard({ pack, libraryDocs }: StarterPackCardPr
         </ul>
       </CardContent>
       <CardFooter className="flex flex-col sm:flex-row gap-2">
-        <Button asChild className="w-full sm:flex-1 sm:whitespace-normal h-auto">
+        <Button asChild className="w-full sm:flex-1 whitespace-normal h-auto">
             <Link href={downloadUrl}>
                 <Download className="mr-2 h-4 w-4" />
                 {t('downloadZip')}
@@ -66,7 +66,7 @@ export default function StarterPackCard({ pack, libraryDocs }: StarterPackCardPr
         </Button>
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant="outline" className="w-full sm:flex-1 sm:whitespace-normal h-auto">
+                <Button variant="outline" className="w-full sm:flex-1 whitespace-normal h-auto">
                 {t('viewContents')}
                 </Button>
             </DialogTrigger>
@@ -81,26 +81,11 @@ export default function StarterPackCard({ pack, libraryDocs }: StarterPackCardPr
                     <div className="space-y-3 p-6">
                         {packContents.length > 0 ? packContents.map(doc => {
                             const docTitle = locale === 'tr' ? doc.title_tr : doc.title;
-                            const fileDetails = doc.files[locale] || doc.files['en'];
                             return (
                                 <div key={doc.id} className="flex items-center justify-between p-3 rounded-lg border bg-muted/50">
                                     <div className="flex items-center gap-3 overflow-hidden">
                                         <FileText className="h-5 w-5 text-secondary flex-shrink-0"/>
                                         <span className="font-medium text-sm truncate" title={docTitle}>{docTitle}</span>
-                                    </div>
-                                    <div className="flex items-center gap-2 flex-shrink-0">
-                                        {doc.previewEnabled && (
-                                            <Button variant="ghost" size="icon" asChild>
-                                                <Link href={fileDetails.url} target="_blank" aria-label={`Preview ${docTitle}`}>
-                                                    <Eye className="h-4 w-4" />
-                                                </Link>
-                                            </Button>
-                                        )}
-                                        <Button variant="ghost" size="icon" asChild>
-                                            <Link href={fileDetails.url} download aria-label={`Download ${docTitle}`}>
-                                                <Download className="h-4 w-4" />
-                                            </Link>
-                                        </Button>
                                     </div>
                                 </div>
                             );
