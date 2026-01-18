@@ -23,25 +23,38 @@ export default function ResourcesPageClient({
   const architectPack = starterPacks.find(p => p.id === 'pack-architect');
 
   return (
-    <div className="container mx-auto px-4 py-8 md:py-12 space-y-12 md:space-y-16">
-      {/* Starter Packs Section */}
-      <section>
-        <h2 className="text-3xl font-bold font-headline text-center mb-8">
-          {t('starterPacksTitle')}
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {installerPack && <StarterPackCard pack={installerPack} />}
-          {dealerPack && <StarterPackCard pack={dealerPack} />}
-          {architectPack && <StarterPackCard pack={architectPack} />}
+    <>
+      {/* Hero Section */}
+      <div className="bg-muted border-b">
+        <div className="container mx-auto px-4 py-12 text-center">
+          <h1 className="font-headline text-4xl lg:text-5xl font-bold tracking-tight text-primary">
+            {t('heroTitle')}
+          </h1>
+          <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+            {t('heroSubtitle')}
+          </p>
         </div>
-      </section>
+      </div>
+      <div className="container mx-auto px-4 py-8 md:py-12 space-y-12 md:space-y-16">
+        {/* Starter Packs Section */}
+        <section>
+          <h2 className="text-3xl font-bold font-headline text-center mb-8">
+            {t('starterPacksTitle')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {installerPack && <StarterPackCard pack={installerPack} />}
+            {dealerPack && <StarterPackCard pack={dealerPack} />}
+            {architectPack && <StarterPackCard pack={architectPack} />}
+          </div>
+        </section>
 
-      <Separator />
-      
-      {/* Resource Library Section */}
-      <section>
-        <ResourceLibrary documents={libraryDocs} />
-      </section>
-    </div>
+        <Separator />
+
+        {/* Resource Library Section */}
+        <section>
+          <ResourceLibrary documents={libraryDocs} />
+        </section>
+      </div>
+    </>
   );
 }
