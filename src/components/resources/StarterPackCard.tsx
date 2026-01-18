@@ -42,13 +42,13 @@ export default function StarterPackCard({ pack }: StarterPackCardProps) {
         </ul>
       </CardContent>
       <CardFooter className="flex flex-col sm:flex-row gap-2">
-        <Button asChild className="w-full">
+        <Button asChild className="w-full sm:flex-1">
             <Link href={downloadUrl}>
                 <Download className="mr-2 h-4 w-4" />
                 {t('downloadZip')}
             </Link>
         </Button>
-        <Button variant="outline" className="w-full">
+        <Button variant="outline" className="w-full sm:flex-1">
           {t('viewContents')}
         </Button>
       </CardFooter>
