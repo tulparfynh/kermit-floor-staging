@@ -42,9 +42,9 @@ export default function ResourcesPageClient({
             {t('starterPacksTitle')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {installerPack && <StarterPackCard pack={installerPack} />}
-            {dealerPack && <StarterPackCard pack={dealerPack} />}
-            {architectPack && <StarterPackCard pack={architectPack} />}
+            {installerPack && <StarterPackCard pack={installerPack} libraryDocs={libraryDocs} />}
+            {dealerPack && <StarterPackCard pack={dealerPack} libraryDocs={libraryDocs} />}
+            {architectPack && <StarterPackCard pack={architectPack} libraryDocs={libraryDocs} />}
           </div>
         </section>
 

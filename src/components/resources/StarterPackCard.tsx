@@ -4,14 +4,25 @@ import type { Resource, Locale } from '@/lib/resources-data';
 import { useLocale, useTranslations } from 'next-intl';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Check, Download, Package } from 'lucide-react';
+import { Check, Download, Package, Eye, FileText, X } from 'lucide-react';
 import { Link } from '@/navigation';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose,
+} from '@/components/ui/dialog';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 type StarterPackCardProps = {
   pack: Resource;
+  libraryDocs: Resource[];
 };
 
-export default function StarterPackCard({ pack }: StarterPackCardProps) {
+export default function StarterPackCard({ pack, libraryDocs }: StarterPackCardProps) {
   const locale = useLocale() as Locale;
   const t = useTranslations('ResourcesPage');
 
@@ -19,6 +30,11 @@ export default function StarterPackCard({ pack }: StarterPackCardProps) {
   const summary = locale === 'tr' ? pack.summary_tr : pack.summary;
   const bullets = locale === 'tr' ? pack.bullets_tr : pack.bullets;
   const downloadUrl = pack.files[locale]?.url || pack.files['en'].url;
+  
+  const packAudience = pack.audience[0];
+  const packContents = libraryDocs.filter(
+    doc => doc.audience.includes(packAudience) || doc.audience.includes('all')
+  );
 
   return (
     <Card className="flex flex-col">
@@ -48,9 +64,59 @@ export default function StarterPackCard({ pack }: StarterPackCardProps) {
                 {t('downloadZip')}
             </Link>
         </Button>
-        <Button variant="outline" className="w-full sm:flex-1 sm:whitespace-normal h-auto">
-          {t('viewContents')}
-        </Button>
+        <Dialog>
+            <DialogTrigger asChild>
+                <Button variant="outline" className="w-full sm:flex-1 sm:whitespace-normal h-auto">
+                {t('viewContents')}
+                </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-2xl p-0">
+                <DialogHeader className="p-6 pb-4">
+                    <DialogTitle className="text-2xl">{t('viewContentsTitle', { packName: title })}</DialogTitle>
+                    <DialogDescription>
+                        {t('viewContentsDescription')}
+                    </DialogDescription>
+                </DialogHeader>
+                <ScrollArea className="h-[60vh] border-y">
+                    <div className="space-y-3 p-6">
+                        {packContents.length > 0 ? packContents.map(doc => {
+                            const docTitle = locale === 'tr' ? doc.title_tr : doc.title;
+                            const fileDetails = doc.files[locale] || doc.files['en'];
+                            return (
+                                <div key={doc.id} className="flex items-center justify-between p-3 rounded-lg border bg-muted/50">
+                                    <div className="flex items-center gap-3 overflow-hidden">
+                                        <FileText className="h-5 w-5 text-secondary flex-shrink-0"/>
+                                        <span className="font-medium text-sm truncate" title={docTitle}>{docTitle}</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 flex-shrink-0">
+                                        {doc.previewEnabled && (
+                                            <Button variant="ghost" size="icon" asChild>
+                                                <Link href={fileDetails.url} target="_blank" aria-label={`Preview ${docTitle}`}>
+                                                    <Eye className="h-4 w-4" />
+                                                </Link>
+                                            </Button>
+                                        )}
+                                        <Button variant="ghost" size="icon" asChild>
+                                            <Link href={fileDetails.url} download aria-label={`Download ${docTitle}`}>
+                                                <Download className="h-4 w-4" />
+                                            </Link>
+                                        </Button>
+                                    </div>
+                                </div>
+                            );
+                        }) : (
+                            <p className="text-muted-foreground text-center py-8">{t('noResults')}</p>
+                        )}
+                    </div>
+                </ScrollArea>
+                <DialogClose asChild>
+                    <Button variant="ghost" size="icon" className="absolute top-3 right-3 rounded-full">
+                        <X className="h-4 w-4" />
+                        <span className="sr-only">Close</span>
+                    </Button>
+                </DialogClose>
+            </DialogContent>
+        </Dialog>
       </CardFooter>
     </Card>
   );

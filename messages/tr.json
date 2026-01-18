@@ -49,6 +49,8 @@
     "starterPacksTitle": "Başlangıç Paketleri",
     "downloadZip": "ZIP İndir",
     "viewContents": "İçeriği Görüntüle",
+    "viewContentsTitle": "{packName} İçeriği",
+    "viewContentsDescription": "Bu başlangıç paketine aşağıdaki belgeler dahildir.",
     "productLineTabs_skirting": "SPC Süpürgelikler",
     "productLineTabs_flooring": "SPC Parke",
     "productLineTabs_wall_panels": "SPC Duvar Panelleri",

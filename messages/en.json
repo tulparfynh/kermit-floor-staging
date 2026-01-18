@@ -49,6 +49,8 @@
     "starterPacksTitle": "Starter Packs",
     "downloadZip": "Download ZIP",
     "viewContents": "View Contents",
+    "viewContentsTitle": "{packName} Contents",
+    "viewContentsDescription": "The following documents are included in this starter pack.",
     "productLineTabs_skirting": "SPC Skirting Boards",
     "productLineTabs_flooring": "SPC Flooring",
     "productLineTabs_wall_panels": "SPC Wall Panels",
