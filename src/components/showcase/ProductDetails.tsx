@@ -27,7 +27,7 @@ type ProductDetailsProps = {
   panel: Panel;
   panels: Panel[];
   onPanelSelect: (panel: Panel) => void;
-  collectionType: 'spc-wall-panels' | 'spc-3d-wall-panels-model-a' | 'spc-3d-wall-panels-model-b' | 'spc-parquet-natural-collection' | 'spc-parquet-stone-collection' | 'full-natural-collection';
+  collectionType: 'spc-wall-panels' | 'spc-3d-wall-panels-model-a' | 'spc-3d-wall-panels-model-b' | 'spc-parquet-natural-collection' | 'spc-parquet-stone-collection' | 'full-natural-collection' | 'skirting-alpha-140-mm' | 'skirting-berlin-100-mm' | 'skirting-elite-100-mm' | 'skirting-moderna-100-mm' | 'skirting-optima-60-mm' | 'skirting-optima-90-mm' | 'skirting-solid-80-mm' | 'skirting-x-line-100-mm';
   tPanelNames: (key: string) => string;
 };
 
@@ -93,6 +93,25 @@ export function ProductDetails({ panel, panels, onPanelSelect, collectionType, t
       specs = stoneFlooringSpecs;
   } else if (['spc-parquet-natural-collection', 'full-natural-collection'].includes(collectionType)) {
       specs = naturalFlooringSpecs;
+  } else if (collectionType.startsWith('skirting-')) {
+    let height = 'N/A';
+    let thickness = 'N/A';
+
+    if (collectionType.includes('alpha-140-mm')) { height = '140 mm'; thickness = '16 mm'; }
+    else if (collectionType.includes('berlin-100-mm')) { height = '100 mm'; thickness = '13 mm'; }
+    else if (collectionType.includes('elite-100-mm')) { height = '100 mm'; thickness = '15 mm'; }
+    else if (collectionType.includes('moderna-100-mm')) { height = '100 mm'; thickness = '15 mm'; }
+    else if (collectionType.includes('optima-60-mm')) { height = '60 mm'; thickness = '13 mm'; }
+    else if (collectionType.includes('optima-90-mm')) { height = '90 mm'; thickness = '13 mm'; }
+    else if (collectionType.includes('solid-80-mm')) { height = '80 mm'; thickness = '12 mm'; }
+    else if (collectionType.includes('x-line-100-mm')) { height = '100 mm'; thickness = '15 mm'; }
+
+    specs = [
+        { label: t('specHeight'), value: height },
+        { label: t('specThickness'), value: thickness },
+        { label: t('specLength'), value: '2400 mm' },
+        { label: t('specMaterial'), value: t('specMaterialValue') },
+    ];
   }
   else {
       specs = [

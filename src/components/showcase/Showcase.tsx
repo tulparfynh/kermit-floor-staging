@@ -158,10 +158,63 @@ function FlooringCollectionNav() {
   );
 }
 
+function SkirtingCollectionNav() {
+  const t = useTranslations('SkirtingCollectionNames');
+  const pathname = usePathname();
+  const collections = [
+    { name: t('optima-60-mm'), href: '/skirting-boards/optima-60-mm-skirting-board', imageUrl: '/images/skirting-boards/optima-60-mm-skirting-board/0603031/product.jpg', imageHint: 'optima 60mm skirting' },
+    { name: t('optima-90-mm'), href: '/skirting-boards/optima-90-mm-skirting-board', imageUrl: '/images/skirting-boards/optima-90-mm-skirting-board/0704031/product.jpg', imageHint: 'optima 90mm skirting' },
+    { name: t('solid-80-mm'), href: '/skirting-boards/solid-80-mm-skirting-board', imageUrl: '/images/skirting-boards/solid-80-mm-skirting-board/0904031/product.jpg', imageHint: 'solid 80mm skirting' },
+    { name: t('berlin-100-mm'), href: '/skirting-boards/berlin-100-mm-skirting-board', imageUrl: '/images/skirting-boards/berlin-100-mm-skirting-board/1100031/product.jpg', imageHint: 'berlin 100mm skirting' },
+    { name: t('elite-100-mm'), href: '/skirting-boards/elite-100-mm-skirting-board', imageUrl: '/images/skirting-boards/elite-100-mm-skirting-board/E1003031/product.jpg', imageHint: 'elite 100mm skirting' },
+    { name: t('moderna-100-mm'), href: '/skirting-boards/moderna-100-mm-skirting-board', imageUrl: '/images/skirting-boards/moderna-100-mm-skirting-board/1004031/product.jpg', imageHint: 'moderna 100mm skirting' },
+    { name: t('x-line-100-mm'), href: '/skirting-boards/x-line-100-mm-skirting-board', imageUrl: '/images/skirting-boards/x-line-100-mm-skirting-board/X1004031/product.jpg', imageHint: 'x-line 100mm skirting' },
+    { name: t('alpha-140-mm'), href: '/skirting-boards/alpha-140-mm-skirting-board', imageUrl: '/images/skirting-boards/alpha-140-mm-skirting-board/14005031/product.jpg', imageHint: 'alpha 140mm skirting' },
+  ];
+
+  return (
+    <div className="bg-muted py-4 border-b">
+        <div className="container mx-auto px-4">
+            <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
+                {collections.map((collection) => (
+                    <Link 
+                        key={collection.name}
+                        href={collection.href} 
+                        className={cn(
+                            "flex flex-col items-center gap-2 group",
+                        )}
+                    >
+                        <div className={cn(
+                            "relative h-16 w-16 md:h-20 md:w-20 rounded-full overflow-hidden border-2 transition-all duration-300",
+                            pathname.includes(collection.href) ? "border-primary" : "border-transparent group-hover:border-primary/50"
+                        )}
+                        >
+                            <Image 
+                                src={collection.imageUrl}
+                                alt={collection.name}
+                                fill
+                                className="object-cover transition-transform duration-300 group-hover:scale-110"
+                                data-ai-hint={collection.imageHint}
+                            />
+                        </div>
+                        <span className={cn(
+                            "text-xs md:text-sm font-semibold text-foreground/80 group-hover:text-primary transition-colors text-center",
+                            pathname.includes(collection.href) && "text-primary"
+                        )}>
+                            {collection.name}
+                        </span>
+                    </Link>
+                ))}
+            </div>
+        </div>
+    </div>
+  );
+}
+
 
 type ShowcaseProps = {
   initialPanels: Panel[];
-  collectionType: 'spc-wall-panels' | 'spc-3d-wall-panels-model-a' | 'spc-3d-wall-panels-model-b' | 'spc-parquet-natural-collection' | 'spc-parquet-stone-collection' | 'full-natural-collection';
+  collectionType: 'spc-wall-panels' | 'spc-3d-wall-panels-model-a' | 'spc-3d-wall-panels-model-b' | 'spc-parquet-natural-collection' | 'spc-parquet-stone-collection' | 'full-natural-collection' | 'skirting-alpha-140-mm' | 'skirting-berlin-100-mm' | 'skirting-elite-100-mm' | 'skirting-moderna-100-mm' | 'skirting-optima-60-mm' | 'skirting-optima-90-mm' | 'skirting-solid-80-mm' | 'skirting-x-line-100-mm';
 }
 
 export function Showcase({ initialPanels, collectionType }: ShowcaseProps) {
@@ -173,18 +226,21 @@ export function Showcase({ initialPanels, collectionType }: ShowcaseProps) {
   const tSpcParquetNaturalCollectionPanelNames = useTranslations('SpcParquetNaturalCollectionPanelNames');
   const tSpcParquetStoneCollectionPanelNames = useTranslations('SpcParquetStoneCollectionPanelNames');
   const tFullNaturalCollectionPanelNames = useTranslations('FullNaturalCollectionPanelNames');
+  const tSkirtingPanelNames = useTranslations('SkirtingPanelNames');
 
   const tPanelNames = (key: string) => {
-    switch (collectionType) {
-      case 'spc-3d-wall-panels-model-a':
+    switch (true) {
+      case collectionType.startsWith('skirting-'):
+        return tSkirtingPanelNames(key);
+      case collectionType === 'spc-3d-wall-panels-model-a':
         return t3dModelAPanelNames(key);
-      case 'spc-3d-wall-panels-model-b':
+      case collectionType === 'spc-3d-wall-panels-model-b':
         return t3dModelBPanelNames(key);
-      case 'spc-parquet-natural-collection':
+      case collectionType === 'spc-parquet-natural-collection':
         return tSpcParquetNaturalCollectionPanelNames(key);
-      case 'spc-parquet-stone-collection':
+      case collectionType === 'spc-parquet-stone-collection':
         return tSpcParquetStoneCollectionPanelNames(key);
-      case 'full-natural-collection':
+      case collectionType === 'full-natural-collection':
         return tFullNaturalCollectionPanelNames(key);
       default:
         return tSpcPanelNames(key);
@@ -201,11 +257,13 @@ export function Showcase({ initialPanels, collectionType }: ShowcaseProps) {
   }, [initialPanels]);
 
   const isFlooring = ['spc-parquet-natural-collection', 'spc-parquet-stone-collection', 'full-natural-collection'].includes(collectionType);
+  const isSkirting = collectionType.startsWith('skirting-');
+
 
   if (!selectedPanel) {
     return (
       <div className="space-y-6 lg:space-y-8">
-        {isFlooring ? <FlooringCollectionNav /> : <WallCollectionNav />}
+        {isFlooring ? <FlooringCollectionNav /> : isSkirting ? <SkirtingCollectionNav /> : <WallCollectionNav />}
         <div className="container mx-auto px-4 mt-6 lg:mt-8">
           <Skeleton className="h-[60vh] w-full" />
           <div className="text-center py-8">
@@ -219,7 +277,7 @@ export function Showcase({ initialPanels, collectionType }: ShowcaseProps) {
 
   return (
     <div className="space-y-6 lg:space-y-8">
-      {isFlooring ? <FlooringCollectionNav /> : <WallCollectionNav />}
+      {isFlooring ? <FlooringCollectionNav /> : isSkirting ? <SkirtingCollectionNav /> : <WallCollectionNav />}
       <div className="container mx-auto px-4 mt-6 lg:mt-8">
         <ProductDetails 
           panel={selectedPanel} 

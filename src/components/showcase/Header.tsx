@@ -35,7 +35,7 @@ export function NavMenu({ isMobile = false }) {
   const navLinks = [
     { href: '/spc-wall-panels', label: t('navWalls') },
     { href: '/spc-parquet-natural-collection', label: t('navFloors') },
-    { href: '#', label: t('navSkirtings') },
+    { href: '/skirting-boards/optima-60-mm-skirting-board', label: t('navSkirtings') },
     { href: '#', label: t('navDownload') },
     { href: '#', label: t('navAbout') },
     { href: '#', label: t('navContact') },
@@ -72,7 +72,7 @@ export function NavMenu({ isMobile = false }) {
 }
 
 type HeaderProps = {
-  pageType?: 'spc-wall-panels' | 'spc-3d-wall-panels-model-a' | 'spc-3d-wall-panels-model-b' | 'spc-parquet-natural-collection' | 'spc-parquet-stone-collection' | 'full-natural-collection';
+  pageType?: 'spc-wall-panels' | 'spc-3d-wall-panels-model-a' | 'spc-3d-wall-panels-model-b' | 'spc-parquet-natural-collection' | 'spc-parquet-stone-collection' | 'full-natural-collection' | 'skirting-alpha-140-mm' | 'skirting-berlin-100-mm' | 'skirting-elite-100-mm' | 'skirting-moderna-100-mm' | 'skirting-optima-60-mm' | 'skirting-optima-90-mm' | 'skirting-solid-80-mm' | 'skirting-x-line-100-mm';
 }
 
 export function Header({ pageType }: HeaderProps) {
@@ -106,6 +106,38 @@ export function Header({ pageType }: HeaderProps) {
     pageTitle = t('heroTitleFullNaturalCollection');
     heroImage = '/images/full-natural-collection/29074-1/application.jpg';
     heroImageHint = 'elegant room with wide plank natural flooring';
+  } else if (pageType === 'skirting-alpha-140-mm') {
+    pageTitle = t('heroTitleSkirtingAlpha140mm');
+    heroImage = '/images/skirting-boards/alpha-140-mm-skirting-board/14005031/application.jpg';
+    heroImageHint = 'living room with tall skirting';
+  } else if (pageType === 'skirting-berlin-100-mm') {
+    pageTitle = t('heroTitleSkirtingBerlin100mm');
+    heroImage = '/images/skirting-boards/berlin-100-mm-skirting-board/1100031/application.jpg';
+    heroImageHint = 'interior with modern skirting';
+  } else if (pageType === 'skirting-elite-100-mm') {
+    pageTitle = t('heroTitleSkirtingElite100mm');
+    heroImage = '/images/skirting-boards/elite-100-mm-skirting-board/E1003031/application.jpg';
+    heroImageHint = 'room with decorative skirting';
+  } else if (pageType === 'skirting-moderna-100-mm') {
+    pageTitle = t('heroTitleSkirtingModerna100mm');
+    heroImage = '/images/skirting-boards/moderna-100-mm-skirting-board/1004031/application.jpg';
+    heroImageHint = 'hallway with stylish skirting';
+  } else if (pageType === 'skirting-optima-60-mm') {
+    pageTitle = t('heroTitleSkirtingOptima60mm');
+    heroImage = '/images/skirting-boards/optima-60-mm-skirting-board/0603031/application.jpg';
+    heroImageHint = 'room with minimal skirting';
+  } else if (pageType === 'skirting-optima-90-mm') {
+    pageTitle = t('heroTitleSkirtingOptima90mm');
+    heroImage = '/images/skirting-boards/optima-90-mm-skirting-board/0704031/application.jpg';
+    heroImageHint = 'bedroom with medium height skirting';
+  } else if (pageType === 'skirting-solid-80-mm') {
+    pageTitle = t('heroTitleSkirtingSolid80mm');
+    heroImage = '/images/skirting-boards/solid-80-mm-skirting-board/0904031/application.jpg';
+    heroImageHint = 'office with solid skirting';
+  } else if (pageType === 'skirting-x-line-100-mm') {
+    pageTitle = t('heroTitleSkirtingXLine100mm');
+    heroImage = '/images/skirting-boards/x-line-100-mm-skirting-board/X1004031/application.jpg';
+    heroImageHint = 'modern room with x-line skirting';
   }
 
 
