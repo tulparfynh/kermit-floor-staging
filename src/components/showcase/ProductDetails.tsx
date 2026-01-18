@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -95,20 +94,20 @@ export function ProductDetails({ panel, panels, onPanelSelect, collectionType, t
       specs = naturalFlooringSpecs;
   } else if (collectionType.startsWith('skirting-')) {
     let height = 'N/A';
-    let thickness = 'N/A';
+    let depth = 'N/A';
 
-    if (collectionType.includes('alpha-140-mm')) { height = '140 mm'; thickness = '16 mm'; }
-    else if (collectionType.includes('berlin-100-mm')) { height = '100 mm'; thickness = '13 mm'; }
-    else if (collectionType.includes('elite-100-mm')) { height = '100 mm'; thickness = '15 mm'; }
-    else if (collectionType.includes('moderna-100-mm')) { height = '100 mm'; thickness = '15 mm'; }
-    else if (collectionType.includes('optima-60-mm')) { height = '60 mm'; thickness = '14 mm'; }
-    else if (collectionType.includes('optima-90-mm')) { height = '90 mm'; thickness = '18 mm'; }
-    else if (collectionType.includes('solid-80-mm')) { height = '80 mm'; thickness = '12 mm'; }
-    else if (collectionType.includes('x-line-100-mm')) { height = '100 mm'; thickness = '15 mm'; }
+    if (collectionType.includes('alpha-140-mm')) { height = '140 mm'; depth = '16 mm'; }
+    else if (collectionType.includes('berlin-100-mm')) { height = '100 mm'; depth = '13 mm'; }
+    else if (collectionType.includes('elite-100-mm')) { height = '100 mm'; depth = '15 mm'; }
+    else if (collectionType.includes('moderna-100-mm')) { height = '100 mm'; depth = '15 mm'; }
+    else if (collectionType.includes('optima-60-mm')) { height = '60 mm'; depth = '14 mm'; }
+    else if (collectionType.includes('optima-90-mm')) { height = '90 mm'; depth = '18 mm'; }
+    else if (collectionType.includes('solid-80-mm')) { height = '80 mm'; depth = '12 mm'; }
+    else if (collectionType.includes('x-line-100-mm')) { height = '100 mm'; depth = '15 mm'; }
 
     specs = [
         { label: t('specHeight'), value: height },
-        { label: t('specThickness'), value: thickness },
+        { label: t('specDepth'), value: depth },
         { label: t('specLength'), value: '2400 mm' },
         { label: t('specMaterial'), value: t('specMaterialValue') },
     ];

@@ -319,6 +319,7 @@
   },
   "ProductDetails": {
     "specThickness": "THICKNESS",
+    "specDepth": "DEPTH",
     "specWearLayer": "WEAR LAYER",
     "specDimensions": "DIMENSIONS",
     "specEdge": "EDGE",

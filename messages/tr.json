@@ -193,6 +193,7 @@
   },
   "ProductDetails": {
     "specThickness": "KALINLIK",
+    "specDepth": "DERİNLİK",
     "specWearLayer": "AŞINMA TABAKASI",
     "specDimensions": "BOYUTLAR",
     "specEdge": "KENAR",
