@@ -101,7 +101,7 @@ export function ProductDetails({ panel, panels, onPanelSelect, collectionType, t
     else if (collectionType.includes('berlin-100-mm')) { height = '100 mm'; thickness = '13 mm'; }
     else if (collectionType.includes('elite-100-mm')) { height = '100 mm'; thickness = '15 mm'; }
     else if (collectionType.includes('moderna-100-mm')) { height = '100 mm'; thickness = '15 mm'; }
-    else if (collectionType.includes('optima-60-mm')) { height = '60 mm'; thickness = '13 mm'; }
+    else if (collectionType.includes('optima-60-mm')) { height = '60 mm'; thickness = '14 mm'; }
     else if (collectionType.includes('optima-90-mm')) { height = '90 mm'; thickness = '13 mm'; }
     else if (collectionType.includes('solid-80-mm')) { height = '80 mm'; thickness = '12 mm'; }
     else if (collectionType.includes('x-line-100-mm')) { height = '100 mm'; thickness = '15 mm'; }
