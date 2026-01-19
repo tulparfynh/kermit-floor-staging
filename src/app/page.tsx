@@ -106,7 +106,7 @@ export default function Home() {
 
           {/* Why Kermit Section */}
           <section className="container mx-auto px-4">
-              <h2 className="font-headline text-3xl font-bold text-foreground text-center mb-10">{t('whyKermit.title')}</h2>
+              <h2 className="font-headline text-3xl font-bold text-foreground text-center mb-10">{t('whyKermitTitle')}</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {whyKermitItems.map(item => (
                       <WhyKermitCard key={item.title} icon={item.icon} title={item.title} text={item.text} />
