@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Link } from '@/navigation';
-import { Factory, DraftingCompass, Layers, Wrench, Recycle, HardHat, Package, Check, ArrowRight } from 'lucide-react';
+import { Factory, DraftingCompass, Layers, Recycle } from 'lucide-react';
 import { getMessages, getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -52,7 +52,6 @@ export default async function AboutPage() {
     { icon: Factory, title: t('whyKermit.manufacturer.title'), text: t('whyKermit.manufacturer.text') },
     { icon: DraftingCompass, title: t('whyKermit.design.title'), text: t('whyKermit.design.text') },
     { icon: Layers, title: t('whyKermit.system.title'), text: t('whyKermit.system.text') },
-    { icon: Wrench, title: t('whyKermit.installation.title'), text: t('whyKermit.installation.text') },
     { icon: Recycle, title: t('whyKermit.sustainability.title'), text: t('whyKermit.sustainability.text') },
   ];
   
@@ -110,7 +109,7 @@ export default async function AboutPage() {
             {/* 4. Why Kermit Floor */}
             <section>
                 <h2 className="font-headline text-3xl font-bold text-foreground text-center">{t('whyKermit.title')}</h2>
-                <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
                     {whyKermitItems.map(item => (
                         <WhyKermitCard key={item.title} icon={item.icon} title={item.title} text={item.text} />
                     ))}
