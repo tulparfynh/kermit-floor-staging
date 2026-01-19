@@ -119,14 +119,18 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
                     {t('heroSubtitle')}
                 </p>
             </div>
-            <div className="mt-8 space-y-3 w-full max-w-4xl">
-                <p className="text-white/80 text-sm font-semibold">{t('heroStarterPacksTitle')}</p>
-                <div className="flex flex-wrap justify-center gap-3">
-                    {starterPacks.map(pack => (
-                        <StarterPackPill key={pack.id} pack={pack} locale={params.locale} />
-                    ))}
-                </div>
+            
+            <div className="absolute bottom-20 md:bottom-16 left-6 right-6">
+              <div className="space-y-3 w-full max-w-4xl mx-auto">
+                  <p className="text-white/80 text-sm font-semibold">{t('heroStarterPacksTitle')}</p>
+                  <div className="flex flex-wrap justify-center gap-3">
+                      {starterPacks.map(pack => (
+                          <StarterPackPill key={pack.id} pack={pack} locale={params.locale} />
+                      ))}
+                  </div>
+              </div>
             </div>
+            
             <div className="absolute bottom-4 animate-bounce">
                 <ChevronDown className="h-8 w-8 text-white/50" />
             </div>
