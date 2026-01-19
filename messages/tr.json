@@ -143,13 +143,24 @@
       "title": "İletişime Geçin",
       "subtitle": "Satış, destek veya iş ortaklığı talepleriniz için ekibimizle iletişime geçin. Yardımcı olmaktan memnuniyet duyarız."
     },
-    "details": {
-      "title": "İletişim Bilgileri",
-      "addressTitle": "Merkez Ofis",
-      "phoneTitle": "Telefon",
-      "emailTitle": "E-posta",
-      "hoursTitle": "Çalışma Saatleri",
-      "hoursValue": "Pazartesi - Cuma: 09:00 - 18:00"
+     "locations": {
+        "title": "Ofislerimiz",
+        "turkeyTitle": "TÜRKİYE – FABRİKA (MERKEZ)",
+        "turkeyAddress": "Cumhuriyet Mh. Cihan Sk. No:4\nÇAYIROVA / KOCAELİ - TÜRKİYE",
+        "turkeyPhone": "+90 262 658 97 29",
+        "turkeyFax": "+90 262 658 11 29",
+        "turkeyEmail": "info@kermit.com.tr",
+        "moldovaTitle": "MOLDOVA – FABRİKA",
+        "moldovaAddress": "Muncești 799, Chișinău/MOLDOVA",
+        "moldovaPhone": "+373 (22) 85 42 29 / +373 (22) 85 42 30",
+        "moldovaGsm": "GSM: +373 79 157375",
+        "moldovaFax": "+373 (22) 52 40 02",
+        "moldovaEmail": "info@serkanplast.com,\nsales@serkanplast.com",
+        "romaniaTitle": "ROMANYA – MAĞAZA",
+        "romaniaCompany": "DMS INNOVATIVE SOLUTION SRL",
+        "romaniaAddress": "Bükreş - Romanya",
+        "romaniaPhone": "+40 738 754 074 / +40 722 547 258",
+        "romaniaEmail": "info@dmsinnovative.ro"
     },
     "form": {
       "title": "Mesaj Gönderin",

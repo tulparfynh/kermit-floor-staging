@@ -7,7 +7,7 @@ import { z } from 'zod';
 import React from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { MapPin, Phone, Mail, Clock, Building } from 'lucide-react';
+import { MapPin, Phone, Mail, Building, Printer, Smartphone } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
@@ -19,43 +19,33 @@ import { submitContactForm } from '@/app/actions';
 import { contactFormSchema } from '@/lib/schema';
 import { Separator } from '../ui/separator';
 
-function ContactInfoCard() {
-  const t = useTranslations('ContactPage.details');
-  const sharedT = useTranslations('Footer');
-
-  const contactDetails = [
-    { icon: Building, title: t('addressTitle'), value: sharedT('address') },
-    { icon: Phone, title: t('phoneTitle'), value: '+90 (536) 833-8429', href: 'tel:+905368338429' },
-    { icon: Mail, title: t('emailTitle'), value: 'info@kermitfloor.com', href: 'mailto:info@kermitfloor.com' },
-    { icon: Clock, title: t('hoursTitle'), value: t('hoursValue') },
-  ];
-
+function LocationCard({ location }: { location: { title: string; details: any[] } }) {
   return (
-    <Card className="w-full">
+    <Card className="flex flex-col h-full">
       <CardHeader>
-        <CardTitle className="font-headline text-2xl">{t('title')}</CardTitle>
+        <CardTitle className="font-headline text-xl text-center tracking-wider">{location.title}</CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
-        {contactDetails.map((item, index) => (
-          <React.Fragment key={item.title}>
+      <CardContent className="flex-grow space-y-4">
+        {location.details.map((item, index) => (
+          item.value && <React.Fragment key={index}>
             <div className="flex items-start gap-4">
-              <item.icon className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-              <div>
-                <h3 className="font-semibold text-foreground">{item.title}</h3>
+              <item.icon className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+              <div className="text-muted-foreground whitespace-pre-line text-sm">
                 {item.href ? (
-                  <a href={item.href} className="text-muted-foreground hover:text-primary transition-colors">{item.value}</a>
+                  <a href={item.href} className="hover:text-primary transition-colors">{item.value}</a>
                 ) : (
-                  <p className="text-muted-foreground">{item.value}</p>
+                  <span>{item.value}</span>
                 )}
               </div>
             </div>
-            {index < contactDetails.length - 1 && <Separator />}
+            {index < location.details.length - 1 && <Separator />}
           </React.Fragment>
         ))}
       </CardContent>
     </Card>
   );
 }
+
 
 function ContactForm() {
   const t = useTranslations('ContactPage.form');
@@ -173,7 +163,39 @@ function ContactForm() {
 
 export default function ContactPageClient() {
   const t = useTranslations('ContactPage');
+  const tLoc = useTranslations('ContactPage.locations');
   
+  const locations = [
+    {
+      title: tLoc('turkeyTitle'),
+      details: [
+        { icon: MapPin, value: tLoc('turkeyAddress') },
+        { icon: Phone, value: tLoc('turkeyPhone'), href: `tel:${tLoc('turkeyPhone').replace(/ /g,'')}` },
+        { icon: Printer, value: tLoc('turkeyFax'), href: `tel:${tLoc('turkeyFax').replace(/ /g,'')}` },
+        { icon: Mail, value: tLoc('turkeyEmail'), href: `mailto:${tLoc('turkeyEmail')}` },
+      ]
+    },
+    {
+      title: tLoc('moldovaTitle'),
+      details: [
+        { icon: MapPin, value: tLoc('moldovaAddress') },
+        { icon: Phone, value: tLoc('moldovaPhone') },
+        { icon: Smartphone, value: tLoc('moldovaGsm'), href: `tel:${tLoc('moldovaGsm').replace('GSM:', '').replace(/ /g,'')}` },
+        { icon: Printer, value: tLoc('moldovaFax') },
+        { icon: Mail, value: tLoc('moldovaEmail'), href: `mailto:info@serkanplast.com` },
+      ]
+    },
+    {
+      title: tLoc('romaniaTitle'),
+      details: [
+        { icon: Building, value: tLoc('romaniaCompany') },
+        { icon: MapPin, value: tLoc('romaniaAddress') },
+        { icon: Phone, value: tLoc('romaniaPhone') },
+        { icon: Mail, value: tLoc('romaniaEmail'), href: `mailto:${tLoc('romaniaEmail')}` },
+      ]
+    }
+  ];
+
   return (
     <>
       <section className="relative h-64 w-full">
@@ -195,11 +217,24 @@ export default function ContactPageClient() {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
-          
-          <div className="lg:col-span-2 space-y-8">
-            <ContactInfoCard />
+      <div className="container mx-auto px-4 py-12 md:py-16 space-y-12">
+        <section>
+          <h2 className="text-3xl font-bold font-headline text-center mb-8">{tLoc('title')}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {locations.map((loc, index) => (
+              <LocationCard key={index} location={loc} />
+            ))}
+          </div>
+        </section>
+
+        <Separator />
+        
+        <section className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+          <div className="lg:col-span-3">
+            <ContactForm />
+          </div>
+
+          <div className="lg:col-span-2">
             <div className="aspect-video w-full rounded-lg overflow-hidden border">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.825595281358!2d28.97585097669695!3d41.00693997135063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9967201c1e7%3A0x44207f2a1a01c34a!2sKermit%20the%20Frog!5e0!3m2!1sen!2str!4v1721908479705!5m2!1sen!2str"
@@ -213,12 +248,7 @@ export default function ContactPageClient() {
                 ></iframe>
             </div>
           </div>
-
-          <div className="lg:col-span-3">
-            <ContactForm />
-          </div>
-
-        </div>
+        </section>
       </div>
     </>
   );
