@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import StarterPackCard from './StarterPackCard';
 import ResourceLibrary from './ResourceLibrary';
 import { Separator } from '../ui/separator';
+import Image from 'next/image';
 
 type ResourcesPageClientProps = {
   starterPacks: Resource[];
@@ -25,16 +26,25 @@ export default function ResourcesPageClient({
   return (
     <>
       {/* Hero Section */}
-      <div className="bg-muted border-b">
-        <div className="container mx-auto px-4 py-12 text-center">
-          <h1 className="font-headline text-4xl lg:text-5xl font-bold tracking-tight text-primary">
-            {t('heroTitle')}
-          </h1>
-          <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-            {t('heroSubtitle')}
-          </p>
-        </div>
+      <div className="relative h-48 lg:h-64 w-full">
+        <Image
+            src="/images/hero-images/resources-download-hero-image.jpg"
+            alt={t('heroTitle')}
+            fill
+            className="object-cover"
+            data-ai-hint="technical documents blueprints"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center p-4">
+            <h1 className="font-headline text-4xl lg:text-5xl font-bold tracking-tight text-white">
+              {t('heroTitle')}
+            </h1>
+            <p className="mt-4 text-lg text-white/90 max-w-3xl mx-auto">
+              {t('heroSubtitle')}
+            </p>
+          </div>
       </div>
+      
       <div className="container mx-auto px-4 py-8 md:py-12 space-y-12 md:space-y-16">
         {/* Starter Packs Section */}
         <section>
