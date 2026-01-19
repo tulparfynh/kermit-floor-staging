@@ -114,15 +114,17 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent" />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 md:p-12">
-            <div className="max-w-4xl text-white">
-                <h1 className="font-headline text-3xl lg:text-5xl font-bold tracking-tight">
-                    {t('heroTitle')}
-                </h1>
-                <p className="mt-4 text-md lg:text-lg text-white/90">
-                    {t('heroSubtitle')}
-                </p>
+            <div className="flex-grow flex items-center justify-center">
+              <div className="max-w-4xl text-white">
+                  <h1 className="font-headline text-3xl lg:text-5xl font-bold tracking-tight">
+                      {t('heroTitle')}
+                  </h1>
+                  <p className="mt-4 text-md lg:text-lg text-white/90 hidden sm:block">
+                      {t('heroSubtitle')}
+                  </p>
+              </div>
             </div>
-            <div className="absolute bottom-20 md:bottom-16 left-6 right-6">
+            <div className="w-full pb-4">
               <div className="space-y-3 w-full max-w-4xl mx-auto">
                   <p className="text-white/80 text-sm font-semibold">{t('heroStarterPacksTitle')}</p>
                   <div className="flex flex-wrap justify-center gap-3">
@@ -131,9 +133,9 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
                       ))}
                   </div>
               </div>
-            </div>
-            <div className="absolute bottom-4 animate-bounce">
-                <ChevronDown className="h-8 w-8 text-white/50" />
+              <div className="mt-8 animate-bounce">
+                  <ChevronDown className="h-8 w-8 text-white/50 mx-auto" />
+              </div>
             </div>
           </div>
         </section>
@@ -162,7 +164,7 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
 
           {/* 3. Why Kermit Floor Section */}
           <section className="container mx-auto px-4">
-              <h2 className="font-headline text-3xl font-bold text-foreground text-center mb-10">{t('whyKermitTitle')}</h2>
+              <h2 className="font-headline text-3xl font-bold text-foreground text-center mb-10">{t('whyKermit.title')}</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {whyKermitItems.map(item => (
                       <WhyKermitCard key={item.title} icon={item.icon} title={item.title} text={item.text} />
