@@ -29,23 +29,39 @@
     "heroTitleSkirtingXLine100mm": "X-LINE 100MM SÜPÜRGELİK"
   },
   "HomePage": {
-    "heroTitle": "Yenilikçi Duvar ve Zemin Çözümleri",
-    "heroSubtitle": "Mekanınızı zarafet ve dayanıklılıkla yeniden tanımlayan premium SPC ürünlerini keşfedin.",
-    "exploreProducts": "Ürünleri Keşfet",
-    "collectionsTitle": "Koleksiyonlarımız",
+    "heroTitle": "SPC Parke, Süpürgelik ve Duvar Panelleri — Tutarlı Sonuçlar İçin Üretildi",
+    "heroSubtitle": "Dayanıklı performans ve en çok satan tasarımlarla aynı markadan eksiksiz bir SPC iç mekan bitirme sistemi.",
+    "heroStarterPacksTitle": "Kaynak paketlerimizle projenize hızlı başlayın:",
+    "productLinesTitle": "SPC İç Mekanlara Sistem Bazlı Yaklaşım",
+    "productLinesSubtitle": "Bütünsel bir bitiş için birlikte çalışmak üzere tasarlanmış zemin, süpürgelik ve duvar panelleri üretiyoruz.",
     "flooringTitle": "SPC Parke",
     "flooringDescription": "Dayanıklılık ve stil için tasarlanan rijit çekirdekli parkelerimiz, her iç mekan için geniş bir tasarım yelpazesi sunar.",
+    "flooringBenefits": {
+      "b1": "%100 suya dayanıklı ve oldukça sağlam",
+      "b2": "Hızlı ve temiz kilit sistemli montaj",
+      "b3": "Geniş yelpazede gerçekçi ahşap ve taş dekorları"
+    },
     "viewFlooring": "Parkeleri Görüntüle",
-    "wallsTitle": "SPC Duvar Panelleri",
-    "wallsDescription": "Taş, ahşap ve 3D dokularda mevcut, kolay monte edilen premium SPC panellerimizle iç mekanları dönüştürün.",
-    "viewWalls": "Duvar Panellerini Görüntüle",
     "skirtingTitle": "SPC Süpürgelikler",
     "skirtingDescription": "Kusursuz bir duvar-zemin bitişi için mükemmel uyumlu, esnek kenarlı süpürgeliklerimizle projenizi tamamlayın.",
+    "skirtingBenefits": {
+      "b1": "Boyanabilir ve darbelere karşı oldukça dayanıklı",
+      "b2": "Kusurlu duvarlar için esnek kenarlar",
+      "b3": "Parke ve panellerle mükemmel renk uyumu"
+    },
     "viewSkirting": "Süpürgelikleri Görüntüle",
+    "wallsTitle": "SPC Duvar Panelleri",
+    "wallsDescription": "Taş, ahşap ve 3D dokularda mevcut, kolay monte edilen premium SPC panellerimizle iç mekanları dönüştürün.",
+    "wallsBenefits": {
+      "b1": "Derzsiz ve tamamen su geçirmez çözüm",
+      "b2": "Mevcut fayansların üzerine saatler içinde montaj",
+      "b3": "Kusursuz geniş format tasarımlar"
+    },
+    "viewWalls": "Duvar Panellerini Görüntüle",
     "whyKermitTitle": "Neden Kermit Floor?",
     "whyKermit": {
       "manufacturer": {
-        "title": "Üretici Yaklaşımı",
+        "title": "Üretici Zihniyeti",
         "text": "Güvenebileceğiniz tutarlı üretim, stabil özellikler ve tekrarlanabilir kalite."
       },
       "design": {
@@ -57,11 +73,25 @@
         "text": "Zemin, süpürgelik ve duvar panelleri, bütüncül bir bitiş için birlikte çalışacak şekilde tasarlanmıştır."
       }
     },
-    "finalCta": {
-      "title": "Üretici Destekli Bir Sistemle İnşa Etmeye Hazır mısınız?",
-      "ctaPrimary": "Tüm Ürünleri Keşfet",
-      "ctaSecondary": "Satış ile İletişime Geçin"
-    }
+    "viewAboutUs": "Hakkımızda Daha Fazla Bilgi Edinin",
+    "newsTitle": "Haberler & Duyurular",
+    "comingSoon": "Çok Yakında...",
+    "resourcesTitle": "Projenizi Tam Dokümantasyonla Planlayın",
+    "resourcesCardCatalogue": "Kataloglar",
+    "resourcesCardTds": "Teknik Veri Sayfaları",
+    "resourcesCardInstall": "Montaj Kılavuzları",
+    "viewResources": "Kaynaklara Git",
+    "instagramTitle": "Bizden",
+    "instagramSubtitle": "Tasarım ilhamı ve ürün güncellemeleri için Instagram'da @kermitfloor'u takip edin.",
+    "followInstagram": "Instagram'da Takip Edin",
+    "contactCtaTitle": "Dokümantasyon, numuneler ve ticari koşullar için satışla görüşün.",
+    "contactCtaButton": "Satışla İletişime Geçin",
+    "spcWallPanelsTitle": "SPC Duvar Panelleri",
+    "spc3dWallPanelsModelATitle": "3D Paneller (Model A)",
+    "spc3dWallPanelsModelBTitle": "3D Paneller (Model B)",
+    "spcParquetNaturalCollectionTitle": "Doğal Koleksiyon",
+    "spcParquetStoneCollectionTitle": "Taş Koleksiyonu",
+    "fullNaturalCollectionTitle": "Tüm Doğal Ürünler"
   },
   "ResourcesPage": {
     "heroTitle": "Kaynaklar ve İndirmeler",
@@ -163,24 +193,24 @@
       "title": "İletişime Geçin",
       "subtitle": "Satış, destek veya iş ortaklığı talepleriniz için ekibimizle iletişime geçin. Yardımcı olmaktan memnuniyet duyarız."
     },
-     "locations": {
-        "title": "Ofislerimiz",
-        "turkeyTitle": "TÜRKİYE – FABRİKA (MERKEZ)",
-        "turkeyAddress": "Cumhuriyet Mh. Cihan Sk. No:4\nÇAYIROVA / KOCAELİ - TÜRKİYE",
-        "turkeyPhone": "+90 262 658 97 29",
-        "turkeyFax": "+90 262 658 11 29",
-        "turkeyEmail": "info@kermit.com.tr",
-        "moldovaTitle": "MOLDOVA – FABRİKA",
-        "moldovaAddress": "Muncești 799, Chișinău/MOLDOVA",
-        "moldovaPhone": "+373 (22) 85 42 29 / +373 (22) 85 42 30",
-        "moldovaGsm": "GSM: +373 79 157375",
-        "moldovaFax": "+373 (22) 52 40 02",
-        "moldovaEmail": "info@serkanplast.com",
-        "romaniaTitle": "ROMANYA – MAĞAZA",
-        "romaniaCompany": "DMS INNOVATIVE SOLUTION SRL",
-        "romaniaAddress": "Bükreş - Romanya",
-        "romaniaPhone": "+40 738 754 074 / +40 722 547 258",
-        "romaniaEmail": "info@dmsinnovative.ro"
+    "locations": {
+      "title": "Ofislerimiz",
+      "turkeyTitle": "TÜRKİYE – FABRİKA (MERKEZ)",
+      "turkeyAddress": "Cumhuriyet Mh. Cihan Sk. No:4\nÇAYIROVA / KOCAELİ - TÜRKİYE",
+      "turkeyPhone": "+90 262 658 97 29",
+      "turkeyFax": "+90 262 658 11 29",
+      "turkeyEmail": "info@kermit.com.tr",
+      "moldovaTitle": "MOLDOVA – FABRİKA",
+      "moldovaAddress": "Muncești 799, Chișinău/MOLDOVA",
+      "moldovaPhone": "+373 (22) 85 42 29 / +373 (22) 85 42 30",
+      "moldovaGsm": "GSM: +373 79 157375",
+      "moldovaFax": "+373 (22) 52 40 02",
+      "moldovaEmail": "info@serkanplast.com",
+      "romaniaTitle": "ROMANYA – MAĞAZA",
+      "romaniaCompany": "DMS INNOVATIVE SOLUTION SRL",
+      "romaniaAddress": "Bükreş - Romanya",
+      "romaniaPhone": "+40 738 754 074 / +40 722 547 258",
+      "romaniaEmail": "info@dmsinnovative.ro"
     },
     "form": {
       "title": "Mesaj Gönderin",
