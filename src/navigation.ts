@@ -78,8 +78,8 @@ export const pathnames = {
   }
 } satisfies Pathnames<typeof locales>;
 
-// Use the default: `always`
-export const localePrefix = undefined;
+// Use `'as-needed'` to only add a prefix for the non-default locale (`tr`).
+export const localePrefix = 'as-needed' as const;
 
 export const {Link, redirect, usePathname, useRouter, getPathname} =
   createLocalizedPathnamesNavigation({locales, localePrefix, pathnames});
