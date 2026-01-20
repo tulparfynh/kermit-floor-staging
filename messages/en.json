@@ -579,10 +579,12 @@
     "supportInstallation": "Installation Guide",
     "supportTechnical": "Technical Data Sheets",
     "contactTitle": "Contact",
-    "address": "123 Kermit Street, Floor City, 16000, Turkey",
+    "address": "Cumhuriyet Mh. Cihan Sk. No:4 ÇAYIROVA / KOCAELİ - TÜRKİYE",
     "copyright": "© {year} Kermit Floor. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service"
+    "termsOfService": "Terms of Service",
+    "phone": "+90 262 658 97 29",
+    "email": "info@kermit.com.tr"
   }
 }
 
