@@ -96,8 +96,6 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
   const instagramEmbeds = [
     `<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C_q2ZqJv_3Z/" data-instgrm-version="14" style="max-width:540px; width:100%;"></blockquote>`,
     `<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C_m_5_Rv_9s/" data-instgrm-version="14" style="max-width:540px; width:100%;"></blockquote>`,
-    `<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C_j_1_Xv_4p/" data-instgrm-version="14" style="max-width:540px; width:100%;"></blockquote>`,
-    `<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C_g_7_Xv_1t/" data-instgrm-version="14" style="max-width:540px; width:100%;"></blockquote>`,
   ];
 
 
@@ -215,7 +213,7 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
           <section className="container mx-auto px-4 text-center">
              <h2 className="font-headline text-3xl font-bold text-foreground mb-2">{t('instagramTitle')}</h2>
              <p className="text-muted-foreground mb-10">{t('instagramSubtitle')}</p>
-             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-6xl mx-auto">
+             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-5xl mx-auto">
                 {instagramEmbeds.map((embed, i) => (
                   <div key={i} className="flex justify-center" dangerouslySetInnerHTML={{ __html: embed }} />
                 ))}
