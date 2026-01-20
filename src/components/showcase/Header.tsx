@@ -115,7 +115,7 @@ export function Header({ pageType }: HeaderProps) {
     heroImageHint = 'elegant room with wide plank natural flooring';
   } else if (pageType === 'skirting-alpha-140-mm') {
     pageTitle = t('heroTitleSkirtingAlpha140mm');
-    heroImage = '/images/skirting-boards/alpha-140-mm-skirting-board/14005031/application.jpg';
+    heroImage = '/images/skirting-boards/alpha-140-mm-skirting-board/1404031/application.jpg';
     heroImageHint = 'living room with tall skirting';
   } else if (pageType === 'skirting-berlin-100-mm') {
     pageTitle = t('heroTitleSkirtingBerlin100mm');
@@ -123,7 +123,7 @@ export function Header({ pageType }: HeaderProps) {
     heroImageHint = 'interior with modern skirting';
   } else if (pageType === 'skirting-elite-100-mm') {
     pageTitle = t('heroTitleSkirtingElite100mm');
-    heroImage = '/images/skirting-boards/elite-100-mm-skirting-board/E1003031/application.jpg';
+    heroImage = '/images/skirting-boards/elite-100-mm-skirting-board/E1004031/application.jpg';
     heroImageHint = 'room with decorative skirting';
   } else if (pageType === 'skirting-moderna-100-mm') {
     pageTitle = t('heroTitleSkirtingModerna100mm');
