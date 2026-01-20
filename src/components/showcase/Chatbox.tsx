@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
@@ -100,7 +101,7 @@ export function Chatbox() {
                 className="rounded-full w-auto h-auto p-4 shadow-xl"
                 onClick={() => setIsOpen(true)}
               >
-                <WhatsAppIcon className="h-9 w-9" />
+                <WhatsAppIcon className="h-10 w-10" />
                 <span className="ml-3 text-lg font-semibold">{t('prompt')}</span>
               </Button>
             </motion.div>
