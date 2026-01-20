@@ -5,7 +5,6 @@ import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import type { Panel } from '@/lib/panel-data';
 import { Card } from '@/components/ui/card';
-import { InquiryForm } from './InquiryForm';
 import { Separator } from '@/components/ui/separator';
 import { ColorPicker } from './ColorPicker';
 import { ProductDetails } from './ProductDetails';
@@ -276,7 +275,7 @@ export function Showcase({ initialPanels, collectionType }: ShowcaseProps) {
   }
 
   return (
-    <div className="space-y-6 lg:space-y-8">
+    <div className="space-y-6 lg:space-y-8 pb-6 lg:pb-8">
       {isFlooring ? <FlooringCollectionNav /> : isSkirting ? <SkirtingCollectionNav /> : <WallCollectionNav />}
       <div className="container mx-auto px-4 mt-6 lg:mt-8">
         <ProductDetails 
@@ -349,14 +348,6 @@ export function Showcase({ initialPanels, collectionType }: ShowcaseProps) {
                     allowFullScreen>
                 </iframe>
             </Card>
-        </section>
-      </div>
-
-      <div className="container mx-auto px-4 pb-6 lg:pb-8">
-        <Separator className="my-6 lg:my-8" />
-
-        <section id="inquiry" className="scroll-mt-20">
-          <InquiryForm panel={selectedPanel} collectionType={collectionType} tPanelNames={tPanelNames} />
         </section>
       </div>
     </div>

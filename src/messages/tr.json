@@ -395,22 +395,6 @@
     "featureSoundAbsorbtion": "Yüksek Ses Emilimi",
     "featurePhthalateFree": "Ftalat İçermez"
   },
-  "InquiryForm": {
-    "title": "Bilgi Talebi Gönder",
-    "description": "{panelName} paneliyle ilgileniyor musunuz? Aşağıdaki formu doldurun.",
-    "nameLabel": "Tam Adınız",
-    "namePlaceholder": "Ad Soyad",
-    "emailLabel": "E-posta Adresi",
-    "emailPlaceholder": "ornek@example.com",
-    "messageLabel": "Mesajınız",
-    "messagePlaceholder": "Fiyatlandırma ve stok durumu hakkında daha fazla bilgi almak istiyorum...",
-    "submitButton": "Talebi Gönder",
-    "submittingButton": "Gönderiliyor...",
-    "successTitle": "Talep Gönderildi!",
-    "successDescription": "Teşekkürler, {name}! {panelName} hakkındaki talebiniz alınmıştır.",
-    "errorTitle": "Bir şeyler ters gitti",
-    "errorMessage": "Beklenmedik bir hata oluştu. Lütfen tekrar deneyin."
-  },
   "Chatbox": {
     "greeting": "Merhaba! SPC duvar panellerimiz hakkında size nasıl yardımcı olabilirim?",
     "prompt": "WhatsApp Destek",

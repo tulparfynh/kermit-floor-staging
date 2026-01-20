@@ -521,22 +521,6 @@
     "featureSoundAbsorbtion": "Sound Absorbtion",
     "featurePhthalateFree": "Phthalate Free"
   },
-  "InquiryForm": {
-    "title": "Send an Inquiry",
-    "description": "Interested in the {panelName} panel? Fill out the form below.",
-    "nameLabel": "Full Name",
-    "namePlaceholder": "John Doe",
-    "emailLabel": "Email Address",
-    "emailPlaceholder": "you@example.com",
-    "messageLabel": "Your Message",
-    "messagePlaceholder": "I'd like to know more about pricing and availability...",
-    "submitButton": "Send Inquiry",
-    "submittingButton": "Sending...",
-    "successTitle": "Inquiry Sent!",
-    "successDescription": "Thank you, {name}! Your inquiry about {panelName} has been received.",
-    "errorTitle": "Something went wrong",
-    "errorMessage": "An unexpected error occurred. Please try again."
-  },
   "Chatbox": {
     "greeting": "Hello! How can I help you with our SPC wall panels today?",
     "prompt": "WhatsApp Support",
