@@ -33,7 +33,7 @@ export function NavMenu({ isMobile = false }) {
   const t = useTranslations('Header');
   
   const getResourcesLink = () => {
-    if (pathname.includes('/skirting-boards')) return '/resources?tab=skirting';
+    if (pathname.includes('/spc-skirting-boards')) return '/resources?tab=skirting';
     if (pathname.includes('/spc-parquet') || pathname.includes('/full-natural-collection')) return '/resources?tab=flooring';
     if (pathname.includes('/spc-wall-panels') || pathname.includes('/spc-3d-wall-panels')) return '/resources?tab=wall_panels';
     return '/resources';
@@ -43,7 +43,7 @@ export function NavMenu({ isMobile = false }) {
     { href: '/', label: t('navHome') },
     { href: '/spc-wall-panels', label: t('navWalls') },
     { href: '/spc-parquet-natural-collection', label: t('navFloors') },
-    { href: '/skirting-boards/optima-60-mm-skirting-board', label: t('navSkirtings') },
+    { href: '/spc-skirting-boards/optima-60-mm-skirting-board', label: t('navSkirtings') },
     { href: getResourcesLink(), label: t('navDownload') },
     { href: '/about', label: t('navAbout') },
     { href: '/contact', label: t('navContact') },
@@ -60,8 +60,8 @@ export function NavMenu({ isMobile = false }) {
         let isActive = false;
         if (link.href === '/') {
             isActive = pathname === '/';
-        } else if (link.href.includes('skirting-boards')) {
-            isActive = pathname.startsWith('/skirting-boards');
+        } else if (link.href.includes('spc-skirting-boards')) {
+            isActive = pathname.startsWith('/spc-skirting-boards');
         } else if (link.href.includes('spc-parquet-natural-collection')) {
             isActive = pathname.startsWith('/spc-parquet-') || pathname.startsWith('/full-natural-collection');
         } else if (link.href.includes('spc-wall-panels')) {

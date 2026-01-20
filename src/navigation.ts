@@ -44,37 +44,37 @@ export const pathnames = {
     en: '/full-natural-collection',
     tr: '/tam-dogal-koleksiyon',
   },
-  '/skirting-boards/alpha-140-mm-skirting-board': {
-    en: '/skirting-boards/alpha-140-mm-skirting-board',
-    tr: '/supurgelikler/alpha-140-mm-supurgelik',
+  '/spc-skirting-boards/alpha-140-mm-skirting-board': {
+    en: '/spc-skirting-boards/alpha-140-mm-skirting-board',
+    tr: '/spc-supurgelikler/alpha-140-mm-supurgelik',
   },
-  '/skirting-boards/berlin-100-mm-skirting-board': {
-    en: '/skirting-boards/berlin-100-mm-skirting-board',
-    tr: '/supurgelikler/berlin-100-mm-supurgelik',
+  '/spc-skirting-boards/berlin-100-mm-skirting-board': {
+    en: '/spc-skirting-boards/berlin-100-mm-skirting-board',
+    tr: '/spc-supurgelikler/berlin-100-mm-supurgelik',
   },
-  '/skirting-boards/elite-100-mm-skirting-board': {
-    en: '/skirting-boards/elite-100-mm-skirting-board',
-    tr: '/supurgelikler/elite-100-mm-supurgelik',
+  '/spc-skirting-boards/elite-100-mm-skirting-board': {
+    en: '/spc-skirting-boards/elite-100-mm-skirting-board',
+    tr: '/spc-supurgelikler/elite-100-mm-supurgelik',
   },
-  '/skirting-boards/moderna-100-mm-skirting-board': {
-    en: '/skirting-boards/moderna-100-mm-skirting-board',
-    tr: '/supurgelikler/moderna-100-mm-supurgelik',
+  '/spc-skirting-boards/moderna-100-mm-skirting-board': {
+    en: '/spc-skirting-boards/moderna-100-mm-skirting-board',
+    tr: '/spc-supurgelikler/moderna-100-mm-supurgelik',
   },
-  '/skirting-boards/optima-60-mm-skirting-board': {
-    en: '/skirting-boards/optima-60-mm-skirting-board',
-    tr: '/supurgelikler/optima-60-mm-supurgelik',
+  '/spc-skirting-boards/optima-60-mm-skirting-board': {
+    en: '/spc-skirting-boards/optima-60-mm-skirting-board',
+    tr: '/spc-supurgelikler/optima-60-mm-supurgelik',
   },
-  '/skirting-boards/optima-90-mm-skirting-board': {
-    en: '/skirting-boards/optima-90-mm-skirting-board',
-    tr: '/supurgelikler/optima-90-mm-supurgelik',
+  '/spc-skirting-boards/optima-90-mm-skirting-board': {
+    en: '/spc-skirting-boards/optima-90-mm-skirting-board',
+    tr: '/spc-supurgelikler/optima-90-mm-supurgelik',
   },
-  '/skirting-boards/solid-80-mm-skirting-board': {
-    en: '/skirting-boards/solid-80-mm-skirting-board',
-    tr: '/supurgelikler/solid-80-mm-supurgelik',
+  '/spc-skirting-boards/solid-80-mm-skirting-board': {
+    en: '/spc-skirting-boards/solid-80-mm-skirting-board',
+    tr: '/spc-supurgelikler/solid-80-mm-supurgelik',
   },
-  '/skirting-boards/x-line-100-mm-skirting-board': {
-    en: '/skirting-boards/x-line-100-mm-skirting-board',
-    tr: '/supurgelikler/x-line-100-mm-supurgelik',
+  '/spc-skirting-boards/x-line-100-mm-skirting-board': {
+    en: '/spc-skirting-boards/x-line-100-mm-skirting-board',
+    tr: '/spc-supurgelikler/x-line-100-mm-supurgelik',
   }
 } satisfies Pathnames<typeof locales>;
 

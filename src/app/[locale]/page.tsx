@@ -78,7 +78,7 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
   const productLines = [
     { name: 'flooring', href: '/spc-parquet-natural-collection', imageUrl: '/images/spc-parquet-natural-collection/29098-2/application.jpg', imageHint: 'elegant room flooring', benefits: [{text: t('flooringBenefits.b1'), icon: ShieldCheck}, {text: t('flooringBenefits.b2'), icon: Zap}, {text: t('flooringBenefits.b3'), icon: Palette}] },
     { name: 'walls', href: '/spc-wall-panels', imageUrl: '/images/spc-wall-panels/23048-6/application.jpg', imageHint: 'modern kitchen panels', benefits: [{text: t('wallsBenefits.b1'), icon: ShieldCheck}, {text: t('wallsBenefits.b2'), icon: Zap}, {text: t('wallsBenefits.b3'), icon: Palette}] },
-    { name: 'skirting', href: '/skirting-boards/elite-100-mm-skirting-board', imageUrl: '/images/skirting-boards/elite-100-mm-skirting-board/E1004031/application.jpg', imageHint: 'room with decorative skirting', benefits: [{text: t('skirtingBenefits.b1'), icon: ShieldCheck}, {text: t('skirtingBenefits.b2'), icon: Zap}, {text: t('skirtingBenefits.b3'), icon: Palette}] },
+    { name: 'skirting', href: '/spc-skirting-boards/elite-100-mm-skirting-board', imageUrl: '/images/skirting-boards/elite-100-mm-skirting-board/E1004031/application.jpg', imageHint: 'room with decorative skirting', benefits: [{text: t('skirtingBenefits.b1'), icon: ShieldCheck}, {text: t('skirtingBenefits.b2'), icon: Zap}, {text: t('skirtingBenefits.b3'), icon: Palette}] },
   ];
   
   const whyKermitItems = [
@@ -115,7 +115,6 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent" />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 md:p-12">
-            
             <div className="flex-grow flex items-center justify-center">
               <div className="max-w-4xl text-white">
                   <h1 className="font-headline text-3xl lg:text-5xl font-bold tracking-tight">
@@ -126,17 +125,15 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
                   </p>
               </div>
             </div>
-            
             <div className="w-full pb-4">
               <div className="space-y-3 w-full max-w-4xl mx-auto">
                   <p className="text-white/80 text-sm font-semibold">{t('heroStarterPacksTitle')}</p>
                   <div className="flex flex-wrap justify-center gap-3">
                       {starterPacks.map(pack => (
-                          <StarterPackPill key={pack.id} pack={pack} locale={params.locale} />
+                          <StarterPackPill key={pack.id} pack={pack} locale={params?.locale || 'en'} />
                       ))}
                   </div>
               </div>
-            
               <div className="mt-8 animate-bounce">
                   <ChevronDown className="h-8 w-8 text-white/50 mx-auto" />
               </div>
