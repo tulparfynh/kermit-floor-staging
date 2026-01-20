@@ -428,7 +428,7 @@
   },
   "Chatbox": {
     "greeting": "Merhaba! SPC duvar panellerimiz hakkında size nasıl yardımcı olabilirim?",
-    "prompt": "Bizimle sohbet edin!",
+    "prompt": "WhatsApp Destek",
     "placeholder": "Mesajınızı yazın...",
     "whatsappRedirect": "Sizin için WhatsApp'ı açtım. Lütfen mesajınızı oradan gönderin!"
   },

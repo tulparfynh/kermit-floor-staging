@@ -554,7 +554,7 @@
   },
   "Chatbox": {
     "greeting": "Hello! How can I help you with our SPC wall panels today?",
-    "prompt": "Chat with us!",
+    "prompt": "WhatsApp Support",
     "placeholder": "Type your message...",
     "whatsappRedirect": "I've opened WhatsApp for you. Please send your message there!"
   },
