@@ -81,7 +81,7 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
   const productLines = [
     { name: 'flooring', href: '/spc-parquet-natural-collection', imageUrl: '/images/spc-parquet-natural-collection/29098-2/application.jpg', imageHint: 'elegant room flooring', benefits: [{text: t('flooringBenefits.b1'), icon: ShieldCheck}, {text: t('flooringBenefits.b2'), icon: Zap}, {text: t('flooringBenefits.b3'), icon: Palette}] },
     { name: 'walls', href: '/spc-wall-panels', imageUrl: '/images/spc-wall-panels/23048-6/application.jpg', imageHint: 'modern kitchen panels', benefits: [{text: t('wallsBenefits.b1'), icon: ShieldCheck}, {text: t('wallsBenefits.b2'), icon: Zap}, {text: t('wallsBenefits.b3'), icon: Palette}] },
-    { name: 'skirting', href: '/skirting-boards/optima-60-mm-skirting-board', imageUrl: '/images/skirting-boards/elite-100-mm-skirting-board/E1004031/application.jpg', imageHint: 'room with decorative skirting', benefits: [{text: t('skirtingBenefits.b1'), icon: ShieldCheck}, {text: t('skirtingBenefits.b2'), icon: Zap}, {text: t('skirtingBenefits.b3'), icon: Palette}] },
+    { name: 'skirting', href: '/skirting-boards/elite-100-mm-skirting-board', imageUrl: '/images/skirting-boards/elite-100-mm-skirting-board/E1004031/application.jpg', imageHint: 'room with decorative skirting', benefits: [{text: t('skirtingBenefits.b1'), icon: ShieldCheck}, {text: t('skirtingBenefits.b2'), icon: Zap}, {text: t('skirtingBenefits.b3'), icon: Palette}] },
   ];
   
   const whyKermitItems = [
@@ -96,7 +96,12 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
       { title: t('resourcesCardInstall'), icon: Wrench },
   ];
   
-  const instagramPlaceholders = Array.from({ length: 8 }, (_, i) => i + 1);
+  const instagramEmbeds = [
+    `<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C_q2ZqJv_3Z/" data-instgrm-version="14" style="max-width:540px; width:100%;"></blockquote>`,
+    `<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C_m_5_Rv_9s/" data-instgrm-version="14" style="max-width:540px; width:100%;"></blockquote>`,
+    `<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C_j_1_Xv_4p/" data-instgrm-version="14" style="max-width:540px; width:100%;"></blockquote>`,
+    `<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C_g_7_Xv_1t/" data-instgrm-version="14" style="max-width:540px; width:100%;"></blockquote>`,
+  ];
 
 
   return (
@@ -210,20 +215,9 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
           <section className="container mx-auto px-4 text-center">
              <h2 className="font-headline text-3xl font-bold text-foreground mb-2">{t('instagramTitle')}</h2>
              <p className="text-muted-foreground mb-10">{t('instagramSubtitle')}</p>
-             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-4 max-w-5xl mx-auto">
-                {instagramPlaceholders.map(i => (
-                    <div key={i} className="aspect-square relative group overflow-hidden rounded-md">
-                        <Image
-                            src={`https://picsum.photos/seed/${100+i}/400/400`}
-                            alt={`Instagram post placeholder ${i}`}
-                            fill
-                            className="object-cover transition-transform duration-300 group-hover:scale-110"
-                            data-ai-hint="interior design"
-                        />
-                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                          <Instagram className="h-8 w-8 text-white" />
-                        </div>
-                    </div>
+             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-6xl mx-auto">
+                {instagramEmbeds.map((embed, i) => (
+                  <div key={i} className="flex justify-center" dangerouslySetInnerHTML={{ __html: embed }} />
                 ))}
              </div>
              <div className="mt-10">

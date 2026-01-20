@@ -3,6 +3,7 @@ import '../globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import {getMessages} from 'next-intl/server';
 import {NextIntlClientProvider, useMessages} from 'next-intl';
+import Script from 'next/script';
  
 export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
   const messages = await getMessages({locale});
@@ -35,6 +36,7 @@ export default function RootLayout({
           {children}
           <Toaster />
         </NextIntlClientProvider>
+        <Script src="//www.instagram.com/embed.js" strategy="lazyOnload" />
       </body>
     </html>
   );
