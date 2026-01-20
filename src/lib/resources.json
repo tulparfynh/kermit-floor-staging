@@ -126,8 +126,8 @@
       "title_tr": "Teknik Veri Sayfası: Alpha 140mm",
       "summary": "Detailed technical specifications for the Alpha 140mm skirting board.",
       "summary_tr": "Alpha 140mm süpürgelik için ayrıntılı teknik özellikler.",
-      "version": "v1.2",
-      "updatedAt": "2024-05-30",
+      "version": "v1.0",
+      "updatedAt": "2025-08-30",
       "tags": [
         "tds",
         "skirting",
@@ -141,7 +141,7 @@
           "format": "pdf"
         },
         "tr": {
-          "url": "/downloads/tds-skirting-alpha-140mm-tr.pdf",
+          "url": "/downloads/tvs-supurgelik-alpha-140mm-tr.pdf",
           "size": "1.2 MB",
           "format": "pdf"
         }
@@ -160,8 +160,8 @@
       "title_tr": "Teknik Veri Sayfası: Berlin 100mm",
       "summary": "Detailed technical specifications for the Berlin 100mm skirting board.",
       "summary_tr": "Berlin 100mm süpürgelik için ayrıntılı teknik özellikler.",
-      "version": "v1.2",
-      "updatedAt": "2024-05-30",
+      "version": "v1.0",
+      "updatedAt": "2023-05-30",
       "tags": [
         "tds",
         "skirting",
@@ -175,41 +175,7 @@
           "format": "pdf"
         },
         "tr": {
-          "url": "/downloads/tds-skirting-berlin-100mm-tr.pdf",
-          "size": "1.2 MB",
-          "format": "pdf"
-        }
-      },
-      "previewEnabled": true
-    },
-    {
-      "id": "skirting-tds-elite-100mm",
-      "productLine": "skirting",
-      "docType": "tds",
-      "audience": [
-        "all"
-      ],
-      "installationMethod": null,
-      "title": "Technical Data Sheet: Elite 100mm",
-      "title_tr": "Teknik Veri Sayfası: Elite 100mm",
-      "summary": "Detailed technical specifications for the Elite 100mm skirting board.",
-      "summary_tr": "Elite 100mm süpürgelik için ayrıntılı teknik özellikler.",
-      "version": "v1.2",
-      "updatedAt": "2024-05-30",
-      "tags": [
-        "tds",
-        "skirting",
-        "elite",
-        "100mm"
-      ],
-      "files": {
-        "en": {
-          "url": "/downloads/tds-skirting-elite-100mm-en.pdf",
-          "size": "1.2 MB",
-          "format": "pdf"
-        },
-        "tr": {
-          "url": "/downloads/tds-skirting-elite-100mm-tr.pdf",
+          "url": "/downloads/tvs-supurgelik-berlin-100mm-tr.pdf",
           "size": "1.2 MB",
           "format": "pdf"
         }
@@ -228,7 +194,7 @@
       "title_tr": "Teknik Veri Sayfası: Moderna 100mm",
       "summary": "Detailed technical specifications for the Moderna 100mm skirting board.",
       "summary_tr": "Moderna 100mm süpürgelik için ayrıntılı teknik özellikler.",
-      "version": "v1.2",
+      "version": "v1.0",
       "updatedAt": "2024-05-30",
       "tags": [
         "tds",
@@ -243,7 +209,7 @@
           "format": "pdf"
         },
         "tr": {
-          "url": "/downloads/tds-skirting-moderna-100mm-tr.pdf",
+          "url": "/downloads/tvs-supurgelik-moderna-100mm-tr.pdf",
           "size": "1.2 MB",
           "format": "pdf"
         }
@@ -251,101 +217,33 @@
       "previewEnabled": true
     },
     {
-      "id": "skirting-tds-optima-60mm",
+      "id": "skirting-tds-elite-100mm",
       "productLine": "skirting",
       "docType": "tds",
       "audience": [
         "all"
       ],
       "installationMethod": null,
-      "title": "Technical Data Sheet: Optima 60mm",
-      "title_tr": "Teknik Veri Sayfası: Optima 60mm",
-      "summary": "Detailed technical specifications for the Optima 60mm skirting board.",
-      "summary_tr": "Optima 60mm süpürgelik için ayrıntılı teknik özellikler.",
-      "version": "v1.5",
-      "updatedAt": "2024-05-30",
+      "title": "Technical Data Sheet: Elite 100mm",
+      "title_tr": "Teknik Veri Sayfası: Elite 100mm",
+      "summary": "Detailed technical specifications for the Elite 100mm skirting board.",
+      "summary_tr": "Elite 100mm süpürgelik için ayrıntılı teknik özellikler.",
+      "version": "v1.0",
+      "updatedAt": "2024-07-30",
       "tags": [
         "tds",
         "skirting",
-        "optima",
-        "60mm"
+        "elite",
+        "100mm"
       ],
       "files": {
         "en": {
-          "url": "/downloads/tds-skirting-optima-60mm-en.pdf",
-          "size": "1.1 MB",
-          "format": "pdf"
-        },
-        "tr": {
-          "url": "/downloads/tds-skirting-optima-60mm-tr.pdf",
-          "size": "1.1 MB",
-          "format": "pdf"
-        }
-      },
-      "previewEnabled": true
-    },
-    {
-      "id": "skirting-tds-optima-90mm",
-      "productLine": "skirting",
-      "docType": "tds",
-      "audience": [
-        "all"
-      ],
-      "installationMethod": null,
-      "title": "Technical Data Sheet: Optima 90mm",
-      "title_tr": "Teknik Veri Sayfası: Optima 90mm",
-      "summary": "Detailed technical specifications for the Optima 90mm skirting board.",
-      "summary_tr": "Optima 90mm süpürgelik için ayrıntılı teknik özellikler.",
-      "version": "v1.5",
-      "updatedAt": "2024-05-30",
-      "tags": [
-        "tds",
-        "skirting",
-        "optima",
-        "90mm"
-      ],
-      "files": {
-        "en": {
-          "url": "/downloads/tds-skirting-optima-90mm-en.pdf",
-          "size": "1.1 MB",
-          "format": "pdf"
-        },
-        "tr": {
-          "url": "/downloads/tds-skirting-optima-90mm-tr.pdf",
-          "size": "1.1 MB",
-          "format": "pdf"
-        }
-      },
-      "previewEnabled": true
-    },
-    {
-      "id": "skirting-tds-solid-80mm",
-      "productLine": "skirting",
-      "docType": "tds",
-      "audience": [
-        "all"
-      ],
-      "installationMethod": null,
-      "title": "Technical Data Sheet: Solid 80mm",
-      "title_tr": "Teknik Veri Sayfası: Solid 80mm",
-      "summary": "Detailed technical specifications for the Solid 80mm skirting board.",
-      "summary_tr": "Solid 80mm süpürgelik için ayrıntılı teknik özellikler.",
-      "version": "v1.2",
-      "updatedAt": "2024-05-30",
-      "tags": [
-        "tds",
-        "skirting",
-        "solid",
-        "80mm"
-      ],
-      "files": {
-        "en": {
-          "url": "/downloads/tds-skirting-solid-80mm-en.pdf",
+          "url": "/downloads/tds-skirting-elite-100mm-en.pdf",
           "size": "1.2 MB",
           "format": "pdf"
         },
         "tr": {
-          "url": "/downloads/tds-skirting-solid-80mm-tr.pdf",
+          "url": "/downloads/tvs-supurgelik-elite-100mm-tr.pdf",
           "size": "1.2 MB",
           "format": "pdf"
         }
@@ -364,8 +262,8 @@
       "title_tr": "Teknik Veri Sayfası: X-Line 100mm",
       "summary": "Detailed technical specifications for the X-Line 100mm skirting board.",
       "summary_tr": "X-Line 100mm süpürgelik için ayrıntılı teknik özellikler.",
-      "version": "v1.2",
-      "updatedAt": "2024-05-30",
+      "version": "v1.0",
+      "updatedAt": "2024-08-30",
       "tags": [
         "tds",
         "skirting",
@@ -379,13 +277,118 @@
           "format": "pdf"
         },
         "tr": {
-          "url": "/downloads/tds-skirting-x-line-100mm-tr.pdf",
+          "url": "/downloads/tvs-supurgelik-x-line-100mm-tr.pdf",
           "size": "1.2 MB",
           "format": "pdf"
         }
       },
       "previewEnabled": true
     },
+    {
+      "id": "skirting-tds-optima-90mm",
+      "productLine": "skirting",
+      "docType": "tds",
+      "audience": [
+        "all"
+      ],
+      "installationMethod": null,
+      "title": "Technical Data Sheet: Optima 90mm",
+      "title_tr": "Teknik Veri Sayfası: Optima 90mm",
+      "summary": "Detailed technical specifications for the Optima 90mm skirting board.",
+      "summary_tr": "Optima 90mm süpürgelik için ayrıntılı teknik özellikler.",
+      "version": "v1.0",
+      "updatedAt": "2023-05-30",
+      "tags": [
+        "tds",
+        "skirting",
+        "optima",
+        "90mm"
+      ],
+      "files": {
+        "en": {
+          "url": "/downloads/tds-skirting-optima-90mm-en.pdf",
+          "size": "1.1 MB",
+          "format": "pdf"
+        },
+        "tr": {
+          "url": "/downloads/tvs-supurgelik-optima-90mm-tr.pdf",
+          "size": "1.1 MB",
+          "format": "pdf"
+        }
+      },
+      "previewEnabled": true
+    },
+    {
+      "id": "skirting-tds-solid-80mm",
+      "productLine": "skirting",
+      "docType": "tds",
+      "audience": [
+        "all"
+      ],
+      "installationMethod": null,
+      "title": "Technical Data Sheet: Solid 80mm",
+      "title_tr": "Teknik Veri Sayfası: Solid 80mm",
+      "summary": "Detailed technical specifications for the Solid 80mm skirting board.",
+      "summary_tr": "Solid 80mm süpürgelik için ayrıntılı teknik özellikler.",
+      "version": "v1.0",
+      "updatedAt": "2023-05-30",
+      "tags": [
+        "tds",
+        "skirting",
+        "solid",
+        "80mm"
+      ],
+      "files": {
+        "en": {
+          "url": "/downloads/tds-skirting-solid-80mm-en.pdf",
+          "size": "1.2 MB",
+          "format": "pdf"
+        },
+        "tr": {
+          "url": "/downloads/tvs-supurgelik-solid-80mm-tr.pdf",
+          "size": "1.2 MB",
+          "format": "pdf"
+        }
+      },
+      "previewEnabled": true
+    },
+    {
+      "id": "skirting-tds-optima-60mm",
+      "productLine": "skirting",
+      "docType": "tds",
+      "audience": [
+        "all"
+      ],
+      "installationMethod": null,
+      "title": "Technical Data Sheet: Optima 60mm",
+      "title_tr": "Teknik Veri Sayfası: Optima 60mm",
+      "summary": "Detailed technical specifications for the Optima 60mm skirting board.",
+      "summary_tr": "Optima 60mm süpürgelik için ayrıntılı teknik özellikler.",
+      "version": "v1.0",
+      "updatedAt": "2024-01-30",
+      "tags": [
+        "tds",
+        "skirting",
+        "optima",
+        "60mm"
+      ],
+      "files": {
+        "en": {
+          "url": "/downloads/tds-skirting-optima-60mm-en.pdf",
+          "size": "1.1 MB",
+          "format": "pdf"
+        },
+        "tr": {
+          "url": "/downloads/tvs-supurgelik-optima-60mm-tr.pdf",
+          "size": "1.1 MB",
+          "format": "pdf"
+        }
+      },
+      "previewEnabled": true
+    },
+    
+    
+    
     {
       "id": "flooring-install-click",
       "productLine": "flooring",
@@ -394,35 +397,16 @@
       "installationMethod": "clip",
       "title": "SPC Flooring Installation Guide (Click System)",
       "title_tr": "SPC Parke Montaj Kılavuzu (Kilit Sistem)",
-      "summary": "Step-by-step instructions for installing our SPC flooring with the click-lock system.",
-      "summary_tr": "Kilit sistemli SPC parkemizin montajı için adım adım talimatlar.",
+      "summary": "Step-by-step instructions for installing our SPC flooring with the UniClic system.",
+      "summary_tr": "UniClic sistemli SPC parkemizin montajı için adım adım talimatlar.",
       "version": "v3.0",
-      "updatedAt": "2024-07-01",
+      "updatedAt": "2025-12-11",
       "tags": ["installation", "flooring", "click-system"],
       "files": {
-        "en": { "url": "/downloads/install-flooring-click-en.pdf", "size": "3.5 MB", "format": "pdf" },
-        "tr": { "url": "/downloads/install-flooring-click-tr.pdf", "size": "3.5 MB", "format": "pdf" }
+        "en": { "url": "/downloads/spc-flooring-installation-guide-uniclic.pdf", "size": "3.5 MB", "format": "pdf" },
+        "tr": { "url": "/downloads/spc-parke-montaj-kilavuzu-uniclic.pdf", "size": "3.5 MB", "format": "pdf" }
       },
       "previewEnabled": true
-    },
-    {
-      "id": "wall-panel-cad-drawings",
-      "productLine": "wall_panels",
-      "docType": "cad",
-      "audience": ["architect"],
-      "installationMethod": null,
-      "title": "SPC Wall Panels - CAD Drawings",
-      "title_tr": "SPC Duvar Panelleri - CAD Çizimleri",
-      "summary": "A collection of DWG and DXF files for our standard SPC wall panel collection.",
-      "summary_tr": "Standart SPC duvar paneli koleksiyonumuz için DWG ve DXF dosyaları koleksiyonu.",
-      "version": "v1.0",
-      "updatedAt": "2024-04-10",
-      "tags": ["cad", "dwg", "dxf", "wall-panels"],
-      "files": {
-        "en": { "url": "/downloads/cad-wall-panels.zip", "size": "32 MB", "format": "zip" },
-        "tr": { "url": "/downloads/cad-wall-panels.zip", "size": "32 MB", "format": "zip" }
-      },
-      "previewEnabled": false
     },
     {
       "id": "general-warranty",
