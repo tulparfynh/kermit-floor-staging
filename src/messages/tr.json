@@ -5,6 +5,7 @@
     "description": "Modern iç mekanlar için yüksek kaliteli SPC Duvar Panelleri."
   },
   "Header": {
+    "navHome": "ANA SAYFA",
     "navFloors": "SPC PARKE",
     "navWalls": "SPC DUVAR PANELİ",
     "navSkirtings": "SPC SÜPÜRGELİK",
@@ -458,5 +459,3 @@
     "termsOfService": "Hizmet Şartları"
   }
 }
-
-    

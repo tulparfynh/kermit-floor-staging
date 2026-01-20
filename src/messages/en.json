@@ -5,9 +5,10 @@
     "description": "High-quality SPC Wall Panels for modern interiors."
   },
   "Header": {
+    "navHome": "HOME",
     "navFloors": "SPC FLOORING",
     "navWalls": "SPC WALL PANELS",
-    "navSkirtings": "SPC SKIRTING",
+    "navSkirtings": "SPC SKIRTING BOARD",
     "navDownload": "RESOURCES",
     "navAbout": "ABOUT",
     "navContact": "CONTACT",
@@ -584,5 +585,3 @@
     "termsOfService": "Terms of Service"
   }
 }
-
-    
