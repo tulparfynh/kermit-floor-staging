@@ -237,7 +237,7 @@ export default function ContactPageClient() {
           <div className="lg:col-span-2">
             <div className="aspect-video w-full rounded-lg overflow-hidden border">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.825595281358!2d28.97585097669695!3d41.00693997135063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9967201c1e7%3A0x44207f2a1a01c34a!2sKermit%20the%20Frog!5e0!3m2!1sen!2str!4v1721908479705!5m2!1sen!2str"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3018.490899079555!2d29.3512398766898!3d40.83921937138095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cadf0a402315d1%3A0x86873523295c2560!2sKermit%20D%C4%B1%C5%9F%20Tic.%20A.%C5%9E.!5e0!3m2!1sen!2str!4v1722352818296!5m2!1sen!2str"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

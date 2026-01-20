@@ -5,8 +5,9 @@
     "description": "High-quality SPC Wall Panels for modern interiors."
   },
   "Header": {
-    "navFloors": "FLOORING",
-    "navWalls": "SPC WALL PANELS",
+    "navHome": "HOME",
+    "navFloors": "FLOORS",
+    "navWalls": "WALLS",
     "navSkirtings": "SKIRTINGS",
     "navDownload": "RESOURCES",
     "navAbout": "ABOUT",
