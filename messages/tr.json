@@ -5,8 +5,9 @@
     "description": "Modern iç mekanlar için yüksek kaliteli SPC Duvar Panelleri."
   },
   "Header": {
+    "navHome": "ANASAYFA",
     "navFloors": "PARKE",
-    "navWalls": "SPC DUVAR PANELİ",
+    "navWalls": "DUVAR PANELİ",
     "navSkirtings": "SÜPÜRGELİK",
     "navDownload": "DÖKÜMANLAR",
     "navAbout": "HAKKIMIZDA",
@@ -16,46 +17,46 @@
     "heroTitle3dModelA": "SPC 3D DUVAR PANELLERİ: MODEL A",
     "heroTitle3dModelB": "SPC 3D DUVAR PANELLERİ: MODEL B",
     "collectionsTitle": "SPC Duvar Paneli Koleksiyonları",
-    "heroTitleSpcParquetNaturalCollection": "HIZLI TESLİMAT: DOĞAL",
-    "heroTitleSpcParquetStoneCollection": "HIZLI TESLİMAT: TAŞ",
-    "heroTitleFullNaturalCollection": "DOĞAL: TÜM RENKLER",
-    "heroTitleSkirtingAlpha140mm": "ALPHA 140MM SÜPÜRGELİK",
-    "heroTitleSkirtingBerlin100mm": "BERLIN 100MM SÜPÜRGELİK",
-    "heroTitleSkirtingElite100mm": "ELITE 100MM SÜPÜRGELİK",
-    "heroTitleSkirtingModerna100mm": "MODERNA 100MM SÜPÜRGELİK",
-    "heroTitleSkirtingOptima60mm": "OPTIMA 60MM SÜPÜRGELİK",
-    "heroTitleSkirtingOptima90mm": "OPTIMA 90MM SÜPÜRGELİK",
-    "heroTitleSkirtingSolid80mm": "SOLID 80MM SÜPÜRGELİK",
-    "heroTitleSkirtingXLine100mm": "X-LINE 100MM SÜPÜRGELİK"
+    "heroTitleSpcParquetNaturalCollection": "QUICK SHIP: NATURAL",
+    "heroTitleSpcParquetStoneCollection": "QUICK SHIP: STONE",
+    "heroTitleFullNaturalCollection": "NATURAL: TÜM RENKLER",
+    "heroTitleSkirtingAlpha140mm": "ALPHA 140mm SÜPÜRGELİK",
+    "heroTitleSkirtingBerlin100mm": "BERLIN 100mm SÜPÜRGELİK",
+    "heroTitleSkirtingElite100mm": "ELITE 100mm SÜPÜRGELİK",
+    "heroTitleSkirtingModerna100mm": "MODERNA 100mm SÜPÜRGELİK",
+    "heroTitleSkirtingOptima60mm": "OPTIMA 60mm SÜPÜRGELİK",
+    "heroTitleSkirtingOptima90mm": "OPTIMA 90mm SÜPÜRGELİK",
+    "heroTitleSkirtingSolid80mm": "SOLID 80mm SÜPÜRGELİK",
+    "heroTitleSkirtingXLine100mm": "X-LINE 100mm SÜPÜRGELİK"
   },
   "HomePage": {
-    "heroTitle": "SPC ZEMİN, DUVAR VE SÜPÜRGELİKLER",
-    "heroSubtitle": "Dayanıklı performans ve en çok satan tasarımlarla aynı markadan eksiksiz bir SPC iç mekan bitirme sistemi.",
-    "heroStarterPacksTitle": "Kaynak paketlerimizle projenize hızlı başlayın:",
-    "productLinesTitle": "SPC İç Mekanlara Sistem Bazlı Yaklaşım",
-    "productLinesSubtitle": "Bütünsel bir bitiş için birlikte çalışmak üzere tasarlanmış zemin, süpürgelik ve duvar panelleri üretiyoruz.",
+    "heroTitle": "SPC PARKE, DUVAR PANELİ VE SÜPÜRGELİKLER",
+    "heroSubtitle": "Parkeden Duvara ve Süpürgeliğe, en popüler renkler ve çizgilerle bir iç mekan finiş sistemi.",
+    "heroStarterPacksTitle": "Mesleğinize Uygun Hızlı Başlangıç Paketlerimiz:",
+    "productLinesTitle": "İç Mekanlara Sistem Bazlı Yaklaşım",
+    "productLinesSubtitle": "Bütünsel bir bitiş için birlikte çalışmak üzere tasarlanmış SPC Parke, Süpürgelik ve Duvar Panelleri üretiyoruz.",
     "flooringTitle": "SPC Parke",
-    "flooringDescription": "Dayanıklılık ve stil için tasarlanan rijit çekirdekli parkelerimiz, her iç mekan için geniş bir tasarım yelpazesi sunar.",
+    "flooringDescription": "Islak ve kuru yüzeylere stil için tasarlanan rijit çekirdekli parkelerimiz, her iç mekan için geniş bir tasarım yelpazesi sunar.",
     "flooringBenefits": {
       "b1": "%100 suya dayanıklı ve oldukça sağlam",
-      "b2": "Hızlı ve temiz kilit sistemli montaj",
-      "b3": "Geniş yelpazede gerçekçi ahşap ve taş dekorları"
+      "b2": "UniClic kilit sistemli montaj",
+      "b3": "Geniş yelpazede gerçekçi ahşap ve taş/mermer dekorları"
     },
     "viewFlooring": "Parkeleri Görüntüle",
     "skirtingTitle": "SPC Süpürgelikler",
-    "skirtingDescription": "Kusursuz bir duvar-zemin bitişi için mükemmel uyumlu, esnek kenarlı süpürgeliklerimizle projenizi tamamlayın.",
+    "skirtingDescription": "Kusursuz bir duvar-parke bitişi için esnek kenarlı süpürgeliklerimizle projenizi tamamlayın.",
     "skirtingBenefits": {
-      "b1": "Boyanabilir ve darbelere karşı oldukça dayanıklı",
-      "b2": "Kusurlu duvarlar için esnek kenarlar",
+      "b1": "Esnek kenarlı contasıyla mastik/silikon çekmeye son!",
+      "b2": "Askı aparatıyla sağlam montaj ve Kablo Kanalı imkanı",
       "b3": "Parke ve panellerle mükemmel renk uyumu"
     },
     "viewSkirting": "Süpürgelikleri Görüntüle",
     "wallsTitle": "SPC Duvar Panelleri",
-    "wallsDescription": "Taş, ahşap ve 3D dokularda mevcut, kolay monte edilen premium SPC panellerimizle iç mekanları dönüştürün.",
+    "wallsDescription": "Mermer veya ahşap desenlerde ve ister düz ister 3D profilde, kolay monte edilen premium SPC panellerimizle iç mekanları dönüştürün.",
     "wallsBenefits": {
-      "b1": "Derzsiz ve tamamen su geçirmez çözüm",
-      "b2": "Mevcut fayansların üzerine saatler içinde montaj",
-      "b3": "Kusursuz geniş format tasarımlar"
+      "b1": "Tamamen su geçirmez çözüm, ister oturma odasına ister banyoya!",
+      "b2": "Renovasyon için mevcut fayansların üzerine dertsiz ve hızlı montaj",
+      "b3": "3D Modellerle odanıza derinlik katın!"
     },
     "viewWalls": "Duvar Panellerini Görüntüle",
     "whyKermitTitle": "Neden Kermit Floor?",
@@ -70,7 +71,7 @@
       },
       "system": {
         "title": "Sistem Yaklaşımı",
-        "text": "Zemin, süpürgelik ve duvar panelleri, bütüncül bir bitiş için birlikte çalışacak şekilde tasarlanmıştır."
+        "text": "Parke, süpürgelik ve duvar panelleri, bütüncül bir bitiş için birlikte çalışacak şekilde tasarlanmıştır."
       }
     },
     "viewAboutUs": "Hakkımızda Daha Fazla Bilgi Edinin",
@@ -80,22 +81,22 @@
     "resourcesCardCatalogue": "Kataloglar",
     "resourcesCardTds": "Teknik Veri Sayfaları",
     "resourcesCardInstall": "Montaj Kılavuzları",
-    "viewResources": "Kaynaklara Git",
+    "viewResources": "Dökümanlara Git",
     "instagramTitle": "Bizden",
     "instagramSubtitle": "Tasarım ilhamı ve ürün güncellemeleri için Instagram'da @kermitfloor'u takip edin.",
     "followInstagram": "Instagram'da Takip Edin",
     "contactCtaTitle": "Dokümantasyon, numuneler ve ticari koşullar için satışla görüşün.",
-    "contactCtaButton": "Satışla İletişime Geçin",
+    "contactCtaButton": "Hemen İletişime Geçin",
     "spcWallPanelsTitle": "SPC Duvar Panelleri",
-    "spc3dWallPanelsModelATitle": "3D Paneller (Model A)",
-    "spc3dWallPanelsModelBTitle": "3D Paneller (Model B)",
-    "spcParquetNaturalCollectionTitle": "Doğal Koleksiyon",
-    "spcParquetStoneCollectionTitle": "Taş Koleksiyonu",
-    "fullNaturalCollectionTitle": "Tüm Doğal Ürünler"
+    "spc3dWallPanelsModelATitle": "SPC 3D Paneller (Model A)",
+    "spc3dWallPanelsModelBTitle": "SPC 3D Paneller (Model B)",
+    "spcParquetNaturalCollectionTitle": "Natural Koleksiyonu",
+    "spcParquetStoneCollectionTitle": "Stone Koleksiyonu",
+    "fullNaturalCollectionTitle": "Natural: Tüm Renkler"
   },
   "ResourcesPage": {
-    "heroTitle": "Kaynaklar ve İndirmeler",
-    "heroSubtitle": "Kataloglar, teknik veri sayfaları, montaj kılavuzları, CAD dosyaları, dokular, garantiler ve paketleme bilgileri.",
+    "heroTitle": "Dökümanlar ve Videolar",
+    "heroSubtitle": "Kataloglar, teknik veri sayfaları, montaj kılavuzları, CAD dosyaları, texture'lar, garanti ve paketleme bilgileri.",
     "starterPacksTitle": "Başlangıç Paketleri",
     "downloadZip": "ZIP İndir",
     "viewContents": "İçeriği Görüntüle",
@@ -122,29 +123,29 @@
   },
   "AboutPage": {
     "seo": {
-      "metaTitle": "Kermit Floor Hakkımızda | SPC Zemin, Süpürgelik ve Duvar Paneli Üreticisi",
-      "metaDescription": "Kermit Floor; SPC zemin kaplama, SPC süpürgelik ve SPC duvar paneli üretir. Polimer işleme ve kalıp tecrübesine dayalı üretim altyapısı ile ihracata uygun, sistem odaklı çözümler sunar."
+      "metaTitle": "Kermit Floor Hakkımızda | SPC Parke, Süpürgelik ve Duvar Paneli Üreticisi",
+      "metaDescription": "Kermit Floor; SPC Parke kaplama, SPC süpürgelik ve SPC duvar paneli üretir. Polimer işleme ve kalıp tecrübesine dayalı üretim altyapısı ile ihracata uygun, sistem odaklı çözümler sunar."
     },
     "hero": {
       "title": "Kermit Floor Hakkımızda",
-      "subtitle": "SPC zemin kaplama, SPC süpürgelik ve SPC duvar paneli üretiyoruz—dayanıklılık, hızlı uygulama ve tutarlı sonuç için tasarlandı.",
+      "subtitle": "SPC Parke kaplama, SPC süpürgelik ve SPC duvar paneli üretiyoruz—dayanıklılık, hızlı uygulama ve tutarlı sonuç için tasarlandı.",
       "ctaPrimary": "Ürünleri İncele",
       "ctaSecondary": "Dokümanları İndir"
     },
     "whoWeAre": {
       "title": "Biz Kimiz",
-      "p1": "Kermit Floor, SPC tabanlı iç mekân bitiş sistemlerine odaklanan bir üreticidir: SPC zemin kaplama, SPC süpürgelik, SPC duvar paneli. Ürün geliştirme yaklaşımımız; polimer işleme ve kalıp üretim tecrübesi üzerine kuruludur. Bu sayede tasarım detaylarında kontrol, üretimde süreklilik ve kalite standardizasyonu sağlar.",
+      "p1": "Kermit Floor, SPC tabanlı iç mekân bitiş sistemlerine odaklanan bir üreticidir: SPC parke kaplama, SPC süpürgelik, SPC duvar paneli. Ürün geliştirme yaklaşımımız; polimer işleme ve kalıp üretim tecrübesi üzerine kuruludur. Bu sayede tasarım detaylarında kontrol, üretimde süreklilik ve kalite standardizasyonu sağlar.",
       "p2": "Ürünlerimizi; ustanın işini kolaylaştıracak şekilde, sağlam, dayanıklı ve uygulaması pratik olacak biçimde geliştirirken; konut ve ticari mekânlarda modern ve temiz bir görünüm hedefleriz."
     },
     "whatWeMake": {
       "title": "Neler Üretiyoruz",
       "flooring": {
-        "title": "SPC Zemin Kaplama",
+        "title": "SPC Parke Kaplama",
         "text": "Günlük kullanıma uygun dayanıklılık ve farklı iç mekânlarda güvenilir uygulama sonucu sağlayan rijit çekirdekli sistemler."
       },
       "skirting": {
         "title": "SPC Süpürgelik",
-        "text": "Duvar–zemin birleşimini temiz bitiren çözümler. Süpürgeliklerimizde esnek kenar yapısı, özellikle yüzey düzensizliklerinde daha iyi oturma ve daha düzgün bitiş sağlar."
+        "text": "Duvar–parke birleşimini temiz bitiren çözümler. Süpürgeliklerimizde esnek kenar yapısı, özellikle yüzey düzensizliklerinde daha iyi oturma ve daha düzgün bitiş sağlar."
       },
       "wallPanels": {
         "title": "SPC Duvar Paneli",
@@ -163,7 +164,7 @@
       },
       "system": {
         "title": "Sistem Mantığı",
-        "text": "Zemin + süpürgelik + duvar paneli ile bütüncül bitiş."
+        "text": "Parke + Süpürgelik + Duvar Paneli ile bütüncül bitiş."
       }
     },
     "footprint": {
@@ -187,7 +188,7 @@
   "ContactPage": {
     "seo": {
       "title": "İletişim - Kermit Floor | Üretici Bilgi Talebi",
-      "description": "Satış, teknik destek veya iş ortaklığı talepleriniz için Kermit Floor ile iletişime geçin. SPC zemin, süpürgelik ve duvar paneli üreticisiyiz."
+      "description": "Satış, teknik destek veya iş ortaklığı talepleriniz için Kermit Floor ile iletişime geçin. SPC Parke, süpürgelik ve duvar paneli üreticisiyiz."
     },
     "hero": {
       "title": "İletişime Geçin",
@@ -398,7 +399,7 @@
     "specEdgeValue": "Mikro Derzli",
     "specInstallationValue": "Yapıştırma",
     "specInstallationValueClick": "Kilit Sistem",
-    "specUsageAreaValue": "İç Cephe Duvar & Zemin",
+    "specUsageAreaValue": "İç Cephe Duvar & Parke",
     "specMaterialValue": "SPC (Taş Polimer Kompozit)",
     "specIxpeUnderlay": "IXPE ŞİLTE",
     "specLockingSystem": "KİLİT SİSTEMİ",
@@ -434,9 +435,9 @@
     "whatsappRedirect": "Sizin için WhatsApp'ı açtım. Lütfen mesajınızı oradan gönderin!"
   },
   "Footer": {
-    "tagline": "Modern iç mekanlar için premium SPC zemin ve duvar paneli çözümleri.",
+    "tagline": "Modern iç mekanlar için premium SPC parke ve duvar paneli çözümleri.",
     "productsTitle": "Ürünler",
-    "productFlooring": "SPC Zemin Kaplaması",
+    "productFlooring": "SPC Parke Kaplaması",
     "productSkirting": "SPC Süpürgelik",
     "productWallPanels": "SPC Duvar Panelleri",
     "product3dWallPanels": "SPC 3D Duvar Panelleri",

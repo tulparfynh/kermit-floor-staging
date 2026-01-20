@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Logo } from './Header';
@@ -11,10 +10,10 @@ export function Footer() {
   const t = useTranslations('Footer');
 
   const productLinks = [
-      { href: '#', label: t('productFlooring') },
-      { href: '#', label: t('productSkirting') },
+      { href: '/spc-parquet-natural-collection', label: t('productFlooring') },
+      { href: '/spc-skirting-boards/optima-60-mm-skirting-board', label: t('productSkirting') },
       { href: '/spc-wall-panels', label: t('productWallPanels') },
-      { href: '#', label: t('product3dWallPanels') },
+      { href: '/spc-3d-wall-panels-model-a', label: t('product3dWallPanels') },
     ];
     
     const supportLinks = [
