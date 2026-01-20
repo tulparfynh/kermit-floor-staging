@@ -134,6 +134,25 @@
       "previewEnabled": true
     },
     {
+      "id": "flooring-catalogue-2025",
+      "productLine": "flooring",
+      "docType": "catalogue",
+      "audience": ["all"],
+      "installationMethod": null,
+      "title": "SPC Flooring Catalogue 2025",
+      "title_tr": "SPC Parke Kataloğu 2025",
+      "summary": "The complete collection of our innovative SPC flooring products.",
+      "summary_tr": "Yenilikçi SPC parke ürünlerimizin eksiksiz koleksiyonu.",
+      "version": "v1.0",
+      "updatedAt": "2024-07-26",
+      "tags": ["catalogue", "flooring", "2025"],
+      "files": {
+        "en": { "url": "/downloads/spc-flooring-catalogue-en.pdf", "size": "12 MB", "format": "pdf" },
+        "tr": { "url": "/downloads/spc-parke-katalogu-tr.pdf", "size": "12 MB", "format": "pdf" }
+      },
+      "previewEnabled": true
+    },
+    {
       "id": "skirting-tds-alpha-140mm",
       "productLine": "skirting",
       "docType": "tds",
