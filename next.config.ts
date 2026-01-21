@@ -40,12 +40,6 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
-      {
-        protocol: 'https',
-        hostname: 'www.kermitfloor.com',
-        port: '',
-        pathname: '/**',
-      }
     ],
   },
 };

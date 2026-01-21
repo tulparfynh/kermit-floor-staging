@@ -18,7 +18,7 @@ export function Logo() {
   return (
     <Link href={`/`}>
       <Image
-        src="https://www.kermitfloor.com/wp-content/uploads/2022/11/Kermit-Floor-Logo-PNG-2-3-1-1024x347.png"
+        src="/images/kermit-floor-logo.png"
         alt="Kermit Floor Logo"
         width={140}
         height={48}
