@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import {getMessages} from 'next-intl/server';
 import {NextIntlClientProvider, useMessages} from 'next-intl';
 import Script from 'next/script';
+import { inter, montserrat } from '@/app/fonts';
  
 export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
   const messages = await getMessages({locale});
@@ -24,12 +25,8 @@ export default function RootLayout({
 }>) {
   const messages = useMessages();
   return (
-    <html lang={locale} className="scroll-smooth">
+    <html lang={locale} className={`${inter.variable} ${montserrat.variable} scroll-smooth`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>
