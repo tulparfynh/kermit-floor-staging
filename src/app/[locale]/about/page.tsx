@@ -87,7 +87,7 @@ export default async function AboutPage() {
               <Button asChild size="lg">
                 <Link href="/spc-wall-panels">{t('hero.ctaPrimary')}</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white bg-transparent text-white hover:bg-white/10 hover:text-white">
+              <Button asChild size="lg" className="bg-background text-primary hover:bg-background/80">
                 <Link href="/resources">{t('hero.ctaSecondary')}</Link>
               </Button>
             </div>
