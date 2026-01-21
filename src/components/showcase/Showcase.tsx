@@ -357,5 +357,3 @@ export function Showcase({ initialPanels, collectionType }: ShowcaseProps) {
     </div>
   );
 }
-
-    

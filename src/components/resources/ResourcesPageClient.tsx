@@ -1,3 +1,4 @@
+
 'use client';
 
 import type { Resource } from '@/lib/resources-data';
