@@ -1,3 +1,4 @@
+
 import type {NextConfig} from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
@@ -12,6 +13,8 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    unoptimized: false,
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
         protocol: 'https',
