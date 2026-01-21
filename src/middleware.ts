@@ -34,10 +34,11 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Match all pathnames except for static files and API routes.
-  // We explicitly include /robots.txt so the middleware can handle it.
+  // Match all pathnames except for static files (e.g. images) and API routes.
+  // This prevents the middleware from interfering with static asset requests.
+  // We explicitly include /robots.txt so the middleware can handle it for staging.
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml).*)',
+    '/((?!api|_next/static|_next/image|images|favicon.ico|sitemap.xml|.*\\.[^/]+$).*)',
     '/robots.txt',
   ]
 };
