@@ -80,6 +80,7 @@ export default function ContactPageClient() {
           className="object-cover"
           data-ai-hint="business office contact"
           priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center p-4">
           <h1 className="font-headline text-4xl lg:text-5xl font-bold tracking-tight text-white">

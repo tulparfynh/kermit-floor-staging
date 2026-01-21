@@ -34,7 +34,7 @@ const WhyKermitCard = ({ icon: Icon, title, text }: { icon: React.ElementType, t
 const WhatWeMakeCard = ({ title, text, image, imageHint }: { title: string, text: string, image: string, imageHint: string }) => (
     <Card className="flex flex-col overflow-hidden text-center">
         <div className="relative aspect-video w-full">
-            <Image src={image} alt={title} fill className="object-cover" data-ai-hint={imageHint} />
+            <Image src={image} alt={title} fill className="object-cover" data-ai-hint={imageHint} sizes="(max-width: 768px) 100vw, 33vw" />
         </div>
         <CardHeader>
             <CardTitle className="font-headline text-xl">{title}</CardTitle>
@@ -120,7 +120,7 @@ export default async function AboutPage() {
             {/* 5. Manufacturing & Supply Footprint */}
             <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="relative aspect-square lg:aspect-[4/3] rounded-lg overflow-hidden">
-                    <Image src="https://images.unsplash.com/photo-1581092918056-0c9c4e579346?q=80&w=1974&auto=format&fit=crop" alt="Manufacturing facility" fill className="object-cover" data-ai-hint="manufacturing facility" />
+                    <Image src="https://images.unsplash.com/photo-1581092918056-0c9c4e579346?q=80&w=1974&auto=format&fit=crop" alt="Manufacturing facility" fill className="object-cover" data-ai-hint="manufacturing facility" sizes="(max-width: 1024px) 100vw, 50vw" />
                 </div>
                 <div>
                     <h2 className="font-headline text-3xl font-bold text-foreground">{t('footprint.title')}</h2>
@@ -145,7 +145,7 @@ export default async function AboutPage() {
             {/* 6. Sustainability & Responsibility */}
             <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="lg:order-2 relative aspect-square lg:aspect-[4/3] rounded-lg overflow-hidden">
-                    <Image src="https://images.unsplash.com/photo-1542601906-8b6a35da7601?q=80&w=2070&auto=format&fit=crop" alt="Hands holding a green sprout" fill className="object-cover" data-ai-hint="sustainability responsibility" />
+                    <Image src="https://images.unsplash.com/photo-1542601906-8b6a35da7601?q=80&w=2070&auto=format&fit=crop" alt="Hands holding a green sprout" fill className="object-cover" data-ai-hint="sustainability responsibility" sizes="(max-width: 1024px) 100vw, 50vw" />
                 </div>
                 <div className="lg:order-1">
                     <h2 className="font-headline text-3xl font-bold text-foreground">{t('sustainability.title')}</h2>

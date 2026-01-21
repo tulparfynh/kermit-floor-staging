@@ -214,6 +214,7 @@ export function ProductDetails({ panel, panels, onPanelSelect, collectionType, t
                                         fill
                                         className="object-contain rounded-lg"
                                         data-ai-hint={p.productImageHint}
+                                        sizes="100vw"
                                     />
                                     </div>
                                     <DialogClose asChild>

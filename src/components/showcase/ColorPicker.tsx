@@ -105,6 +105,7 @@ export function ColorPicker({
                           fill
                           className="w-full h-full object-cover"
                           data-ai-hint={panel.productImageHint}
+                          sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
                         />
                          <div className="absolute inset-0 flex items-end justify-center p-2">
                            <p className="bg-black/40 px-2 py-1 rounded-md text-white text-sm font-bold text-center" style={{textShadow: '0 1px 2px rgba(0,0,0,0.7)'}}>{panel.nameKey}</p>

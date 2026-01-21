@@ -30,7 +30,7 @@ const StarterPackPill = ({ pack, locale }: { pack: Resource; locale: Locale }) =
 const ProductLineCard = ({ title, description, benefits, href, imageUrl, imageHint, ctaText }: { title: string, description: string, benefits: {text: string, icon: React.ElementType}[], href: any, imageUrl: string, imageHint: string, ctaText: string }) => (
   <Card className="flex flex-col overflow-hidden text-left transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
     <div className="relative aspect-[4/3] w-full">
-      <Image src={imageUrl} alt={title} fill className="object-cover" data-ai-hint={imageHint} />
+      <Image src={imageUrl} alt={title} fill className="object-cover" data-ai-hint={imageHint} sizes="(max-width: 768px) 100vw, 33vw" />
     </div>
     <CardHeader>
       <CardTitle className="font-headline text-2xl">{title}</CardTitle>
@@ -112,6 +112,7 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
             className="object-cover"
             data-ai-hint="modern kitchen wall"
             priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent" />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 md:p-12">

@@ -194,6 +194,7 @@ export function Header({ pageType }: HeaderProps) {
             className="object-cover"
             data-ai-hint={heroImageHint}
             priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
             <h1 className="font-headline text-4xl lg:text-5xl font-bold tracking-tight text-white text-center">

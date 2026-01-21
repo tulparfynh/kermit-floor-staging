@@ -70,6 +70,7 @@ function WallCollectionNav() {
                                     fill
                                     className="object-cover transition-transform duration-300 group-hover:scale-110"
                                     data-ai-hint={collection.imageHint}
+                                    sizes="80px"
                                 />
                             </div>
                             <span className={cn(
@@ -137,6 +138,7 @@ function FlooringCollectionNav() {
                                     fill
                                     className="object-cover transition-transform duration-300 group-hover:scale-110"
                                     data-ai-hint={collection.imageHint}
+                                    sizes="80px"
                                 />
                             </div>
                             <span className={cn(
@@ -194,6 +196,7 @@ function SkirtingCollectionNav() {
                                 fill
                                 className="object-cover transition-transform duration-300 group-hover:scale-110"
                                 data-ai-hint={collection.imageHint}
+                                sizes="80px"
                             />
                         </div>
                         <span className={cn(
@@ -322,6 +325,7 @@ export function Showcase({ initialPanels, collectionType }: ShowcaseProps) {
                     fill
                     className="object-contain rounded-lg"
                     data-ai-hint={selectedPanel.applicationImageHint}
+                    sizes="100vw"
                   />
                 </div>
                 <DialogClose asChild>
