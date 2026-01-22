@@ -116,6 +116,12 @@
       "description": "Create stunning feature walls with our Model B 3D SPC panels, featuring elegant and contemporary patterns."
     }
   },
+  "SpcParquetNaturalCollectionPage": {
+    "seo": {
+      "title": "Kermit Floor | Best Selling SPC Flooring Oak Planks",
+      "description": "Explore our best-selling collection of natural oak SPC flooring planks. Durable, waterproof, and beautifully designed for any interior."
+    }
+  },
   "ResourcesPage": {
     "heroTitle": "Resources & Downloads",
     "heroSubtitle": "Catalogues, technical data sheets, installation guides, CAD files, textures, warranties and packaging information.",
@@ -609,3 +615,5 @@
     "email": "info@kermit.com.tr"
   }
 }
+
+    

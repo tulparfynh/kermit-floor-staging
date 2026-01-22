@@ -116,6 +116,12 @@
       "description": "Model B 3D SPC panellerimizle büyüleyici duvarlar yaratın, zarif ve çağdaş desenlere sahiptir."
     }
   },
+  "SpcParquetNaturalCollectionPage": {
+    "seo": {
+      "title": "Kermit Floor | SPC Parke Natürel Koleksiyonu",
+      "description": "En çok satan natürel meşe SPC parke koleksiyonumuzu keşfedin. Dayanıklı, su geçirmez ve her türlü iç mekan için güzel tasarlanmış."
+    }
+  },
   "ResourcesPage": {
     "heroTitle": "Dökümanlar ve Videolar",
     "heroSubtitle": "Kataloglar, teknik veri sayfaları, montaj kılavuzları, CAD dosyaları, texture'lar, garanti ve paketleme bilgileri.",
@@ -474,3 +480,5 @@
     "termsOfService": "Hizmet Şartları"
   }
 }
+
+    
