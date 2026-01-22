@@ -135,6 +135,10 @@
     }
   },
   "ResourcesPage": {
+    "seo": {
+      "title": "Kermit Floor | Dökümanlar: Kataloglar, Veri Sayfaları, Montaj Kılavuzları ve daha fazlası",
+      "description": "Kermit Floor SPC ürünleri için katalogları, teknik veri sayfalarını, montaj kılavuzlarını ve diğer kaynakları indirin."
+    },
     "heroTitle": "Dökümanlar ve Videolar",
     "heroSubtitle": "Kataloglar, teknik veri sayfaları, montaj kılavuzları, CAD dosyaları, texture'lar, garanti ve paketleme bilgileri.",
     "starterPacksTitle": "Başlangıç Paketleri",

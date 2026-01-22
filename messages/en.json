@@ -135,6 +135,10 @@
     }
   },
   "ResourcesPage": {
+    "seo": {
+      "title": "Kermit Floor | Resources: Catalogues, TDS, Installation Manuals and more",
+      "description": "Download catalogues, technical data sheets, installation guides, and other resources for Kermit Floor SPC products."
+    },
     "heroTitle": "Resources & Downloads",
     "heroSubtitle": "Catalogues, technical data sheets, installation guides, CAD files, textures, warranties and packaging information.",
     "starterPacksTitle": "Starter Packs",
