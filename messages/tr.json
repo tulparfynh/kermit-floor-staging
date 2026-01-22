@@ -122,6 +122,12 @@
       "description": "En çok satan natürel meşe SPC parke koleksiyonumuzu keşfedin. Dayanıklı, su geçirmez ve her türlü iç mekan için güzel tasarlanmış."
     }
   },
+  "SpcParquetStoneCollectionPage": {
+    "seo": {
+      "title": "Kermit Floor | Mermer Desenli SPC Parke Koleksiyonu",
+      "description": "Mermer ve taş desenli SPC parke koleksiyonumuzu keşfedin. Dayanıklı, su geçirmez ve modern, zarif bir görünüm için mükemmel."
+    }
+  },
   "ResourcesPage": {
     "heroTitle": "Dökümanlar ve Videolar",
     "heroSubtitle": "Kataloglar, teknik veri sayfaları, montaj kılavuzları, CAD dosyaları, texture'lar, garanti ve paketleme bilgileri.",
