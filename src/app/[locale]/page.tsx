@@ -1,4 +1,5 @@
 
+import * as React from 'react';
 import { Link } from '@/navigation';
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/showcase/Header';
@@ -6,7 +7,7 @@ import { Footer } from '@/components/showcase/Footer';
 import Image from 'next/image';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { ArrowRight, Factory, DraftingCompass, Layers, ChevronDown, Package, Download, BookOpen, FileText, Wrench, ShieldCheck, Zap, Palette, Instagram } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { getStarterPacks } from '@/lib/resources-data';
 import type { Resource, Locale } from '@/lib/resources-data';
 import { cn } from '@/lib/utils';
@@ -23,6 +24,65 @@ export async function generateMetadata({params: {locale}}: {params: {locale: str
     description: t('description')
   };
 }
+
+
+const StarterPackPill = ({ pack, locale }: { pack: Resource, locale: Locale }) => {
+  const title = locale === 'tr' ? pack.title_tr : pack.title;
+  const downloadUrl = pack.files[locale]?.url || pack.files['en'].url;
+
+  return (
+    <Button asChild size="sm" variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20 backdrop-blur-sm h-auto px-4 py-2">
+      <a href={downloadUrl} download>
+        <Download className="mr-2 h-4 w-4" />
+        {title}
+      </a>
+    </Button>
+  );
+};
+
+const ProductLineCard = ({ title, description, benefits, href, imageUrl, imageHint, ctaText }: { title: string, description: string, benefits: {text: string, icon: React.ElementType}[], href: string, imageUrl: string, imageHint: string, ctaText: string }) => (
+    <Card className="flex flex-col overflow-hidden text-center group">
+        <div className="relative aspect-[4/3] w-full overflow-hidden">
+            <Image src={imageUrl} alt={title} fill className="object-cover transition-transform duration-300 group-hover:scale-105" data-ai-hint={imageHint} sizes="(max-width: 768px) 100vw, 33vw"/>
+        </div>
+        <CardHeader>
+            <CardTitle className="font-headline text-xl">{title}</CardTitle>
+        </CardHeader>
+        <CardContent className="flex-grow space-y-4">
+            <p className="text-muted-foreground">{description}</p>
+            <ul className="text-left space-y-2">
+                {benefits.map((benefit, i) => (
+                    <li key={i} className="flex items-start">
+                        <benefit.icon className="h-5 w-5 text-secondary mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-foreground/80">{benefit.text}</span>
+                    </li>
+                ))}
+            </ul>
+        </CardContent>
+        <CardFooter>
+            <Button asChild className="w-full">
+                <Link href={href}>{ctaText} <ArrowRight className="ml-2 h-5 w-5" /></Link>
+            </Button>
+        </CardFooter>
+    </Card>
+);
+
+const WhyKermitCard = ({ icon: Icon, title, text }: { icon: React.ElementType, title: string, text: string }) => (
+  <div className="flex flex-col items-center text-center p-6 bg-muted/50 rounded-lg h-full">
+    <div className="bg-background p-3 rounded-full mb-4 border">
+        <Icon className="h-8 w-8 text-primary" />
+    </div>
+    <h3 className="font-headline text-lg font-semibold text-foreground">{title}</h3>
+    <p className="text-muted-foreground text-sm mt-2">{text}</p>
+  </div>
+);
+
+const ResourceTeaserCard = ({ title, icon: Icon }: { title: string, icon: React.ElementType }) => (
+    <Card className="p-6 flex flex-col items-center justify-center text-center bg-muted/50 hover:bg-muted transition-colors duration-200">
+        <Icon className="h-10 w-10 text-secondary mb-3" />
+        <h3 className="font-semibold text-lg text-foreground">{title}</h3>
+    </Card>
+);
 
 export default async function Home({ params }: { params: { locale: Locale } }) {
   const t = await getTranslations('HomePage');
