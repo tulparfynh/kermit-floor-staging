@@ -230,7 +230,7 @@
   },
   "ContactPage": {
     "seo": {
-      "title": "İletişim - Kermit Floor | Üretici Bilgi Talebi",
+      "title": "Kermit Floor | İletişim",
       "description": "Satış, teknik destek veya iş ortaklığı talepleriniz için Kermit Floor ile iletişime geçin. SPC Parke, süpürgelik ve duvar paneli üreticisiyiz."
     },
     "hero": {
@@ -529,3 +529,5 @@
     "termsOfService": "Hizmet Şartları"
   }
 }
+
+    
