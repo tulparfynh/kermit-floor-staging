@@ -5,8 +5,12 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import type { InstagramPost } from '@/lib/instagram-data';
 import { Button } from '../ui/button';
 import Image from 'next/image';
+import { useLocale } from 'next-intl';
 
 export default function InstagramPostCard({ post }: { post: InstagramPost }) {
+  const locale = useLocale();
+  const caption = locale === 'tr' ? post.caption_tr : post.caption_en;
+
   return (
     <Card className="w-full max-w-sm mx-auto overflow-hidden shadow-lg border">
       <CardHeader className="flex flex-row items-center justify-between p-3">
@@ -49,9 +53,9 @@ export default function InstagramPostCard({ post }: { post: InstagramPost }) {
             </div>
             <Bookmark className="h-6 w-6 text-muted-foreground cursor-pointer hover:text-foreground transition-colors" />
         </div>
-        <p className="text-sm">
+        <p className="text-sm whitespace-pre-line">
             <a href={post.postUrl} target="_blank" rel="noopener noreferrer" className="font-semibold mr-1">kermitfloor</a>
-            {post.caption}
+            {caption}
         </p>
       </CardContent>
 
