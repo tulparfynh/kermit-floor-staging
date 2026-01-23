@@ -1,4 +1,3 @@
-
 'use client';
 
 import { cn } from '@/lib/utils';
@@ -23,6 +22,7 @@ export function Logo() {
         width={140}
         height={48}
         className="object-contain"
+        unoptimized
       />
     </Link>
   );
