@@ -7,6 +7,10 @@ requiredDependencies:
     - libvips-dev
 
 runConfig:
-  # Increase this value if you'd like to automatically spin up
-  # more instances in response to increased traffic.
   maxInstances: 1
+
+# IMPORTANT: Keep public/ (and other needed assets) instead of letting App Hosting prune them away.
+outputFiles:
+  serverApp:
+    include:
+      - .
