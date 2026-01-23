@@ -1,0 +1,17 @@
+
+[
+  {
+    "id": "reel1",
+    "videoSrc": "/videos/reels1.mp4",
+    "posterSrc": "/images/spc-wall-panels/23048-6/application.jpg",
+    "caption": "Transform your interiors with our premium, easy-to-install SPC panels, available in stone, wood, and 3D textures. Grout-free and fully waterproof.",
+    "postUrl": "https://www.instagram.com/reel/DQGvo2HDQOM/"
+  },
+  {
+    "id": "reel2",
+    "videoSrc": "/videos/reels2.mp4",
+    "posterSrc": "/images/spc-parquet-natural-collection/29098-2/application.jpg",
+    "caption": "A complete SPC interior finishing system from the same brand with durable performance and best selling designs. Flooring, skirting, and wall panels designed to work together.",
+    "postUrl": "https://www.instagram.com/reel/DQGmbQnDS8o/"
+  }
+]
