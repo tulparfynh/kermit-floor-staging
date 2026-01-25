@@ -133,7 +133,7 @@ export function Header({ pageType }: HeaderProps) {
     heroImageHint = 'living room with tall skirting';
   } else if (pageType === 'skirting-berlin-100-mm') {
     pageTitle = t('heroTitleSkirtingBerlin100mm');
-    heroImage = '/images/skirting-boards/berlin-100-mm-skirting-board/1100031/application.jpg';
+    heroImage = '/images/skirting-boards/berlin-100-mm-skirting-board/1110031/application.jpg';
     heroImageHint = 'interior with modern skirting';
   } else if (pageType === 'skirting-elite-100-mm') {
     pageTitle = t('heroTitleSkirtingElite100mm');
