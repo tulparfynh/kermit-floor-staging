@@ -5,13 +5,17 @@ import {getMessages} from 'next-intl/server';
 import {NextIntlClientProvider, useMessages} from 'next-intl';
 import { inter, montserrat } from '@/app/fonts';
  
-export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
+export async function generateMetadata({params: {locale}}: {params: {locale: string}}): Promise<Metadata> {
   const messages = await getMessages({locale});
   const t = (key: string) => (messages.Metadata as any)[key] as string;
  
   return {
     title: t('title'),
-    description: t('description')
+    description: t('description'),
+    icons: {
+      icon: '/favicon.ico',
+      apple: '/apple-touch-icon.png',
+    },
   };
 }
 
