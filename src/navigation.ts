@@ -79,6 +79,10 @@ export const pathnames = {
   '/privacy-policy': {
     en: '/privacy-policy',
     tr: '/gizlilik-politikasi'
+  },
+  '/terms-of-service': {
+    en: '/terms-of-service',
+    tr: '/kullanim-sartlari'
   }
 } satisfies Pathnames<typeof locales>;
 

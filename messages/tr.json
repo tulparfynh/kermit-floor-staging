@@ -607,5 +607,69 @@
       "title": "14. Bu Gizlilik Politikasındaki Değişiklikler",
       "content": "<p>Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. “Son güncelleme” tarihi buna göre değişecektir. Önemli değişiklikler Site'de yayınlanacaktır.</p>"
     }
+  },
+  "TermsOfServicePage": {
+    "seo": {
+      "title": "Kermit Floor | Kullanım Şartları",
+      "description": "Kermit Floor web sitesini kullanmak için kullanım şartlarını okuyun."
+    },
+    "title": "Site Kullanım Şartları",
+    "lastUpdated": "Son Güncelleme: 25 Ocak 2026",
+    "section1": {
+      "title": "1. Taraflar ve Kapsam",
+      "content": "<p>İşbu Site Kullanım Şartları (“Şartlar”), Kermit Plastik Sanayi ve Ticaret Anonim Şirketi (“Kermit Floor”, “Şirket”) tarafından işletilen www.kermitfloor.com alan adlı internet sitesinin (“Site”) kullanımına ilişkindir.</p><p>Site; ürünler, teknik dokümanlar, kataloglar ve iletişim/teklif talep kanalları sunan bilgilendirme amaçlı bir platformdur. Site üzerinden online satış (checkout) yapılmamaktadır.</p>"
+    },
+    "section2": {
+      "title": "2. Şartların Kabulü",
+      "content": "<p>Site’ye erişmeniz veya Site’yi kullanmanız, işbu Şartlar’ı kabul ettiğiniz anlamına gelir. Kabul etmiyorsanız Site’yi kullanmayınız.</p>"
+    },
+    "section3": {
+      "title": "3. Tanımlar",
+      "content": "<ul><li><strong>İçerik:</strong> Site’de yer alan tüm metin, görsel, video, katalog, teknik doküman, çizim, marka/Logo, tasarım ve yazılım unsurları.</li><li><strong>Kullanıcı:</strong> Site’yi ziyaret eden veya Site üzerinden talep/mesaj ileten gerçek kişi.</li></ul>"
+    },
+    "section4": {
+      "title": "4. Bilgi Amaçlı İçerik – Bağlayıcı Teklif Değildir",
+      "content": "<p>Site’de yer alan ürün bilgileri, teknik özellikler, görseller, açıklamalar ve dokümanlar genel bilgilendirme amaçlıdır; bağlayıcı bir teklif niteliği taşımaz.</p><p>Fiyat, termin, stok, teknik özellik ve uygulama detayları; ancak Şirket’in yazılı teyidi/teklifi (e-posta, proforma, teklif formu vb.) ile kesinleşir.</p>"
+    },
+    "section5": {
+      "title": "5. Teknik Dokümanlar ve Uygulama Sorumluluğu",
+      "content": "<p>Teknik föyler, montaj talimatları ve diğer uygulama yönlendirmeleri genel rehber niteliğindedir. Proje şartları, zemin/duvar yüzeyi, çevresel koşullar ve uygulama yöntemi gibi faktörler sonuca etki eder. Uygulama kararları ve saha uygunluğu değerlendirmesi, proje sorumluları/uzman uygulayıcılar tarafından yapılmalıdır.</p>"
+    },
+    "section6": {
+      "title": "6. Fikri Mülkiyet Hakları",
+      "content": "<p>Site’deki tüm İçerik, aksi açıkça belirtilmedikçe, Kermit Floor’a aittir veya lisans altında kullanılmaktadır.</p><p>Kullanıcı; katalog ve teknik dokümanları yalnızca kendi iç değerlendirmesi ve teklif talebi süreci kapsamında görüntüleyebilir/indirebilir. Şirket’in yazılı izni olmaksızın:</p><ul><li>İçeriklerin kopyalanması, çoğaltılması, dağıtılması, yeniden yayımlanması,</li><li>Ticari amaçla kullanılması,</li><li>Rakip/üçüncü kişi platformlarında paylaşılması,</li><li>Marka/logoların izinsiz kullanımı</li></ul><p>yasaktır.</p>"
+    },
+    "section7": {
+      "title": "7. İletişim Formları ve Kullanıcı Gönderimleri",
+      "content": "<p>Site üzerinden ilettiğiniz mesaj, talep, dosya ve diğer içeriklerde:</p><ul><li>Paylaşmaya yetkili olduğunuzu,</li><li>Bu içeriklerin yalnızca talebinizi değerlendirmek ve yanıtlamak amacıyla kullanılabileceğini,</li><li>Ayrı bir NDA/gizlilik sözleşmesi bulunmadıkça, gönderimle birlikte gizli ilişki kurulmadığını</li></ul><p>kabul edersiniz.</p>"
+    },
+    "section8": {
+      "title": "8. Yasak Kullanımlar",
+      "content": "<p>Kullanıcı, aşağıdakileri yapmamayı kabul eder:</p><ul><li>Site güvenliğini/işleyişini bozacak eylemler (zararlı yazılım, yetkisiz erişim, güvenlik açığı istismarı),</li><li>Otomatik yöntemlerle veri çekme (scraping), dizinleme, toplu indirme,</li><li>İçeriklerin izinsiz kopyalanması/dağıtılması,</li><li>Hukuka aykırı veya üçüncü kişilerin haklarını ihlal eden kullanım.</li></ul>"
+    },
+    "section9": {
+      "title": "9. Üçüncü Taraf Bağlantılar ve Gömülü İçerikler",
+      "content": "<p>Site, üçüncü taraf sitelere bağlantı veya gömülü içerik (ör. sosyal medya) içerebilir. Üçüncü tarafların içerik ve uygulamalarından Şirket sorumlu değildir.</p>"
+    },
+    "section10": {
+      "title": "10. Site’ye Erişim, Değişiklik ve Askıya Alma",
+      "content": "<p>Şirket, Site’nin içeriğini ve işlevlerini dilediği zaman değiştirebilir; bakım/arıza gibi nedenlerle Site’yi geçici olarak durdurabilir.</p>"
+    },
+    "section11": {
+      "title": "11. Sorumluluğun Sınırlandırılması",
+      "content": "<p>Site “olduğu gibi” sunulur. Kanunun izin verdiği ölçüde Şirket; Site’nin kullanımından veya kullanılamamasından doğan dolaylı/sonuçsal zararlar, kâr kaybı veya veri kaybından sorumlu tutulamaz.</p><p>Sorumluluğun tamamen kaldırılamadığı hallerde sorumluluk, yürürlükteki mevzuatın izin verdiği asgari ölçüyle sınırlıdır.</p>"
+    },
+    "section12": {
+      "title": "12. Gizlilik ve Kişisel Veriler",
+      "content": "<p>Kişisel verilerin işlenmesine ilişkin esaslar, Gizlilik Politikası ve KVKK Aydınlatma Metni ile düzenlenir. KVKK aydınlatma yükümlülüğünde asgari unsurlar (veri sorumlusu kimliği, amaçlar, aktarım, toplama yöntemi/hukuki sebep, haklar) yer almalıdır.</p>"
+    },
+    "section13": {
+      "title": "13. Uygulanacak Hukuk ve Yetki",
+      "content": "<p>İşbu Şartlar Türkiye Cumhuriyeti hukuku kapsamında uygulanır ve yorumlanır. Uyuşmazlıklarda Çayırova mahkeme ve icra daireleri yetkilidir.</p>"
+    },
+    "section14": {
+      "title": "14. İletişim",
+      "content": "<ul><li><strong>Unvan:</strong> Kermit Plastik Sanayi ve Ticaret Anonim Şirketi</li><li><strong>Adres:</strong> Cumhuriyet Mh. Cihan Sk. No:4 ÇAYIROVA / KOCAELİ - TÜRKİYE</li><li><strong>E-posta:</strong> info@kermit.com.tr</li></ul>"
+    }
   }
 }

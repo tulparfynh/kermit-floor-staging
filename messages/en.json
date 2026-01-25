@@ -740,5 +740,69 @@
       "title": "14. Changes to this Privacy Policy",
       "content": "<p>We may update this Privacy Policy from time to time. The “Last updated” date will change accordingly. Material changes will be posted on the Site.</p>"
     }
+  },
+  "TermsOfServicePage": {
+    "seo": {
+      "title": "Kermit Floor | Terms of Service",
+      "description": "Read the terms of service for using the Kermit Floor website."
+    },
+    "title": "Website Terms of Use",
+    "lastUpdated": "Last Updated: 25 January 2026",
+    "section1": {
+      "title": "1. Parties and Scope",
+      "content": "<p>These Website Terms of Use (“Terms”) govern access to and use of www.kermitfloor.com (the “Website”), operated by Kermit Plastik Sanayi ve Ticaret Anonim Şirketi (“Kermit Floor”, “Company”).</p><p>The Website is an informational platform providing product information, catalogs/technical documents, and contact/quote request channels. The Website does not provide online checkout or e-commerce purchasing.</p>"
+    },
+    "section2": {
+      "title": "2. Acceptance",
+      "content": "<p>By accessing or using the Website, you agree to these Terms. If you do not agree, do not use the Website.</p>"
+    },
+    "section3": {
+      "title": "3. Definitions",
+      "content": "<ul><li><strong>Content:</strong> All text, images, videos, catalogs, technical documents, drawings, trademarks/logos, designs, and software on the Website.</li><li><strong>User:</strong> Any person accessing the Website or submitting an inquiry.</li></ul>"
+    },
+    "section4": {
+      "title": "4. Informational Content – No Binding Offer",
+      "content": "<p>All product information, specifications, visuals, and documents are provided for general information only and do not constitute a binding offer. Pricing, lead times, availability, and final specifications are confirmed only via the Company’s written quotation/confirmation.</p>"
+    },
+    "section5": {
+      "title": "5. Technical Documents and Application Responsibility",
+      "content": "<p>Technical sheets and installation guidance are general references. Project conditions may vary and affect outcomes. Application decisions and on-site suitability must be assessed by qualified professionals.</p>"
+    },
+    "section6": {
+      "title": "6. Intellectual Property",
+      "content": "<p>Unless explicitly stated otherwise, all Content is owned by or licensed to Kermit Floor. You may view/download catalogs and documents solely for internal evaluation and quotation discussions. Any reproduction, redistribution, commercial use, or unauthorized use of trademarks/logos is prohibited without prior written consent.</p>"
+    },
+    "section7": {
+      "title": "7. Submissions (Forms, Messages, Files)",
+      "content": "<p>If you submit inquiries, messages, or files, you confirm you have the right to share them. The Company may use them solely to evaluate and respond to your request. No confidentiality obligation is created unless separately agreed in writing (e.g., NDA).</p>"
+    },
+    "section8": {
+      "title": "8. Prohibited Use",
+      "content": "<p>You agree not to:</p><ul><li>interfere with security/operation, introduce malware, attempt unauthorized access,</li><li>scrape, bulk-download, or harvest data via automated means,</li><li>copy/distribute Content without permission,</li><li>use the Website unlawfully or infringe third-party rights.</li></ul>"
+    },
+    "section9": {
+      "title": "9. Third-Party Links/Embedded Content",
+      "content": "<p>The Website may contain third-party links or embedded content. The Company is not responsible for third-party content or practices.</p>"
+    },
+    "section10": {
+      "title": "10. Availability and Changes",
+      "content": "<p>The Company may modify the Website at any time and may suspend access temporarily for maintenance or operational reasons.</p>"
+    },
+    "section11": {
+      "title": "11. Limitation of Liability",
+      "content": "<p>To the maximum extent permitted by law, the Website is provided “as is.” The Company is not liable for indirect or consequential damages, loss of profits, or loss of data arising from use of (or inability to use) the Website.</p>"
+    },
+    "section12": {
+      "title": "12. Privacy",
+      "content": "<p>Personal data handling is governed by the Privacy Policy / KVKK Notice. The KVKK notice must include core transparency items (controller identity, purposes, transfers, collection method/legal basis, rights).</p>"
+    },
+    "section13": {
+      "title": "13. Governing Law and Jurisdiction",
+      "content": "<p>These Terms are governed by the laws of the Republic of Türkiye. Courts and enforcement offices of Çayırova shall have jurisdiction.</p>"
+    },
+    "section14": {
+      "title": "14. Contact",
+      "content": "<ul><li>Kermit Plastik Sanayi ve Ticaret Anonim Şirketi</li><li>Cumhuriyet Mh. Cihan Sk. No:4 ÇAYIROVA / KOCAELİ - TÜRKİYE</li><li>info@kermit.com.tr</li></ul>"
+    }
   }
 }

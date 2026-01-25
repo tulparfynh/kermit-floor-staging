@@ -100,7 +100,7 @@ export function Footer() {
                     {t('privacyPolicy')}
                 </Link>
                 <Separator orientation="vertical" className="h-4" />
-                <Link href="#" className="text-xs hover:text-primary transition-colors">
+                <Link href="/terms-of-service" className="text-xs hover:text-primary transition-colors">
                     {t('termsOfService')}
                 </Link>
                 </div>
