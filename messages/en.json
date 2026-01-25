@@ -653,10 +653,11 @@
     "applicationVideoTitle": "Exemplary Application Video"
   },
   "Chatbox": {
-    "greeting": "Hello! How can I help you with our SPC wall panels today?",
+    "greeting": "Hello! How can we be of service with our SPC Interior Finish products?",
     "prompt": "Chat with us!",
     "placeholder": "Type your message...",
-    "whatsappRedirect": "I've opened WhatsApp for you. Please send your message there!"
+    "whatsappRedirect": "I've opened WhatsApp for you. Please send your message there!",
+    "title": "Kermit Floor Support"
   },
   "Footer": {
     "tagline": "Premium SPC Flooring, Wall Panel and Skirting solutions for modern interiors.",

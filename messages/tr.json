@@ -520,10 +520,11 @@
     "applicationVideoTitle": "Örnek Uygulama Videosu"
   },
   "Chatbox": {
-    "greeting": "Merhaba! SPC duvar panellerimiz hakkında size nasıl yardımcı olabilirim?",
+    "greeting": "Merhaba, size SPC İç Mekan Finiş Sistemimiz hakkında nasıl yardımcı olabiliriz?",
     "prompt": "Bizimle sohbet edin!",
     "placeholder": "Mesajınızı yazın...",
-    "whatsappRedirect": "Sizin için WhatsApp'ı açtım. Lütfen mesajınızı oradan gönderin!"
+    "whatsappRedirect": "Sizin için WhatsApp'ı açtım. Lütfen mesajınızı oradan gönderin!",
+    "title": "Kermit Floor Destek"
   },
   "Footer": {
     "tagline": "Modern iç mekanlar için premium SPC parke ve duvar paneli çözümleri.",
@@ -629,7 +630,7 @@
     },
     "section4": {
       "title": "4. Bilgi Amaçlı İçerik – Bağlayıcı Teklif Değildir",
-      "content": "<p>Site’de yer alan ürün bilgileri, teknik özellikler, görseller, açıklamalar ve dokümanlar genel bilgilendirme amaçlıdır; bağlayıcı bir teklif niteliği taşımaz.</p><p>Fiyat, termin, stok, teknik özellik ve uygulama detayları; ancak Şirket’in yazılı teyidi/teklifi (e-posta, proforma, teklif formu vb.) ile kesinleşir.</p>"
+      "content": "<p>Site’de yer alan ürün bilgileri, teknik özellikler, görseller, açıklamalar ve dokümanlar genel bilgilendirme amaçlıdır; bağlayıcı bir teklif niteliği taşımaz.</p>"
     },
     "section5": {
       "title": "5. Teknik Dokümanlar ve Uygulama Sorumluluğu",
@@ -637,15 +638,15 @@
     },
     "section6": {
       "title": "6. Fikri Mülkiyet Hakları",
-      "content": "<p>Site’deki tüm İçerik, aksi açıkça belirtilmedikçe, Kermit Floor’a aittir veya lisans altında kullanılmaktadır.</p><p>Kullanıcı; katalog ve teknik dokümanları yalnızca kendi iç değerlendirmesi ve teklif talebi süreci kapsamında görüntüleyebilir/indirebilir. Şirket’in yazılı izni olmaksızın:</p><ul><li>İçeriklerin kopyalanması, çoğaltılması, dağıtılması, yeniden yayımlanması,</li><li>Ticari amaçla kullanılması,</li><li>Rakip/üçüncü kişi platformlarında paylaşılması,</li><li>Marka/logoların izinsiz kullanımı</li></ul><p>yasaktır.</p>"
+      "content": "<p>Site’deki tüm İçerik, aksi açıkça belirtilmedikçe, Kermit Floor’a aittir veya lisans altında kullanılmaktadır. Kullanıcı; katalog ve teknik dokümanları yalnızca kendi iç değerlendirmesi ve teklif talebi süreci kapsamında görüntüleyebilir/indirebilir. Şirket’in yazılı izni olmaksızın İçeriklerin kopyalanması, çoğaltılması, dağıtılması, yeniden yayımlanması, ticari amaçla kullanılması veya marka/logoların izinsiz kullanımı yasaktır.</p>"
     },
     "section7": {
       "title": "7. İletişim Formları ve Kullanıcı Gönderimleri",
-      "content": "<p>Site üzerinden ilettiğiniz mesaj, talep, dosya ve diğer içeriklerde:</p><ul><li>Paylaşmaya yetkili olduğunuzu,</li><li>Bu içeriklerin yalnızca talebinizi değerlendirmek ve yanıtlamak amacıyla kullanılabileceğini,</li><li>Ayrı bir NDA/gizlilik sözleşmesi bulunmadıkça, gönderimle birlikte gizli ilişki kurulmadığını</li></ul><p>kabul edersiniz.</p>"
+      "content": "<p>Site üzerinden ilettiğiniz mesaj, talep, dosya ve diğer içeriklerde paylaşıma yetkili olduğunuzu ve bu içeriklerin yalnızca talebinizi değerlendirmek ve yanıtlamak amacıyla kullanılabileceğini, ayrı bir gizlilik sözleşmesi bulunmadıkça, gönderimle birlikte gizli ilişki kurulmadığını kabul edersiniz.</p>"
     },
     "section8": {
       "title": "8. Yasak Kullanımlar",
-      "content": "<p>Kullanıcı, aşağıdakileri yapmamayı kabul eder:</p><ul><li>Site güvenliğini/işleyişini bozacak eylemler (zararlı yazılım, yetkisiz erişim, güvenlik açığı istismarı),</li><li>Otomatik yöntemlerle veri çekme (scraping), dizinleme, toplu indirme,</li><li>İçeriklerin izinsiz kopyalanması/dağıtılması,</li><li>Hukuka aykırı veya üçüncü kişilerin haklarını ihlal eden kullanım.</li></ul>"
+      "content": "<p>Kullanıcı, aşağıdakileri yapmamayı kabul eder:</p><ul><li>Site güvenliğini/işleyişini bozacak eylemler (zararlı yazılım, yetkisiz erişim),</li><li>Otomatik yöntemlerle veri çekme (scraping),</li><li>İçeriklerin izinsiz kopyalanması/dağıtılması,</li><li>Hukuka aykırı veya üçüncü kişilerin haklarını ihlal eden kullanım.</li></ul>"
     },
     "section9": {
       "title": "9. Üçüncü Taraf Bağlantılar ve Gömülü İçerikler",
@@ -657,7 +658,7 @@
     },
     "section11": {
       "title": "11. Sorumluluğun Sınırlandırılması",
-      "content": "<p>Site “olduğu gibi” sunulur. Kanunun izin verdiği ölçüde Şirket; Site’nin kullanımından veya kullanılamamasından doğan dolaylı/sonuçsal zararlar, kâr kaybı veya veri kaybından sorumlu tutulamaz.</p><p>Sorumluluğun tamamen kaldırılamadığı hallerde sorumluluk, yürürlükteki mevzuatın izin verdiği asgari ölçüyle sınırlıdır.</p>"
+      "content": "<p>Site “olduğu gibi” sunulur. Kanunun izin verdiği ölçüde Şirket; Site’nin kullanımından veya kullanılamamasından doğan dolaylı/sonuçsal zararlar, kâr kaybı veya veri kaybından sorumlu tutulamaz.</p>"
     },
     "section12": {
       "title": "12. Gizlilik ve Kişisel Veriler",

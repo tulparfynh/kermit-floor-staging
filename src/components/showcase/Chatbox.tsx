@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
@@ -15,7 +14,7 @@ import { Send, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { ScrollArea } from '../ui/scroll-area';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
@@ -38,6 +37,7 @@ type Message = {
 
 export function Chatbox() {
   const t = useTranslations('Chatbox');
+  const locale = useLocale();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -57,7 +57,7 @@ export function Chatbox() {
         sender: 'user',
       };
       
-      const phoneNumber = "905368338429";
+      const phoneNumber = locale === 'tr' ? "905532775896" : "905376156129";
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
         inputValue
       )}`;
@@ -124,7 +124,7 @@ export function Chatbox() {
                   <Avatar>
                     <AvatarFallback className="bg-secondary text-secondary-foreground">KF</AvatarFallback>
                   </Avatar>
-                  <CardTitle className="font-headline text-xl">Kermit Floor Support</CardTitle>
+                  <CardTitle className="font-headline text-xl">{t('title')}</CardTitle>
                 </div>
                 <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary/80" onClick={() => setIsOpen(false)}>
                   <X className="h-6 w-6" />
