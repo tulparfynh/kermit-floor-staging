@@ -4,6 +4,7 @@ import { Footer } from '@/components/showcase/Footer';
 import ContactPageClient from '@/components/contact/ContactPageClient';
 import { getMessages } from 'next-intl/server';
 import type { Metadata } from 'next';
+import { Chatbox } from '@/components/showcase/Chatbox';
 
 export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
   const messages = await getMessages({locale});
@@ -23,6 +24,7 @@ export default function ContactPage() {
         <ContactPageClient />
       </main>
       <Footer />
+      <Chatbox />
     </div>
   );
 }

@@ -9,6 +9,7 @@ import { Factory, DraftingCompass, Layers } from 'lucide-react';
 import { getMessages, getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { Chatbox } from '@/components/showcase/Chatbox';
 
 export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
   const messages = await getMessages({locale});
@@ -184,6 +185,7 @@ export default async function AboutPage() {
 
       </main>
       <Footer />
+      <Chatbox />
     </div>
   );
 }
