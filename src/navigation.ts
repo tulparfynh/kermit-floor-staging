@@ -75,6 +75,10 @@ export const pathnames = {
   '/spc-skirting-boards/x-line-100-mm-skirting-board': {
     en: '/spc-skirting-boards/x-line-100-mm-skirting-board',
     tr: '/spc-supurgelikler/x-line-100-mm-supurgelik',
+  },
+  '/privacy-policy': {
+    en: '/privacy-policy',
+    tr: '/gizlilik-politikasi'
   }
 } satisfies Pathnames<typeof locales>;
 

@@ -543,7 +543,12 @@
     "termsOfService": "Hizmet Şartları",
     "phone": "+90 262 658 97 29",
     "email": "info@kermit.com.tr"
+  },
+  "PrivacyPolicyPage": {
+    "seo": {
+      "title": "Kermit Floor | Gizlilik Politikası",
+      "description": "Kermit Floor'un kişisel verilerinizi nasıl topladığını, kullandığını ve koruduğunu öğrenin."
+    },
+    "title": "Gizlilik Politikası"
   }
 }
-
-    

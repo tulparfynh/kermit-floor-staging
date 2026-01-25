@@ -676,7 +676,12 @@
     "termsOfService": "Terms of Service",
     "phone": "+90 262 658 97 29",
     "email": "info@kermit.com.tr"
+  },
+  "PrivacyPolicyPage": {
+    "seo": {
+      "title": "Kermit Floor | Privacy Policy",
+      "description": "Learn how Kermit Floor collects, uses, and protects your personal data."
+    },
+    "title": "Privacy Policy"
   }
 }
-
-    

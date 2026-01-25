@@ -96,7 +96,7 @@ export function Footer() {
                 {t('copyright', {year: new Date().getFullYear()})}
                 </p>
                 <div className="flex items-center gap-4">
-                <Link href="#" className="text-xs hover:text-primary transition-colors">
+                <Link href="/privacy-policy" className="text-xs hover:text-primary transition-colors">
                     {t('privacyPolicy')}
                 </Link>
                 <Separator orientation="vertical" className="h-4" />
