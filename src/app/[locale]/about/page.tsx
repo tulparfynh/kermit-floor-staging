@@ -85,7 +85,7 @@ export default async function AboutPage() {
             </p>
             <div className="mt-8 flex justify-center gap-4">
               <Button asChild size="lg">
-                <Link href="/spc-wall-panels">{t('hero.ctaPrimary')}</Link>
+                <Link href="/contact">{t('hero.ctaPrimary')}</Link>
               </Button>
               <Button asChild size="lg" className="bg-background text-primary hover:bg-background/80">
                 <Link href="/resources">{t('hero.ctaSecondary')}</Link>
@@ -188,3 +188,4 @@ export default async function AboutPage() {
   );
 }
  
+    
