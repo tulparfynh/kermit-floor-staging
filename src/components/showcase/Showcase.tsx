@@ -367,6 +367,17 @@ export function Showcase({ initialPanels, collectionType }: ShowcaseProps) {
                     </iframe>
                 </Card>
               </div>
+            ) : isSkirting ? (
+              <Card className="overflow-hidden shadow-lg border-none bg-background/50 relative aspect-video">
+                  <iframe 
+                      className="absolute top-0 left-0 w-full h-full"
+                      src="https://www.youtube.com/embed/6ly_3AK2AaQ" 
+                      title="YouTube video player" 
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                      allowFullScreen>
+                  </iframe>
+              </Card>
             ) : (
               <Card className="overflow-hidden shadow-lg border-none bg-background/50 relative aspect-video">
                   <iframe 
