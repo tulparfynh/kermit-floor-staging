@@ -13,8 +13,8 @@ export async function generateMetadata({params: {locale}}: {params: {locale: str
     title: t('title'),
     description: t('description'),
     icons: {
-      icon: '/favicon.ico',
-      apple: '/apple-touch-icon.png',
+      icon: '/images/icons/favicon.32x32.png',
+      apple: '/images/icons/favicon.180x180.png',
     },
   };
 }
