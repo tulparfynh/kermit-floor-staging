@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.kermitfloor.com/sitemap.xml
+Sitemap: https://kermitfloor.com/sitemap.xml
