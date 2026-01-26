@@ -1,7 +1,6 @@
 import createMiddleware from 'next-intl/middleware';
 import {locales, pathnames, localePrefix, defaultLocale} from './navigation';
 
-// The middleware is now simplified to only handle internationalization.
 export default createMiddleware({
   defaultLocale,
   locales,
@@ -10,10 +9,13 @@ export default createMiddleware({
 });
 
 export const config = {
-  // Match all pathnames except for static files (e.g. images) and API routes.
-  // This prevents the middleware from interfering with static asset requests.
-  // We have removed /robots.txt from this matcher.
+  // Match only internationalized pathnames
   matcher: [
-    '/((?!api|_next/static|_next/image|images|favicon.ico|sitemap.xml|.*\\.[^/]+$).*)',
+    // Match all pathnames except for
+    // - … if they start with `/api`, `/_next` or `/_vercel`
+    // - … the ones containing a dot (e.g. `favicon.ico`)
+    '/((?!api|_next|_vercel|.*\\..*).*)',
+    // Match all pathnames starting with a locale (e.g. `/tr/about`)
+    '/(tr|en)/:path*'
   ]
 };
