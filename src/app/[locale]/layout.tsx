@@ -20,6 +20,10 @@ export async function generateMetadata({params: {locale}}: {params: {locale: str
   };
 }
 
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'tr' }];
+}
+
 export default function RootLayout({
   children,
   params: {locale}

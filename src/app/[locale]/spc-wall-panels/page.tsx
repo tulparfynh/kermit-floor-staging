@@ -17,10 +17,6 @@ export async function generateMetadata({params: {locale}}: {params: {locale: str
   };
 }
 
-// This tells Next.js to re-validate the page (check for new data)
-// at most once every 60 seconds.
-export const revalidate = 60; 
-
 export default async function SpcWallPanelsPage() {
   const panels = await getPanels();
 

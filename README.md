@@ -1,5 +1,16 @@
-e# Firebase Studio
+# Kermit Floor
 
-This is a NextJS starter in Firebase Studio.
+Next.js site for Kermit Floor (SPC floors, wall panels, skirting). Supports English and Turkish via next-intl.
 
-To get started, take a look at src/app/page.tsx.
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+Runs at http://localhost:9002.
+
+## Deployment
+
+See [DEPLOY.md](DEPLOY.md) for Cloudflare (OpenNext) and optional Firebase/standalone build instructions.

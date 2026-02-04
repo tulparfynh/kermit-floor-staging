@@ -1,4 +1,3 @@
-
 import type {NextConfig} from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 import { legacyRedirects } from './src/redirects/legacyRedirects';
@@ -6,8 +5,6 @@ import { legacyRedirects } from './src/redirects/legacyRedirects';
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
-  output: "standalone",
-  /* config options here */
   async redirects() {
     return legacyRedirects;
   },

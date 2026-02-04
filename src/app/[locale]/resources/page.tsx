@@ -16,8 +16,6 @@ export async function generateMetadata({params: {locale}}: {params: {locale: str
   };
 }
 
-export const revalidate = 60;
-
 export default async function ResourcesPage() {
   const starterPacks = await getStarterPacks();
   const libraryDocs = await getLibraryDocuments();
