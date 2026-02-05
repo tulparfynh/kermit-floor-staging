@@ -28,7 +28,7 @@ export function MobileMenu() {
         <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
         <div className="flex flex-col h-full">
           <div className="p-6 border-b">
-            <Link href={`/`} onClick={() => setMenuOpen(false)}>
+            <Link href="/" onClick={() => setMenuOpen(false)}>
               <Logo />
             </Link>
           </div>

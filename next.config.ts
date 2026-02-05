@@ -2,17 +2,11 @@ import type {NextConfig} from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 import { legacyRedirects } from './src/redirects/legacyRedirects';
 
-const withNextIntl = createNextIntlPlugin();
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig: NextConfig = {
   async redirects() {
-    return legacyRedirects;
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
+    return [...legacyRedirects];
   },
   images: {
     minimumCacheTTL: 604800,

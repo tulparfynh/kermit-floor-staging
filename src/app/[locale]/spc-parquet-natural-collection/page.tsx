@@ -4,16 +4,20 @@ import { Showcase } from '@/components/showcase/Showcase';
 import { Chatbox } from '@/components/showcase/Chatbox';
 import { Footer } from '@/components/showcase/Footer';
 import { getFloorNatural } from '@/lib/floor-natural-data';
-import { getMessages } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
-export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
-  const messages = await getMessages({locale});
-  const t = (key: string) => ((messages.SpcParquetNaturalCollectionPage as any).seo as any)[key] as string;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'SpcParquetNaturalCollectionPage' });
  
   return {
-    title: t('title'),
-    description: t('description')
+    title: t('seo.title'),
+    description: t('seo.description')
   };
 }
 

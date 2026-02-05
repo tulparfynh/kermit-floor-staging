@@ -4,7 +4,7 @@
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import type { Panel } from '@/lib/panel-data';
+import type { Panel } from '@/lib/panel-types';
 import { Droplets, ShieldCheck, Zap, Hammer, Volume2, Leaf, ZoomIn, X, ChevronLeft, ChevronRight, Ruler, Square, Building, Layers, Waves, Slice, Cable } from 'lucide-react';
 import {
     Dialog,

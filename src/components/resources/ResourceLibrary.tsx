@@ -26,8 +26,9 @@ export default function ResourceLibrary({ documents }: ResourceLibraryProps) {
   const t = useTranslations('ResourcesPage');
   const searchParams = useSearchParams();
   const tabFromUrl = searchParams.get('tab');
-
-  const defaultTab = productLines.includes(tabFromUrl as any) ? tabFromUrl : 'flooring';
+  const defaultTab: ProductLine = productLines.includes(tabFromUrl as ProductLine)
+    ? (tabFromUrl as ProductLine)
+    : 'flooring';
 
   const getDocumentsByProductLine = (productLine: ProductLine) => {
     return documents.filter(doc => doc.productLine === productLine || (doc.productLine === 'general' && productLine !== 'general'));

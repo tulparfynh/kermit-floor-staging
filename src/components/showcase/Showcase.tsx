@@ -4,7 +4,7 @@
 
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
-import type { Panel } from '@/lib/panel-data';
+import type { Panel } from '@/lib/panel-types';
 import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { ColorPicker } from './ColorPicker';
@@ -24,10 +24,27 @@ import { Link, usePathname } from '@/navigation';
 import { cn } from '@/lib/utils';
 
 
+type LinkHref = Parameters<typeof Link>[0]['href'];
+const getHrefPath = (href: LinkHref): string => {
+  if (typeof href === 'string') {
+    return href;
+  }
+  if (typeof href === 'object' && href !== null && 'pathname' in href) {
+    return String(href.pathname ?? '');
+  }
+  return '';
+};
+
 function WallCollectionNav() {
   const t = useTranslations('HomePage');
   const pathname = usePathname();
-  const collections = [
+  const pathnameValue = typeof pathname === 'string' ? pathname : '';
+  const collections: {
+    name: string;
+    href: LinkHref;
+    imageUrl: string;
+    imageHint: string;
+  }[] = [
     { 
       name: t('spcWallPanelsTitle'), 
       href: '/spc-wall-panels', 
@@ -62,7 +79,7 @@ function WallCollectionNav() {
                         >
                             <div className={cn(
                                 "relative h-16 w-16 md:h-20 md:w-20 rounded-full overflow-hidden border-2 transition-all duration-300",
-                                pathname === collection.href ? "border-primary" : "border-transparent group-hover:border-primary/50"
+                                pathnameValue === getHrefPath(collection.href) ? "border-primary" : "border-transparent group-hover:border-primary/50"
                             )}
                             >
                                 <Image 
@@ -76,7 +93,7 @@ function WallCollectionNav() {
                             </div>
                             <span className={cn(
                                 "text-xs md:text-sm font-semibold text-foreground/80 group-hover:text-primary transition-colors text-center",
-                                pathname === collection.href && "text-primary"
+                                pathnameValue === getHrefPath(collection.href) && "text-primary"
                             )}>
                                 {collection.name}
                             </span>
@@ -95,7 +112,13 @@ function WallCollectionNav() {
 function FlooringCollectionNav() {
   const t = useTranslations('HomePage');
   const pathname = usePathname();
-  const collections = [
+  const pathnameValue = typeof pathname === 'string' ? pathname : '';
+  const collections: {
+    name: string;
+    href: LinkHref;
+    imageUrl: string;
+    imageHint: string;
+  }[] = [
     { 
       name: t('spcParquetNaturalCollectionTitle'), 
       href: '/spc-parquet-natural-collection', 
@@ -130,7 +153,7 @@ function FlooringCollectionNav() {
                         >
                             <div className={cn(
                                 "relative h-16 w-16 md:h-20 md:w-20 rounded-full overflow-hidden border-2 transition-all duration-300",
-                                pathname === collection.href ? "border-primary" : "border-transparent group-hover:border-primary/50"
+                                pathnameValue === getHrefPath(collection.href) ? "border-primary" : "border-transparent group-hover:border-primary/50"
                             )}
                             >
                                 <Image 
@@ -144,7 +167,7 @@ function FlooringCollectionNav() {
                             </div>
                             <span className={cn(
                                 "text-xs md:text-sm font-semibold text-foreground/80 group-hover:text-primary transition-colors text-center",
-                                pathname === collection.href && "text-primary"
+                                pathnameValue === getHrefPath(collection.href) && "text-primary"
                             )}>
                                 {collection.name}
                             </span>
@@ -163,7 +186,13 @@ function FlooringCollectionNav() {
 function SkirtingCollectionNav() {
   const t = useTranslations('SkirtingCollectionNames');
   const pathname = usePathname();
-  const collections = [
+  const pathnameValue = typeof pathname === 'string' ? pathname : '';
+  const collections: {
+    name: string;
+    href: LinkHref;
+    imageUrl: string;
+    imageHint: string;
+  }[] = [
     { name: t('optima-60-mm'), href: '/spc-skirting-boards/optima-60-mm-skirting-board', imageUrl: '/images/skirting-boards/optima-60-mm-skirting-board/0603031/product.jpg', imageHint: 'optima 60mm skirting' },
     { name: t('optima-90-mm'), href: '/spc-skirting-boards/optima-90-mm-skirting-board', imageUrl: '/images/skirting-boards/optima-90-mm-skirting-board/0704031/product.jpg', imageHint: 'optima 90mm skirting' },
     { name: t('solid-80-mm'), href: '/spc-skirting-boards/solid-80-mm-skirting-board', imageUrl: '/images/skirting-boards/solid-80-mm-skirting-board/0904031/product.jpg', imageHint: 'solid 80mm skirting' },
@@ -188,7 +217,7 @@ function SkirtingCollectionNav() {
                     >
                         <div className={cn(
                             "relative h-16 w-16 md:h-20 md:w-20 rounded-full overflow-hidden border-2 transition-all duration-300",
-                            pathname.includes(collection.href) ? "border-primary" : "border-transparent group-hover:border-primary/50"
+                            pathnameValue.includes(getHrefPath(collection.href)) ? "border-primary" : "border-transparent group-hover:border-primary/50"
                         )}
                         >
                             <Image 
@@ -202,7 +231,7 @@ function SkirtingCollectionNav() {
                         </div>
                         <span className={cn(
                             "text-xs md:text-sm font-semibold text-foreground/80 group-hover:text-primary transition-colors text-center",
-                            pathname.includes(collection.href) && "text-primary"
+                            pathnameValue.includes(getHrefPath(collection.href)) && "text-primary"
                         )}>
                             {collection.name}
                         </span>
@@ -232,22 +261,30 @@ export function Showcase({ initialPanels, collectionType }: ShowcaseProps) {
   const tSkirtingPanelNames = useTranslations('SkirtingPanelNames');
   const tShowcase = useTranslations('ShowcasePage');
 
+  const safeTranslate = (namespace: string, key: string, translate: (value: string) => string) => {
+    try {
+      return translate(key);
+    } catch (error) {
+      return key;
+    }
+  };
+
   const tPanelNames = (key: string) => {
     switch (true) {
       case collectionType.startsWith('skirting-'):
-        return tSkirtingPanelNames(key);
+        return safeTranslate('SkirtingPanelNames', key, tSkirtingPanelNames);
       case collectionType === 'spc-3d-wall-panels-model-a':
-        return t3dModelAPanelNames(key);
+        return safeTranslate('3DModelAPanelNames', key, t3dModelAPanelNames);
       case collectionType === 'spc-3d-wall-panels-model-b':
-        return t3dModelBPanelNames(key);
+        return safeTranslate('3DModelBPanelNames', key, t3dModelBPanelNames);
       case collectionType === 'spc-parquet-natural-collection':
-        return tSpcParquetNaturalCollectionPanelNames(key);
+        return safeTranslate('SpcParquetNaturalCollectionPanelNames', key, tSpcParquetNaturalCollectionPanelNames);
       case collectionType === 'spc-parquet-stone-collection':
-        return tSpcParquetStoneCollectionPanelNames(key);
+        return safeTranslate('SpcParquetStoneCollectionPanelNames', key, tSpcParquetStoneCollectionPanelNames);
       case collectionType === 'full-natural-collection':
-        return tFullNaturalCollectionPanelNames(key);
+        return safeTranslate('FullNaturalCollectionPanelNames', key, tFullNaturalCollectionPanelNames);
       default:
-        return tSpcPanelNames(key);
+        return safeTranslate('PanelNames', key, tSpcPanelNames);
     }
   };
 
@@ -259,6 +296,21 @@ export function Showcase({ initialPanels, collectionType }: ShowcaseProps) {
       setSelectedPanel(null);
     }
   }, [initialPanels]);
+
+  // Fallback for Cloudflare Worker: server may not have fs, so initialPanels can be []. Load from static JSON.
+  useEffect(() => {
+    if (initialPanels.length > 0) return;
+    let cancelled = false;
+    fetch(`/data/${collectionType}.json`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data: Panel[] | null) => {
+        if (cancelled || !Array.isArray(data) || data.length === 0) return;
+        setPanels(data);
+        setSelectedPanel(data[0]);
+      })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [initialPanels.length, collectionType]);
 
   const isFlooring = ['spc-parquet-natural-collection', 'spc-parquet-stone-collection', 'full-natural-collection'].includes(collectionType);
   const isSkirting = collectionType.startsWith('skirting-');

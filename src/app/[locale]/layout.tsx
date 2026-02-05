@@ -2,13 +2,17 @@ import type {Metadata} from 'next';
 import Script from 'next/script';
 import '../globals.css';
 import { Toaster } from "@/components/ui/toaster";
-import {getMessages} from 'next-intl/server';
-import {NextIntlClientProvider, useMessages} from 'next-intl';
+import {getMessages, getTranslations, setRequestLocale} from 'next-intl/server';
+import {NextIntlClientProvider} from 'next-intl';
 import { inter, montserrat } from '@/app/fonts';
  
-export async function generateMetadata({params: {locale}}: {params: {locale: string}}): Promise<Metadata> {
-  const messages = await getMessages({locale});
-  const t = (key: string) => (messages.Metadata as any)[key] as string;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
  
   return {
     title: t('title'),
@@ -24,14 +28,17 @@ export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'tr' }];
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params: {locale}
+  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: {locale: string};
+  params: Promise<{ locale: string }>;
 }>) {
-  const messages = useMessages();
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const messages = await getMessages({ locale });
+  const gaId = process.env.NEXT_PUBLIC_GA_ID?.trim();
   return (
     <html lang={locale} className={`${inter.variable} ${montserrat.variable} scroll-smooth`}>
       <head>
@@ -41,22 +48,26 @@ export default function RootLayout({
           {children}
           <Toaster />
         </NextIntlClientProvider>
-        <Script
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-        />
-        <Script
-          id="gtag-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
-            `,
-          }}
-        />
+        {gaId ? (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+            />
+            <Script
+              id="gtag-init"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${gaId}');
+                `,
+              }}
+            />
+          </>
+        ) : null}
       </body>
     </html>
   );

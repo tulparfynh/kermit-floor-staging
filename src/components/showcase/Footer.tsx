@@ -9,13 +9,13 @@ import { useTranslations } from 'next-intl';
 export function Footer() {
   const t = useTranslations('Footer');
 
-  const productLinks = [
+  const productLinks: { href: Parameters<typeof Link>[0]['href']; label: string }[] = [
       { href: '/spc-parquet-natural-collection', label: t('productFlooring') },
       { href: '/spc-wall-panels', label: t('productWallPanels') },
       { href: '/spc-skirting-boards/optima-90-mm-skirting-board', label: t('productSkirting') },
     ];
     
-    const supportLinks = [
+    const supportLinks: { href: Parameters<typeof Link>[0]['href']; label: string }[] = [
       { href: '/resources', label: t('supportCatalogue') },
       { href: '/resources', label: t('supportInstallation') },
       { href: '/resources', label: t('supportTechnical') },

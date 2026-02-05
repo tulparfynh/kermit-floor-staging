@@ -1,13 +1,15 @@
 
-import {
-  createLocalizedPathnamesNavigation,
-  Pathnames
-} from 'next-intl/navigation';
+import {createNavigation} from 'next-intl/navigation';
+import type {Pathnames} from 'next-intl/routing';
 
 export const locales = ['en', 'tr'] as const;
 export const defaultLocale = 'en';
 
 export const pathnames = {
+  '/': {
+    en: '/',
+    tr: '/'
+  },
   '/resources': {
     en: '/resources',
     tr: '/kaynaklar'
@@ -89,8 +91,15 @@ export const pathnames = {
 // Use `'as-needed'` to only add a prefix for the non-default locale (`tr`).
 export const localePrefix = 'as-needed' as const;
 
-export const {Link, redirect, usePathname, useRouter, getPathname} =
-  createLocalizedPathnamesNavigation({locales, localePrefix, pathnames});
+const navigation = (() => {
+  try {
+    return createNavigation({locales, defaultLocale, localePrefix, pathnames});
+  } catch (error) {
+    throw error;
+  }
+})();
+
+export const {Link, redirect, usePathname, useRouter, getPathname} = navigation;
 
 
 export type AppPathnames = keyof typeof pathnames;

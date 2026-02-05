@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Header } from '@/components/showcase/Header';
 import { Footer } from '@/components/showcase/Footer';
 import Image from 'next/image';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { ArrowRight, Factory, DraftingCompass, Layers, ChevronDown, Package, Download, BookOpen, FileText, Wrench, ShieldCheck, Zap, Palette, Instagram } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { getStarterPacks } from '@/lib/resources-data';
@@ -18,17 +18,37 @@ import { getInstagramPosts } from '@/lib/instagram-data';
 import InstagramPostCard from '@/components/showcase/InstagramPostCard';
 import { StarterPackDialog } from '@/components/showcase/StarterPackDialog';
 
-export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
-  const messages = await getMessages({locale});
-  const t = (key: string) => ((messages.HomePage as any).seo as any)[key] as string;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'HomePage' });
  
   return {
-    title: t('title'),
-    description: t('description')
+    title: t('seo.title'),
+    description: t('seo.description')
   };
 }
 
-const ProductLineCard = ({ title, description, benefits, href, imageUrl, imageHint, ctaText }: { title: string, description: string, benefits: {text: string, icon: React.ElementType}[], href: string, imageUrl: string, imageHint: string, ctaText: string }) => (
+const ProductLineCard = ({
+  title,
+  description,
+  benefits,
+  href,
+  imageUrl,
+  imageHint,
+  ctaText,
+}: {
+  title: string;
+  description: string;
+  benefits: {text: string; icon: React.ElementType}[];
+  href: Parameters<typeof Link>[0]['href'];
+  imageUrl: string;
+  imageHint: string;
+  ctaText: string;
+}) => (
     <Card className="flex flex-col overflow-hidden text-center group">
         <div className="relative aspect-[4/3] w-full overflow-hidden">
             <Image src={imageUrl} alt={title} fill className="object-cover transition-transform duration-300 group-hover:scale-105" data-ai-hint={imageHint} sizes="(max-width: 768px) 100vw, 33vw"/>
@@ -72,12 +92,24 @@ const ResourceTeaserCard = ({ title, icon: Icon }: { title: string, icon: React.
     </Card>
 );
 
-export default async function Home({ params }: { params: { locale: Locale } }) {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('HomePage');
   const starterPacks = await getStarterPacks();
   const instagramPosts = getInstagramPosts();
 
-  const productLines = [
+  const productLines: {
+    name: string;
+    href: Parameters<typeof Link>[0]['href'];
+    imageUrl: string;
+    imageHint: string;
+    benefits: {text: string; icon: React.ElementType}[];
+  }[] = [
     { name: 'flooring', href: '/spc-parquet-natural-collection', imageUrl: '/images/spc-parquet-natural-collection/29098-2/application.jpg', imageHint: 'elegant room flooring', benefits: [{text: t('flooringBenefits.b1'), icon: ShieldCheck}, {text: t('flooringBenefits.b2'), icon: Zap}, {text: t('flooringBenefits.b3'), icon: Palette}] },
     { name: 'walls', href: '/spc-wall-panels', imageUrl: '/images/spc-wall-panels/23048-6/application.jpg', imageHint: 'modern kitchen panels', benefits: [{text: t('wallsBenefits.b1'), icon: ShieldCheck}, {text: t('wallsBenefits.b2'), icon: Zap}, {text: t('wallsBenefits.b3'), icon: Palette}] },
     { name: 'skirting', href: '/spc-skirting-boards/optima-90-mm-skirting-board', imageUrl: '/images/skirting-boards/elite-100-mm-skirting-board/E1004031/application.jpg', imageHint: 'room with decorative skirting', benefits: [{text: t('skirtingBenefits.b1'), icon: ShieldCheck}, {text: t('skirtingBenefits.b2'), icon: Zap}, {text: t('skirtingBenefits.b3'), icon: Palette}] },
@@ -127,7 +159,7 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
                   <p className="text-white/80 text-sm font-semibold">{t('heroStarterPacksTitle')}</p>
                   <div className="flex flex-wrap justify-center gap-3">
                       {starterPacks.map(pack => (
-                          <StarterPackDialog key={pack.id} pack={pack} locale={params?.locale || 'en'} />
+                          <StarterPackDialog key={pack.id} pack={pack} locale={locale} />
                       ))}
                   </div>
               </div>

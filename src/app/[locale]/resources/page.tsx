@@ -1,18 +1,23 @@
+import { Suspense } from 'react';
 import { Header } from '@/components/showcase/Header';
 import { Footer } from '@/components/showcase/Footer';
 import { Chatbox } from '@/components/showcase/Chatbox';
 import { getStarterPacks, getLibraryDocuments } from '@/lib/resources-data';
 import ResourcesPageClient from '@/components/resources/ResourcesPageClient';
-import { getMessages } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
-export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
-  const messages = await getMessages({locale});
-  const t = (key: string) => ((messages.ResourcesPage as any).seo as any)[key] as string;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'ResourcesPage' });
  
   return {
-    title: t('title'),
-    description: t('description')
+    title: t('seo.title'),
+    description: t('seo.description')
   };
 }
 
@@ -24,10 +29,12 @@ export default async function ResourcesPage() {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-grow">
-        <ResourcesPageClient
-          starterPacks={starterPacks}
-          libraryDocs={libraryDocs}
-        />
+        <Suspense fallback={<div className="container mx-auto px-4 py-8 animate-pulse bg-muted/30 min-h-[40vh] rounded-lg" />}>
+          <ResourcesPageClient
+            starterPacks={starterPacks}
+            libraryDocs={libraryDocs}
+          />
+        </Suspense>
       </main>
       <Footer />
       <Chatbox />

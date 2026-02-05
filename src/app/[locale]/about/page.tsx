@@ -6,18 +6,22 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Link } from '@/navigation';
 import { Factory, DraftingCompass, Layers } from 'lucide-react';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Chatbox } from '@/components/showcase/Chatbox';
 
-export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
-  const messages = await getMessages({locale});
-  const t = (key: string) => (messages.AboutPage.seo as any)[key] as string;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const locale = (await params).locale;
+  const t = await getTranslations({ locale, namespace: 'AboutPage' });
  
   return {
-    title: t('metaTitle'),
-    description: t('metaDescription')
+    title: t('seo.metaTitle'),
+    description: t('seo.metaDescription')
   };
 }
 
@@ -46,7 +50,13 @@ const WhatWeMakeCard = ({ title, text, image, imageHint }: { title: string, text
     </Card>
 );
 
-export default async function AboutPage() {
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('AboutPage');
 
   const whyKermitItems = [
@@ -176,9 +186,9 @@ export default async function AboutPage() {
                     <Button asChild size="lg">
                         <Link href="/spc-wall-panels">{t('finalCta.ctaPrimary')}</Link>
                     </Button>
-                    <Button asChild size="lg" variant="outline">
-                        <Link href="/resources?tab=wall_panels">{t('finalCta.ctaSecondary')}</Link>
-                    </Button>
+                            <Button asChild size="lg" variant="outline">
+                                <Link href={{ pathname: '/resources', query: { tab: 'wall_panels' } }}>{t('finalCta.ctaSecondary')}</Link>
+                            </Button>
                 </div>
             </div>
         </section>

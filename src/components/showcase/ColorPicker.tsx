@@ -2,7 +2,7 @@
 'use client';
 
 import Image from 'next/image';
-import type { Panel } from '@/lib/panel-data';
+import type { Panel } from '@/lib/panel-types';
 import {
   Carousel,
   CarouselContent,

@@ -4,16 +4,20 @@ import { Showcase } from '@/components/showcase/Showcase';
 import { Chatbox } from '@/components/showcase/Chatbox';
 import { Footer } from '@/components/showcase/Footer';
 import { getSkirtingAlpha140mm } from '@/lib/skirting-alpha-140-mm-data';
-import { getMessages } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
-export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
-  const messages = await getMessages({locale});
-  const t = (key: string) => ((messages.SkirtingPages as any)['alpha-140-mm'] as any)[key] as string;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'SkirtingPages' });
  
   return {
-    title: t('title'),
-    description: t('description')
+    title: t('alpha-140-mm.title'),
+    description: t('alpha-140-mm.description')
   };
 }
 

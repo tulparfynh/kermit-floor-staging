@@ -1,17 +1,21 @@
 import { Header } from '@/components/showcase/Header';
 import { Footer } from '@/components/showcase/Footer';
 import { Chatbox } from '@/components/showcase/Chatbox';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { Separator } from '@/components/ui/separator';
 
-export async function generateMetadata({params: {locale}}: {params: {locale: string}}) {
-  const messages = await getMessages({locale});
-  const t = (key: string) => ((messages.PrivacyPolicyPage as any).seo as any)[key] as string;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'PrivacyPolicyPage' });
  
   return {
-    title: t('title'),
-    description: t('description')
+    title: t('seo.title'),
+    description: t('seo.description')
   };
 }
 
@@ -34,7 +38,13 @@ const RichTextComponents = {
   h3: (chunks: React.ReactNode) => <h3 className="text-lg font-semibold text-foreground mt-4">{chunks}</h3>,
 };
 
-export default async function PrivacyPolicyPage() {
+export default async function PrivacyPolicyPage({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
     const t = await getTranslations('PrivacyPolicyPage');
     const sections = Array.from({ length: 14 }, (_, i) => i + 1);
 

@@ -15,7 +15,7 @@ const MobileMenu = dynamic(() => import('./MobileMenu').then(mod => mod.MobileMe
 export function Logo() {
   const locale = useLocale();
   return (
-    <Link href={`/`}>
+    <Link href="/">
       <Image
         src="/images/kermit-floor-logo.png"
         alt="Kermit Floor Logo"
@@ -29,16 +29,23 @@ export function Logo() {
 
 export function NavMenu({ isMobile = false }) {
   const pathname = usePathname();
+  const pathnameValue = typeof pathname === 'string' ? pathname : '';
   const t = useTranslations('Header');
   
-  const getResourcesLink = () => {
-    if (pathname.includes('/spc-skirting-boards')) return '/resources?tab=skirting';
-    if (pathname.includes('/spc-parquet') || pathname.includes('/full-natural-collection')) return '/resources?tab=flooring';
-    if (pathname.includes('/spc-wall-panels') || pathname.includes('/spc-3d-wall-panels')) return '/resources?tab=wall_panels';
+  const getResourcesLink = (): Parameters<typeof Link>[0]['href'] => {
+    if (pathnameValue.includes('/spc-skirting-boards')) {
+      return { pathname: '/resources', query: { tab: 'skirting' } };
+    }
+    if (pathnameValue.includes('/spc-parquet') || pathnameValue.includes('/full-natural-collection')) {
+      return { pathname: '/resources', query: { tab: 'flooring' } };
+    }
+    if (pathnameValue.includes('/spc-wall-panels') || pathnameValue.includes('/spc-3d-wall-panels')) {
+      return { pathname: '/resources', query: { tab: 'wall_panels' } };
+    }
     return '/resources';
-  }
+  };
   
-  const navLinks = [
+  const navLinks: { href: Parameters<typeof Link>[0]['href']; label: string }[] = [
     { href: '/', label: t('navHome') },
     { href: '/spc-parquet-natural-collection', label: t('navFloors') },
     { href: '/spc-wall-panels', label: t('navWalls') },
@@ -57,18 +64,24 @@ export function NavMenu({ isMobile = false }) {
     >
       {navLinks.map((link) => {
         let isActive = false;
-        if (link.href === '/') {
-            isActive = pathname === '/';
-        } else if (link.href.includes('spc-skirting-boards')) {
-            isActive = pathname.startsWith('/spc-skirting-boards');
-        } else if (link.href.includes('spc-parquet-natural-collection')) {
-            isActive = pathname.startsWith('/spc-parquet-') || pathname.startsWith('/full-natural-collection');
-        } else if (link.href.includes('spc-wall-panels')) {
-            isActive = pathname.startsWith('/spc-wall-panels') || pathname.startsWith('/spc-3d-wall-panels');
-        } else if (link.href.startsWith('/resources')) {
-            isActive = pathname.startsWith('/resources');
+        const hrefPath =
+          typeof link.href === 'string'
+            ? link.href
+            : typeof link.href === 'object' && link.href !== null && 'pathname' in link.href
+              ? String(link.href.pathname ?? '')
+              : '';
+        if (hrefPath === '/') {
+            isActive = pathnameValue === '/';
+        } else if (hrefPath.includes('spc-skirting-boards')) {
+            isActive = pathnameValue.startsWith('/spc-skirting-boards');
+        } else if (hrefPath.includes('spc-parquet-natural-collection')) {
+            isActive = pathnameValue.startsWith('/spc-parquet-') || pathnameValue.startsWith('/full-natural-collection');
+        } else if (hrefPath.includes('spc-wall-panels')) {
+            isActive = pathnameValue.startsWith('/spc-wall-panels') || pathnameValue.startsWith('/spc-3d-wall-panels');
+        } else if (hrefPath.startsWith('/resources')) {
+            isActive = pathnameValue.startsWith('/resources');
         } else {
-            isActive = pathname.startsWith(link.href);
+            isActive = pathnameValue.startsWith(hrefPath);
         }
         
         return (
@@ -184,10 +197,10 @@ export function Header({ pageType }: HeaderProps) {
           </div>
         </div>
       </header>
-      {pageTitle && (
+      {pageTitle && heroImage && (
         <div className="relative h-48 lg:h-64 w-full">
           <Image
-            src={heroImage || ''}
+            src={heroImage}
             alt="Wall panel texture background"
             fill
             className="object-cover"
