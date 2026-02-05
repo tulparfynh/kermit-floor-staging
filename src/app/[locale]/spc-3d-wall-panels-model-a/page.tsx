@@ -1,5 +1,6 @@
 
 import { Header } from '@/components/showcase/Header';
+import { HeroPreload } from '@/components/showcase/HeroPreload';
 import { Showcase } from '@/components/showcase/Showcase';
 import { Chatbox } from '@/components/showcase/Chatbox';
 import { Footer } from '@/components/showcase/Footer';
@@ -27,13 +28,16 @@ export default async function Spc3dWallPanelsModelAPage() {
   const panels = await get3dPanelsModelA();
 
   return (
-    <main className="min-h-screen flex flex-col bg-background">
-      <Header pageType="spc-3d-wall-panels-model-a" />
+    <>
+      <HeroPreload pageType="spc-3d-wall-panels-model-a" />
+      <main className="min-h-screen flex flex-col bg-background">
+        <Header pageType="spc-3d-wall-panels-model-a" />
       <div className="flex-grow">
         <Showcase initialPanels={panels} collectionType="spc-3d-wall-panels-model-a" />
       </div>
       <Footer />
       <Chatbox />
-    </main>
+      </main>
+    </>
   );
 }

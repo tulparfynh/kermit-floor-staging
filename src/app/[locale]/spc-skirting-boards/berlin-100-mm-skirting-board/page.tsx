@@ -1,5 +1,6 @@
 
 import { Header } from '@/components/showcase/Header';
+import { HeroPreload } from '@/components/showcase/HeroPreload';
 import { Showcase } from '@/components/showcase/Showcase';
 import { Chatbox } from '@/components/showcase/Chatbox';
 import { Footer } from '@/components/showcase/Footer';
@@ -25,14 +26,17 @@ export default async function SkirtingBerlin100mmPage() {
   const panels = await getSkirtingBerlin100mm();
 
   return (
-    <main className="min-h-screen flex flex-col bg-background">
-      <Header pageType="skirting-berlin-100-mm" />
+    <>
+      <HeroPreload pageType="skirting-berlin-100-mm" />
+      <main className="min-h-screen flex flex-col bg-background">
+        <Header pageType="skirting-berlin-100-mm" />
       <div className="flex-grow">
         <Showcase initialPanels={panels} collectionType="skirting-berlin-100-mm" />
       </div>
       <Footer />
       <Chatbox />
-    </main>
+      </main>
+    </>
   );
 }
 

@@ -3,11 +3,13 @@ import * as React from 'react';
 import { Link } from '@/navigation';
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/showcase/Header';
+import { HeroPreload } from '@/components/showcase/HeroPreload';
 import { Footer } from '@/components/showcase/Footer';
 import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { ArrowRight, Factory, DraftingCompass, Layers, ChevronDown, Package, Download, BookOpen, FileText, Wrench, ShieldCheck, Zap, Palette, Instagram } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
+import { HOME_HERO_IMAGE_PATH } from '@/lib/hero-images';
 import { getStarterPacks } from '@/lib/resources-data';
 import type { Resource, Locale } from '@/lib/resources-data';
 import { cn } from '@/lib/utils';
@@ -128,13 +130,15 @@ export default async function Home({
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-background">
-      <Header />
+    <>
+      <HeroPreload />
+      <div className="flex flex-col min-h-screen bg-background">
+        <Header />
       <main className="flex-grow">
         {/* 1. Hero Section */}
         <section className="relative h-[75vh] md:h-[85vh] w-full">
           <Image
-            src="/images/spc-wall-panels/23048-6/application.jpg"
+            src={HOME_HERO_IMAGE_PATH}
             alt="Modern kitchen with elegant SPC wall panels"
             fill
             className="object-cover"
@@ -269,6 +273,7 @@ export default async function Home({
       </main>
       <Footer />
       <Chatbox />
-    </div>
+      </div>
+    </>
   );
 }

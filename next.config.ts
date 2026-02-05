@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
     return [...legacyRedirects];
   },
   images: {
+    loader: 'custom',
+    loaderFile: './src/lib/cloudflare-image-loader.ts',
     minimumCacheTTL: 604800,
     unoptimized: false,
     formats: ['image/avif', 'image/webp'],
