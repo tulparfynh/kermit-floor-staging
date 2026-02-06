@@ -59,6 +59,7 @@
   },
   "devDependencies": {
     "@opennextjs/cloudflare": "^1.16.2",
+    "esbuild": "^0.24.0",
     "@types/node": "^20",
     "@types/react": "^19.2.1",
     "@types/react-dom": "^19.2.1",
