@@ -5,6 +5,7 @@ export const inter = Inter({
   display: 'swap',
   variable: '--font-inter',
   weight: ['400', '500', '700'],
+  preload: true,
 });
 
 export const montserrat = Montserrat({
@@ -12,4 +13,5 @@ export const montserrat = Montserrat({
   display: 'swap',
   variable: '--font-montserrat',
   weight: ['700'],
+  preload: true,
 });

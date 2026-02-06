@@ -1,22 +1,34 @@
-
 import * as React from 'react';
+import dynamic from 'next/dynamic';
 import { Link } from '@/navigation';
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/showcase/Header';
 import { Footer } from '@/components/showcase/Footer';
 import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { ArrowRight, Factory, DraftingCompass, Layers, ChevronDown, Package, Download, BookOpen, FileText, Wrench, ShieldCheck, Zap, Palette, Instagram } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
+import { ArrowRight, Factory, DraftingCompass, Layers, ChevronDown, BookOpen, FileText, Wrench, ShieldCheck, Zap, Palette } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { getStarterPacks } from '@/lib/resources-data';
 import type { Resource, Locale } from '@/lib/resources-data';
-import { cn } from '@/lib/utils';
 import { Separator } from '@/components/ui/separator';
-import { Chatbox } from '@/components/showcase/Chatbox';
 import type { Metadata } from 'next';
 import { getInstagramPosts } from '@/lib/instagram-data';
-import InstagramPostCard from '@/components/showcase/InstagramPostCard';
-import { StarterPackDialog } from '@/components/showcase/StarterPackDialog';
+import type { InstagramPost } from '@/lib/instagram-data';
+
+const Chatbox = dynamic(
+  () => import('@/components/showcase/Chatbox').then((m) => m.Chatbox),
+  { ssr: true }
+);
+
+const HomeInstagramSection = dynamic(
+  () => import('@/components/showcase/HomeInstagramSection').then((m) => m.default),
+  { ssr: true }
+);
+
+const StarterPackDialog = dynamic(
+  () => import('@/components/showcase/StarterPackDialog').then((m) => m.StarterPackDialog),
+  { ssr: true }
+);
 
 export async function generateMetadata({
   params,
@@ -140,6 +152,7 @@ export default async function Home({
             className="object-cover"
             data-ai-hint="modern kitchen wall"
             priority
+            fetchPriority="high"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent" />
@@ -236,22 +249,12 @@ export default async function Home({
           </section>
           
           {/* 6. Instagram ("From Us") Section */}
-          <section className="container mx-auto px-4 text-center">
-             <h2 className="font-headline text-3xl font-bold text-foreground mb-2">{t('instagramTitle')}</h2>
-             <p className="text-muted-foreground mb-10">{t('instagramSubtitle')}</p>
-             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                {instagramPosts.map((post) => (
-                  <InstagramPostCard key={post.id} post={post} />
-                ))}
-             </div>
-             <div className="mt-10">
-                <Button asChild>
-                    <a href="https://www.instagram.com/kermitfloor" target="_blank" rel="noopener noreferrer">
-                       <Instagram className="mr-2 h-5 w-5" /> {t('followInstagram')}
-                    </a>
-                </Button>
-             </div>
-          </section>
+          <HomeInstagramSection
+            posts={instagramPosts}
+            title={t('instagramTitle')}
+            subtitle={t('instagramSubtitle')}
+            followLabel={t('followInstagram')}
+          />
 
         </div>
 

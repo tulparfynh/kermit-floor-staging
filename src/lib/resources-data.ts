@@ -49,8 +49,6 @@ export type Resource = {
 };
 
 export async function getResources(): Promise<Resource[]> {
-  // In a real app, this could fetch from a CMS or database.
-  // Here, we're just returning the imported JSON data.
   return data.resources as Resource[];
 }
 
