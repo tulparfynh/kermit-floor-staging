@@ -2,6 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import cloudflareImageLoader from '@/lib/cloudflare-image-loader';
 import dynamic from 'next/dynamic';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname } from '@/navigation';
@@ -22,6 +23,7 @@ export function Logo() {
         width={140}
         height={48}
         className="object-contain"
+        loader={cloudflareImageLoader}
       />
     </Link>
   );
@@ -207,6 +209,7 @@ export function Header({ pageType }: HeaderProps) {
             data-ai-hint={heroImageHint}
             priority
             sizes="100vw"
+            loader={cloudflareImageLoader}
           />
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
             <h1 className="font-headline text-4xl lg:text-5xl font-bold tracking-tight text-white text-center">
