@@ -15,8 +15,14 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'Metadata' });
  
   return {
+    metadataBase: new URL('https://kermitfloor.com'),
     title: t('title'),
     description: t('description'),
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      url: '/',
+    },
     icons: {
       icon: '/images/icons/favicon.32x32.png',
       apple: '/images/icons/favicon.180x180.png',
