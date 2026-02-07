@@ -8,9 +8,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [...legacyRedirects];
   },
-  images: {
-    unoptimized: true,
-  },
 };
 
 export default withNextIntl(nextConfig);
