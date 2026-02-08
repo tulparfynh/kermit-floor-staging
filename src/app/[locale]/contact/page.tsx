@@ -5,6 +5,7 @@ import ContactPageClient from '@/components/contact/ContactPageClient';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { Chatbox } from '@/components/showcase/Chatbox';
+import { getAlternatesForRoute, getCanonicalForRoute } from '@/lib/seo/canonical';
 
 export async function generateMetadata({
   params,
@@ -16,7 +17,13 @@ export async function generateMetadata({
  
   return {
     title: t('seo.title'),
-    description: t('seo.description')
+    description: t('seo.description'),
+    alternates: getAlternatesForRoute('/contact', locale),
+    openGraph: {
+      title: t('seo.title'),
+      description: t('seo.description'),
+      url: getCanonicalForRoute('/contact', locale),
+    },
   };
 }
 

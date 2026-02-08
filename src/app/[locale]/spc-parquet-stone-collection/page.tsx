@@ -6,6 +6,7 @@ import { Footer } from '@/components/showcase/Footer';
 import { getFloorStone } from '@/lib/floor-stone-data';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
+import { getAlternatesForRoute, getCanonicalForRoute } from '@/lib/seo/canonical';
 
 export async function generateMetadata({
   params,
@@ -17,7 +18,13 @@ export async function generateMetadata({
  
   return {
     title: t('seo.title'),
-    description: t('seo.description')
+    description: t('seo.description'),
+    alternates: getAlternatesForRoute('/spc-parquet-stone-collection', locale),
+    openGraph: {
+      title: t('seo.title'),
+      description: t('seo.description'),
+      url: getCanonicalForRoute('/spc-parquet-stone-collection', locale),
+    },
   };
 }
 

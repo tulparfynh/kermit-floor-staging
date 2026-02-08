@@ -6,6 +6,7 @@ import { Footer } from '@/components/showcase/Footer';
 import { getSkirtingBerlin100mm } from '@/lib/skirting-berlin-100-mm-data';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
+import { getAlternatesForRoute, getCanonicalForRoute } from '@/lib/seo/canonical';
 
 export async function generateMetadata({
   params,
@@ -17,7 +18,13 @@ export async function generateMetadata({
  
   return {
     title: t('berlin-100-mm.title'),
-    description: t('berlin-100-mm.description')
+    description: t('berlin-100-mm.description'),
+    alternates: getAlternatesForRoute('/spc-skirting-boards/berlin-100-mm-skirting-board', locale),
+    openGraph: {
+      title: t('berlin-100-mm.title'),
+      description: t('berlin-100-mm.description'),
+      url: getCanonicalForRoute('/spc-skirting-boards/berlin-100-mm-skirting-board', locale),
+    },
   };
 }
 

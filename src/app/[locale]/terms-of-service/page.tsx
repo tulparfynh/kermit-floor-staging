@@ -4,6 +4,7 @@ import { Chatbox } from '@/components/showcase/Chatbox';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { Separator } from '@/components/ui/separator';
+import { getAlternatesForRoute, getCanonicalForRoute } from '@/lib/seo/canonical';
 
 export async function generateMetadata({
   params,
@@ -15,7 +16,13 @@ export async function generateMetadata({
  
   return {
     title: t('seo.title'),
-    description: t('seo.description')
+    description: t('seo.description'),
+    alternates: getAlternatesForRoute('/terms-of-service', locale),
+    openGraph: {
+      title: t('seo.title'),
+      description: t('seo.description'),
+      url: getCanonicalForRoute('/terms-of-service', locale),
+    },
   };
 }
 

@@ -6,6 +6,7 @@ import { Footer } from '@/components/showcase/Footer';
 import { get3dPanelsModelB } from '@/lib/3d-panel-data-model-b';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
+import { getAlternatesForRoute, getCanonicalForRoute } from '@/lib/seo/canonical';
 
 export async function generateMetadata({
   params,
@@ -17,7 +18,13 @@ export async function generateMetadata({
  
   return {
     title: t('seo.title'),
-    description: t('seo.description')
+    description: t('seo.description'),
+    alternates: getAlternatesForRoute('/spc-3d-wall-panels-model-b', locale),
+    openGraph: {
+      title: t('seo.title'),
+      description: t('seo.description'),
+      url: getCanonicalForRoute('/spc-3d-wall-panels-model-b', locale),
+    },
   };
 }
 

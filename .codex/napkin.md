@@ -20,6 +20,7 @@
 | 2026-02-08 | self | Missed that Cloudflare image quota exhaustion can present as generic 500s | Tail runtime logs and inspect `/_next/image` errors for `IMAGES_TRANSFORM_ERROR` before deeper code rollback |
 | 2026-02-08 | self | Added `export const dynamic` in a file already importing `dynamic` from `next/dynamic`, causing a TS declaration conflict | Alias `next/dynamic` import (e.g., `nextDynamic`) when using route config export `dynamic` |
 | 2026-02-08 | self | Ran `rg` with shell-escaped regex that broke in PowerShell | Prefer simple fixed-string `rg` patterns in PowerShell unless regex is necessary |
+| 2026-02-08 | self | Tried layout-wide canonical default (`./`) and it risked default-locale `/en/...` canonicalization with `as-needed` locale prefix | Prefer page-level canonical for localized routes unless route-aware canonical mapping is implemented |
 
 ## User Preferences
 - Keep responses concise and practical.
@@ -41,6 +42,7 @@
 - Prefers aligning repo worker name to Cloudflare connected-build expectation (`kermit-floor`) to avoid deploy warnings.
 - Wants optional user-provided inputs for blog generation: own images, short article context, and reference sources/style examples.
 - Wants image delivery to use raw/local image paths rather than Next/Cloudflare image optimization.
+- Wants canonical host preference to stay on apex (`kermitfloor.com`) rather than `www`.
 
 ## Patterns That Work
 - Validate assumptions by checking repository files before acting.

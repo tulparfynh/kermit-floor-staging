@@ -16,6 +16,7 @@ import { getInstagramPosts } from '@/lib/instagram-data';
 import type { InstagramPost } from '@/lib/instagram-data';
 import { getPublishedBlogPostsByLocale } from '@/lib/blog/content';
 import BlogCard from '@/components/blog/BlogCard';
+import { getAlternatesForRoute, getCanonicalForRoute } from '@/lib/seo/canonical';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
@@ -45,7 +46,13 @@ export async function generateMetadata({
  
   return {
     title: t('seo.title'),
-    description: t('seo.description')
+    description: t('seo.description'),
+    alternates: getAlternatesForRoute('/', locale),
+    openGraph: {
+      title: t('seo.title'),
+      description: t('seo.description'),
+      url: getCanonicalForRoute('/', locale),
+    },
   };
 }
 

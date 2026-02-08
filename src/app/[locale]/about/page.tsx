@@ -10,18 +10,25 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Chatbox } from '@/components/showcase/Chatbox';
+import { getAlternatesForRoute, getCanonicalForRoute } from '@/lib/seo/canonical';
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
-}) {
+}): Promise<Metadata> {
   const locale = (await params).locale;
   const t = await getTranslations({ locale, namespace: 'AboutPage' });
  
   return {
     title: t('seo.metaTitle'),
-    description: t('seo.metaDescription')
+    description: t('seo.metaDescription'),
+    alternates: getAlternatesForRoute('/about', locale),
+    openGraph: {
+      title: t('seo.metaTitle'),
+      description: t('seo.metaDescription'),
+      url: getCanonicalForRoute('/about', locale),
+    },
   };
 }
 

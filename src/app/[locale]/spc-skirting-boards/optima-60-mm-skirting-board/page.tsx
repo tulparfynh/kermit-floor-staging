@@ -6,6 +6,7 @@ import { Footer } from '@/components/showcase/Footer';
 import { getSkirtingOptima60mm } from '@/lib/skirting-optima-60-mm-data';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
+import { getAlternatesForRoute, getCanonicalForRoute } from '@/lib/seo/canonical';
 
 export async function generateMetadata({
   params,
@@ -17,7 +18,13 @@ export async function generateMetadata({
  
   return {
     title: t('optima-60-mm.title'),
-    description: t('optima-60-mm.description')
+    description: t('optima-60-mm.description'),
+    alternates: getAlternatesForRoute('/spc-skirting-boards/optima-60-mm-skirting-board', locale),
+    openGraph: {
+      title: t('optima-60-mm.title'),
+      description: t('optima-60-mm.description'),
+      url: getCanonicalForRoute('/spc-skirting-boards/optima-60-mm-skirting-board', locale),
+    },
   };
 }
 

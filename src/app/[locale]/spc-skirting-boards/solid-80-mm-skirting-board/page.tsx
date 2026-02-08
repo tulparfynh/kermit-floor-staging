@@ -6,6 +6,7 @@ import { Footer } from '@/components/showcase/Footer';
 import { getSkirtingSolid80mm } from '@/lib/skirting-solid-80-mm-data';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
+import { getAlternatesForRoute, getCanonicalForRoute } from '@/lib/seo/canonical';
 
 export async function generateMetadata({
   params,
@@ -17,7 +18,13 @@ export async function generateMetadata({
  
   return {
     title: t('solid-80-mm.title'),
-    description: t('solid-80-mm.description')
+    description: t('solid-80-mm.description'),
+    alternates: getAlternatesForRoute('/spc-skirting-boards/solid-80-mm-skirting-board', locale),
+    openGraph: {
+      title: t('solid-80-mm.title'),
+      description: t('solid-80-mm.description'),
+      url: getCanonicalForRoute('/spc-skirting-boards/solid-80-mm-skirting-board', locale),
+    },
   };
 }
 

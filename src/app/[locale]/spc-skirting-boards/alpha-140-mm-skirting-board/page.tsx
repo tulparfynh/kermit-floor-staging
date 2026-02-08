@@ -6,6 +6,7 @@ import { Footer } from '@/components/showcase/Footer';
 import { getSkirtingAlpha140mm } from '@/lib/skirting-alpha-140-mm-data';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
+import { getAlternatesForRoute, getCanonicalForRoute } from '@/lib/seo/canonical';
 
 export async function generateMetadata({
   params,
@@ -17,7 +18,13 @@ export async function generateMetadata({
  
   return {
     title: t('alpha-140-mm.title'),
-    description: t('alpha-140-mm.description')
+    description: t('alpha-140-mm.description'),
+    alternates: getAlternatesForRoute('/spc-skirting-boards/alpha-140-mm-skirting-board', locale),
+    openGraph: {
+      title: t('alpha-140-mm.title'),
+      description: t('alpha-140-mm.description'),
+      url: getCanonicalForRoute('/spc-skirting-boards/alpha-140-mm-skirting-board', locale),
+    },
   };
 }
 
