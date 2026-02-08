@@ -58,6 +58,8 @@ Onerilen medya yerlesimi:
 - Use proper Turkish characters in TR output (`ç, ğ, ı, İ, ö, ş, ü`).
 - Use bold emphasis for high-signal terms or decision points only (for example: `**moisture risk**`, `**installation checklist**`).
 - Keep emphasis sparse so highlighted text remains meaningful.
+- If user provides `brief_context`, preserve that angle consistently across both locales.
+- If user provides style/reference articles, follow structure/tone patterns only; do not copy language.
 
 ## Comparison Mode
 

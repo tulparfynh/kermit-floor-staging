@@ -71,3 +71,4 @@ Current skill behavior includes:
 - web image sourcing + filing under `public/images/blog/<topicId>/`
 - optional playable user video placement from repo paths
 - final media confirmation summary before finalizing draft
+- optional user-provided image assets, article context brief, and reference/style source inputs

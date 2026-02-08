@@ -12,6 +12,9 @@
 | 2026-02-08 | user | I answered image support as if "cover image" and "blog images" were the same need | Distinguish cover-image metadata from multiple inline body images and answer separately |
 | 2026-02-08 | self | Repeated bracketed-route read error by using `Get-Content` without literal mode | Always use `Get-Content -LiteralPath` for paths containing `[locale]` or `[tag]` |
 | 2026-02-08 | self | Turkish tag pages could 404 when tag params arrived URL-encoded | Decode tag params before normalization and lookup on tag pages |
+| 2026-02-08 | self | Ran multiple `npm` mutation commands in parallel and caused lockfile/node_modules inconsistency | Run dependency mutation commands sequentially (shared files/state) |
+| 2026-02-08 | self | Used `&&` in Windows PowerShell where it is unsupported | Chain commands with `;` and explicit `$LASTEXITCODE` checks |
+| 2026-02-08 | self | OpenNext Cloudflare runtime may fail with older Workers compatibility date after adapter updates | Keep `wrangler.jsonc` compatibility_date at least `2025-05-05` for FinalizationRegistry support |
 
 ## User Preferences
 - Keep responses concise and practical.
@@ -30,6 +33,8 @@
 - Wants locale-specific tags (EN tags in English, TR tags in Turkish) instead of forced shared tag sets.
 - Wants Turkish articles to use proper Turkish characters instead of ASCII transliteration.
 - Wants blog drafts to use bold emphasis on key words/phrases when it improves clarity.
+- Prefers aligning repo worker name to Cloudflare connected-build expectation (`kermit-floor`) to avoid deploy warnings.
+- Wants optional user-provided inputs for blog generation: own images, short article context, and reference sources/style examples.
 
 ## Patterns That Work
 - Validate assumptions by checking repository files before acting.

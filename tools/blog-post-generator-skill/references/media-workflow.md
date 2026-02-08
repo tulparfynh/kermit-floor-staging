@@ -14,6 +14,9 @@ Do not add images just to hit a number.
 
 ## 2) Discover and Select Web Images
 
+If user provided `image_assets[]`, use those first.
+Only fill remaining media slots with web-sourced images.
+
 For each planned image slot:
 
 1. Define the section purpose (context, step detail, material close-up, comparison visual).
@@ -33,6 +36,8 @@ Naming convention:
 - `<locale>-section-02.webp`
 
 Use locale-specific alt text in body image markdown.
+
+For user-provided repo images, keep original path and do not duplicate unless optimization is required.
 
 ## 4) Insert Images Into MDX
 

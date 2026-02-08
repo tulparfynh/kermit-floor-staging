@@ -45,6 +45,15 @@ Stop immediately with a clear input error if any required input is missing.
     - `repoPath`: repository-relative video path (for example `public/videos/blog/spc-installation-demo.mp4`)
     - `about`: what the video demonstrates
     - `locale`: optional (`en`, `tr`, or `both`; default `both`)
+- `image_assets[]`: user-provided repo images to use in post body and/or cover.
+  - Each item may include:
+    - `repoPath`: repository-relative image path (for example `public/images/blog/custom/spc-kitchen.jpg`)
+    - `about`: what the image shows
+    - `locale`: optional (`en`, `tr`, or `both`; default `both`)
+    - `preferredPlacement`: optional section hint
+- `brief_context`: optional short description of what the article should focus on.
+- `reference_sources[]`: optional URLs or notes the user wants considered for factual direction.
+- `style_reference_articles[]`: optional URLs/articles to emulate for structure/tone (without copying).
 
 ## Output Contract
 
@@ -66,31 +75,33 @@ Use the frontmatter contract in `references/schema.md`.
      - 1050-1300 words: 3-5 inline images
    - Assign each planned image to a specific section purpose (context, process step, comparison visual, detail shot).
 4. Run web research for topical context and image candidate discovery.
-5. Select web images and file them under `public/images/blog/<topicId>/`.
+5. If `image_assets[]` are provided, prioritize those for media planning.
+6. For missing slots, select web images and file them under `public/images/blog/<topicId>/`.
    - Use deterministic filenames (for example `<locale>-section-01.webp`).
    - Track selected image source URLs for traceability.
-6. Build claim candidates and verify product/spec claims using `references/claim-sources.md`.
-7. Draft EN post using the template and SEO rules in `references/writing-templates.md` and `references/seo-rules.md`.
-8. Draft TR post from the same topic plan, optimized for TR keywords and search behavior (not a literal translation).
-9. Insert inline image markdown in both locale bodies using the chosen media plan.
-10. If `video_assets[]` are provided:
+7. Build claim candidates and verify product/spec claims using `references/claim-sources.md`.
+8. Use `brief_context`, `reference_sources[]`, and `style_reference_articles[]` if provided to guide angle/structure.
+9. Draft EN post using the template and SEO rules in `references/writing-templates.md` and `references/seo-rules.md`.
+10. Draft TR post from the same topic plan, optimized for TR keywords and search behavior (not a literal translation).
+11. Insert inline image markdown in both locale bodies using the chosen media plan.
+12. If `video_assets[]` are provided:
    - Verify each `repoPath` exists.
    - Place each video in the most relevant section described by `about`.
    - Insert playable video markdown using the repo path (for example `![Installation demo](<video-path>.mp4)`).
-11. Add internal links/CTAs only when they are genuinely helpful for the reader's next step.
+13. Add internal links/CTAs only when they are genuinely helpful for the reader's next step.
    - Avoid generic bottom "related page" blocks.
    - Use lively, context-specific CTA phrasing tied to the section topic.
-12. Populate `sourceUrls` with:
+14. Populate `sourceUrls` with:
    - product/spec verification repo paths
    - external research URLs
    - selected external image source URLs
-13. Present a final draft media confirmation summary to the user before finalizing:
+15. Present a final draft media confirmation summary to the user before finalizing:
    - image count selected and rationale
    - each image path + placement section + source URL
    - each video repo path + placement section
-14. After user confirmation, write/update both MDX files.
-15. Run `npm run blog:validate`.
-16. Return a report with:
+16. After user confirmation, write/update both MDX files.
+17. Run `npm run blog:validate`.
+18. Return a report with:
    - files created/updated
    - status used
    - research URLs captured
