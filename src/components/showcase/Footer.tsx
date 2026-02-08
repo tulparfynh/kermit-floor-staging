@@ -5,6 +5,7 @@ import { Separator } from '@/components/ui/separator';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { Link } from '@/navigation';
 import { useTranslations } from 'next-intl';
+import { CookieSettingsButton } from '@/components/consent/CookieSettingsButton';
 
 export function Footer() {
   const t = useTranslations('Footer');
@@ -104,6 +105,8 @@ export function Footer() {
                 <Link href="/terms-of-service" className="text-xs hover:text-primary transition-colors">
                     {t('termsOfService')}
                 </Link>
+                <Separator orientation="vertical" className="h-4" />
+                <CookieSettingsButton label={t('cookieSettings')} />
                 </div>
             </div>
             </div>

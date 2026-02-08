@@ -42,6 +42,7 @@ const RichTextComponents = {
   li: (chunks: React.ReactNode) => <li>{chunks}</li>,
   strong: (chunks: React.ReactNode) => <strong className="font-semibold text-foreground">{chunks}</strong>,
   em: (chunks: React.ReactNode) => <em className="italic">{chunks}</em>,
+  code: (chunks: React.ReactNode) => <code className="rounded bg-muted px-1 py-0.5 text-sm">{chunks}</code>,
   h3: (chunks: React.ReactNode) => <h3 className="text-lg font-semibold text-foreground mt-4">{chunks}</h3>,
 };
 

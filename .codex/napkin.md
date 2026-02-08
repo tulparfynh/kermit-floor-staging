@@ -21,6 +21,7 @@
 | 2026-02-08 | self | Added `export const dynamic` in a file already importing `dynamic` from `next/dynamic`, causing a TS declaration conflict | Alias `next/dynamic` import (e.g., `nextDynamic`) when using route config export `dynamic` |
 | 2026-02-08 | self | Ran `rg` with shell-escaped regex that broke in PowerShell | Prefer simple fixed-string `rg` patterns in PowerShell unless regex is necessary |
 | 2026-02-08 | self | Tried layout-wide canonical default (`./`) and it risked default-locale `/en/...` canonicalization with `as-needed` locale prefix | Prefer page-level canonical for localized routes unless route-aware canonical mapping is implemented |
+| 2026-02-08 | self | Added `<code>` tags to localized rich text content without ensuring a corresponding `t.rich` renderer mapping | When introducing new rich-text tags in translations, update page-level rich component mappings first |
 
 ## User Preferences
 - Keep responses concise and practical.
@@ -52,6 +53,7 @@
 - For Cloudflare incidents, probe route groups (`/`, `/about`, `/blog`, `/sitemap.xml`) to isolate failing feature paths quickly.
 - If `wrangler tail` seems "stuck", treat it as active stream mode; trigger requests from another terminal and read emitted logs.
 - For Workers-hosted content pages, compile repo content into a deterministic build artifact instead of reading filesystem at runtime.
+- For `next-intl` rich translations, keep content tags aligned with explicit renderer keys on each page.
 
 ## Patterns That Don't Work
 - Guessing environment behavior without verifying local config/scripts.

@@ -1,4 +1,3 @@
-
 {
   "Metadata": {
     "title": "Kermit Floor | SPC Flooring, Wall Panels & Skirting",
@@ -373,6 +372,7 @@
     "23137-6": "Travertine White Vein"
   },
   "FullNaturalCollectionPanelNames": {
+    "7237": "7237",
     "0004-3": "0004-3",
     "0005-3": "0005-3",
     "1001-3": "1001-3",
@@ -466,7 +466,6 @@
     "6070-6": "6070-6",
     "6079-3": "6079-3",
     "720XL-1": "720XL-1",
-    "7237": "7237",
     "7265-7": "7265-7",
     "7310-14": "7310-14",
     "7310-18": "7310-18",
@@ -497,30 +496,6 @@
     "x-line-100-mm": "X-Line 100mm"
   },
   "SkirtingPanelNames": {
-    "1404031": "1404031",
-    "1405031": "1405031",
-    "1406031": "1406031",
-    "1409031": "1409031",
-    "1410031": "1410031",
-    "1412031": "1412031",
-    "1413031": "1413031",
-    "1415031": "1415031",
-    "1110031": "1110031",
-    "1113031": "1101331",
-    "1104031": "1104031",
-    "1105031": "1105031",
-    "1106031": "1106031",
-    "1109031": "1109031",
-    "1112031": "1112031",
-    "1115031": "1115031",
-    "E1013031": "E1013031",
-    "E1004031": "E1004031",
-    "E1005031": "E1005031",
-    "E1006031": "E1006031",
-    "E1009031": "E1009031",
-    "E1010031": "E1010031",
-    "E1012031": "E1012031",
-    "E1015031": "E1015031",
     "1004031": "1004031",
     "1005031": "1005031",
     "1006031": "1006031",
@@ -529,6 +504,30 @@
     "1012031": "1012031",
     "1013031": "1013031",
     "1015031": "1015031",
+    "1104031": "1104031",
+    "1105031": "1105031",
+    "1106031": "1106031",
+    "1109031": "1109031",
+    "1110031": "1110031",
+    "1112031": "1112031",
+    "1113031": "1101331",
+    "1115031": "1115031",
+    "1404031": "1404031",
+    "1405031": "1405031",
+    "1406031": "1406031",
+    "1409031": "1409031",
+    "1410031": "1410031",
+    "1412031": "1412031",
+    "1413031": "1413031",
+    "1415031": "1415031",
+    "E1013031": "E1013031",
+    "E1004031": "E1004031",
+    "E1005031": "E1005031",
+    "E1006031": "E1006031",
+    "E1009031": "E1009031",
+    "E1010031": "E1010031",
+    "E1012031": "E1012031",
+    "E1015031": "E1015031",
     "0604031": "0604031",
     "0605031": "0605031",
     "0606031": "0606031",
@@ -677,7 +676,8 @@
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "phone": "+90 262 658 97 29",
-    "email": "info@kermit.com.tr"
+    "email": "info@kermit.com.tr",
+    "cookieSettings": "Cookie Settings"
   },
   "PrivacyPolicyPage": {
     "seo": {
@@ -685,7 +685,7 @@
       "description": "Learn how Kermit Floor collects, uses, and protects your personal data."
     },
     "title": "Privacy Policy",
-    "lastUpdated": "Last updated: 25 January 2026",
+    "lastUpdated": "Last updated: 8 February 2026",
     "section1": {
       "title": "1. Who we are (Data Controller)",
       "content": "<p>This website (“Site”) is operated by Kermit Plastik Sanayi ve Ticaret Anonim Şirketi (“Kermit Floor”, “we”, “us”).</p><ul><li><strong>Data Controller (KVKK):</strong> Kermit Plastik Sanayi ve Ticaret Anonim Şirketi</li><li><strong>Address:</strong> Cumhuriyet Mh. Cihan Sk. No:4 ÇAYIROVA / KOCAELİ - TÜRKİYE</li><li><strong>Contact (privacy):</strong> info@kermit.com.tr</li><li><strong>Phone:</strong> +90 262 658 97 29</li></ul>"
@@ -716,7 +716,7 @@
     },
     "section8": {
       "title": "8. Cookies and similar technologies",
-      "content": "<p>We use cookies and similar technologies to:</p><ul><li>keep the Site functional,</li><li>measure usage and improve performance,</li><li>remember preferences (if enabled),</li><li>enable embedded content (e.g., social media).</li></ul><p><strong>Cookie choices:</strong> Where legally required, we present a cookie banner allowing you to accept/reject non-essential cookies. You can also manage cookies via browser settings.</p><p><em>(Optional table—populate with your actual tools)</em></p><ul><li><strong>Essential cookies:</strong> required for basic functions</li><li><strong>Analytics cookies:</strong> [e.g., Google Analytics] (consent-based where required)</li><li><strong>Marketing cookies:</strong> [if any] (consent-based)</li></ul>"
+      "content": "<p>We use cookies and similar technologies to keep the Site functional and, with your permission, to measure usage and improve performance.</p><p><strong>Consent-based analytics:</strong> We use Google Analytics 4 (GA4) only after you explicitly accept analytics cookies via our cookie banner. If you reject analytics cookies, GA4 is not activated for your visit.</p><p>You can change your choice at any time by opening <strong>Cookie Settings</strong> from the footer.</p><ul><li><strong>Essential cookies:</strong> required for basic functions and security.</li><li><strong>Analytics cookies (GA4):</strong> enabled only when consent is granted.</li></ul><p><strong>Consent record:</strong> We store your cookie choice in a first-party cookie named <code>kf_consent_v1</code> so your preference can be remembered.</p>"
     },
     "section9": {
       "title": "9. Data retention",
@@ -806,5 +806,20 @@
       "title": "14. Contact",
       "content": "<ul><li>Kermit Plastik Sanayi ve Ticaret Anonim Şirketi</li><li>Cumhuriyet Mh. Cihan Sk. No:4 ÇAYIROVA / KOCAELİ - TÜRKİYE</li><li>info@kermit.com.tr</li></ul>"
     }
+  },
+  "ConsentBanner": {
+    "title": "Your privacy choices",
+    "description": "We use analytics cookies (Google Analytics 4) to understand site usage and improve performance. You can accept or reject analytics cookies.",
+    "accept": "Accept analytics",
+    "reject": "Reject analytics",
+    "manage": "Manage preferences",
+    "privacyLink": "Privacy Policy",
+    "preferencesTitle": "Cookie preferences",
+    "preferencesDescription": "Manage your analytics cookie choice below. Essential cookies remain active for basic site functionality.",
+    "analyticsTitle": "Analytics cookies (Google Analytics 4)",
+    "analyticsDescription": "Used to measure usage and improve site performance. Enabled only with your consent.",
+    "statusAccepted": "Current status: Analytics enabled",
+    "statusRejected": "Current status: Analytics disabled",
+    "statusUnset": "Current status: No choice saved yet"
   }
 }

@@ -1,4 +1,3 @@
-
 {
   "Metadata": {
     "title": "Kermit Floor | SPC Parke, Duvar Paneli ve Süpürgelik",
@@ -373,6 +372,7 @@
     "23137-6": "Travertine White Vein"
   },
   "FullNaturalCollectionPanelNames": {
+    "7237": "7237",
     "0004-3": "0004-3",
     "0005-3": "0005-3",
     "1001-3": "1001-3",
@@ -466,7 +466,6 @@
     "6070-6": "6070-6",
     "6079-3": "6079-3",
     "720XL-1": "720XL-1",
-    "7237": "7237",
     "7265-7": "7265-7",
     "7310-14": "7310-14",
     "7310-18": "7310-18",
@@ -497,30 +496,6 @@
     "x-line-100-mm": "X-Line 100mm"
   },
   "SkirtingPanelNames": {
-    "1404031": "1404031",
-    "1405031": "1405031",
-    "1406031": "1406031",
-    "1409031": "1409031",
-    "1410031": "1410031",
-    "1412031": "1412031",
-    "1413031": "1413031",
-    "1415031": "1415031",
-    "1110031": "1110031",
-    "1113031": "1113031",
-    "1104031": "1104031",
-    "1105031": "1105031",
-    "1106031": "1106031",
-    "1109031": "1109031",
-    "1112031": "1112031",
-    "1115031": "1115031",
-    "E1013031": "E1013031",
-    "E1004031": "E1004031",
-    "E1005031": "E1005031",
-    "E1006031": "E1006031",
-    "E1009031": "E1009031",
-    "E1010031": "E1010031",
-    "E1012031": "E1012031",
-    "E1015031": "E1015031",
     "1004031": "1004031",
     "1005031": "1005031",
     "1006031": "1006031",
@@ -529,6 +504,30 @@
     "1012031": "1012031",
     "1013031": "1013031",
     "1015031": "1015031",
+    "1104031": "1104031",
+    "1105031": "1105031",
+    "1106031": "1106031",
+    "1109031": "1109031",
+    "1110031": "1110031",
+    "1112031": "1112031",
+    "1113031": "1113031",
+    "1115031": "1115031",
+    "1404031": "1404031",
+    "1405031": "1405031",
+    "1406031": "1406031",
+    "1409031": "1409031",
+    "1410031": "1410031",
+    "1412031": "1412031",
+    "1413031": "1413031",
+    "1415031": "1415031",
+    "E1013031": "E1013031",
+    "E1004031": "E1004031",
+    "E1005031": "E1005031",
+    "E1006031": "E1006031",
+    "E1009031": "E1009031",
+    "E1010031": "E1010031",
+    "E1012031": "E1012031",
+    "E1015031": "E1015031",
     "0604031": "0604031",
     "0605031": "0605031",
     "0606031": "0606031",
@@ -677,7 +676,8 @@
     "privacyPolicy": "Gizlilik Politikası",
     "termsOfService": "Hizmet Şartları",
     "phone": "+90 262 658 97 29",
-    "email": "info@kermit.com.tr"
+    "email": "info@kermit.com.tr",
+    "cookieSettings": "?erez Ayarlar?"
   },
   "PrivacyPolicyPage": {
     "seo": {
@@ -685,7 +685,7 @@
       "description": "Kermit Floor'un kişisel verilerinizi nasıl topladığını, kullandığını ve koruduğunu öğrenin."
     },
     "title": "Gizlilik Politikası",
-    "lastUpdated": "Son güncelleme: 25 Ocak 2026",
+    "lastUpdated": "Son g?ncelleme: 8 ?ubat 2026",
     "section1": {
       "title": "1. Biz kimiz (Veri Sorumlusu)",
       "content": "<p>Bu web sitesi (“Site”), Kermit Plastik Sanayi ve Ticaret Anonim Şirketi (“Kermit Floor”, “biz”) tarafından işletilmektedir.</p><ul><li><strong>Veri Sorumlusu (KVKK):</strong> Kermit Plastik Sanayi ve Ticaret Anonim Şirketi</li><li><strong>Adres:</strong> Cumhuriyet Mh. Cihan Sk. No:4 ÇAYIROVA / KOCAELİ - TÜRKİYE</li><li><strong>İletişim (gizlilik):</strong> info@kermit.com.tr</li><li><strong>Telefon:</strong> +90 262 658 97 29</li></ul>"
@@ -716,7 +716,7 @@
     },
     "section8": {
       "title": "8. Çerezler ve benzer teknolojiler",
-      "content": "<p>Çerezleri ve benzer teknolojileri şu amaçlarla kullanırız:</p><ul><li>Site'yi işlevsel tutmak,</li><li>Kullanımı ölçmek ve performansı artırmak,</li><li>Tercihleri hatırlamak (etkinleştirilmişse),</li><li>Gömülü içeriği etkinleştirmek (ör. sosyal medya).</li></ul><p><strong>Çerez tercihleri:</strong> Yasal olarak gerekli olduğunda, zorunlu olmayan çerezleri kabul etmenize/reddetmenize olanak tanıyan bir çerez başlığı sunarız. Çerezleri tarayıcı ayarlarından da yönetebilirsiniz.</p><p><em>(İsteğe bağlı tablo—gerçek araçlarınızla doldurun)</em></p><ul><li><strong>Zorunlu çerezler:</strong> temel işlevler için gereklidir</li><li><strong>Analitik çerezleri:</strong> [ör. Google Analytics] (gerektiğinde rıza tabanlı)</li><li><strong>Pazarlama çerezleri:</strong> [varsa] (rıza tabanlı)</li></ul>"
+      "content": "<p>?erezleri ve benzer teknolojileri Siteyi ?al???r durumda tutmak ve izin vermeniz halinde kullan?m ?l??m? ile performans iyile?tirmesi yapmak i?in kullan?r?z.</p><p><strong>R?zaya ba?l? analitik:</strong> Google Analytics 4 (GA4) yaln?zca ?erez banner? ?zerinden analitik ?erezleri a??k?a kabul etti?inizde etkinle?tirilir. Analitik ?erezleri reddederseniz GA4 ziyaretiniz i?in ?al??maz.</p><p>Tercihinizi istedi?iniz zaman footer alan?ndaki <strong>?erez Ayarlar?</strong> ba?lant?s?ndan de?i?tirebilirsiniz.</p><ul><li><strong>Zorunlu ?erezler:</strong> temel i?levler ve g?venlik i?in gereklidir.</li><li><strong>Analitik ?erezleri (GA4):</strong> yaln?zca r?za verildi?inde etkin olur.</li></ul><p><strong>R?za kayd?:</strong> ?erez tercihinizi hat?rlamak i?in <code>kf_consent_v1</code> adl? birinci taraf ?erez kullan?r?z.</p>"
     },
     "section9": {
       "title": "9. Veri saklama",
@@ -806,5 +806,20 @@
       "title": "14. İletişim",
       "content": "<ul><li><strong>Unvan:</strong> Kermit Plastik Sanayi ve Ticaret Anonim Şirketi</li><li><strong>Adres:</strong> Cumhuriyet Mh. Cihan Sk. No:4 ÇAYIROVA / KOCAELİ - TÜRKİYE</li><li><strong>E-posta:</strong> info@kermit.com.tr</li></ul>"
     }
+  },
+  "ConsentBanner": {
+    "title": "Gizlilik tercihlerinizi belirleyin",
+    "description": "Site kullan?m?n? anlamak ve performans? iyile?tirmek i?in analitik ?erezler (Google Analytics 4) kullan?r?z. Analitik ?erezleri kabul edebilir veya reddedebilirsiniz.",
+    "accept": "Analiti?i kabul et",
+    "reject": "Analiti?i reddet",
+    "manage": "Tercihleri y?net",
+    "privacyLink": "Gizlilik Politikas?",
+    "preferencesTitle": "?erez tercihleri",
+    "preferencesDescription": "Analitik ?erez tercihinizi a?a??dan y?netin. Zorunlu ?erezler temel site i?levleri i?in aktif kal?r.",
+    "analyticsTitle": "Analitik ?erezleri (Google Analytics 4)",
+    "analyticsDescription": "Kullan?m ?l??m? ve performans iyile?tirmesi i?in kullan?l?r. Yaln?zca izninizle etkinle?ir.",
+    "statusAccepted": "G?ncel durum: Analitik a??k",
+    "statusRejected": "G?ncel durum: Analitik kapal?",
+    "statusUnset": "G?ncel durum: Hen?z bir tercih kaydedilmedi"
   }
 }
