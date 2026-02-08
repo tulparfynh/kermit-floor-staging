@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import {getMessages, getTranslations, setRequestLocale} from 'next-intl/server';
 import {NextIntlClientProvider} from 'next-intl';
 import { inter, montserrat } from '@/app/fonts';
+
+const DEFAULT_GA_ID = 'G-W9FZMTQP1H';
  
 export async function generateMetadata({
   params,
@@ -44,7 +46,7 @@ export default async function RootLayout({
   const { locale } = await params;
   setRequestLocale(locale);
   const messages = await getMessages({ locale });
-  const gaId = process.env.NEXT_PUBLIC_GA_ID?.trim();
+  const gaId = process.env.NEXT_PUBLIC_GA_ID?.trim() || DEFAULT_GA_ID;
   return (
     <html lang={locale} className={`${inter.variable} ${montserrat.variable} scroll-smooth`}>
       <head>

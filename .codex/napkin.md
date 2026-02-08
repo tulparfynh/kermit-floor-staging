@@ -43,6 +43,7 @@
 - Wants optional user-provided inputs for blog generation: own images, short article context, and reference sources/style examples.
 - Wants image delivery to use raw/local image paths rather than Next/Cloudflare image optimization.
 - Wants canonical host preference to stay on apex (`kermitfloor.com`) rather than `www`.
+- Wants Google Analytics configured with measurement ID `G-W9FZMTQP1H`.
 
 ## Patterns That Work
 - Validate assumptions by checking repository files before acting.
