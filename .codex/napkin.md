@@ -15,6 +15,7 @@
 | 2026-02-08 | self | Ran multiple `npm` mutation commands in parallel and caused lockfile/node_modules inconsistency | Run dependency mutation commands sequentially (shared files/state) |
 | 2026-02-08 | self | Used `&&` in Windows PowerShell where it is unsupported | Chain commands with `;` and explicit `$LASTEXITCODE` checks |
 | 2026-02-08 | self | OpenNext Cloudflare runtime may fail with older Workers compatibility date after adapter updates | Keep `wrangler.jsonc` compatibility_date at least `2025-05-05` for FinalizationRegistry support |
+| 2026-02-08 | self | Cloudflare build logs can be fully green while runtime still returns 500 | Treat build logs and runtime logs separately; reproduce with live probes and tail runtime errors |
 
 ## User Preferences
 - Keep responses concise and practical.
