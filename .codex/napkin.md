@@ -16,6 +16,8 @@
 | 2026-02-08 | self | Used `&&` in Windows PowerShell where it is unsupported | Chain commands with `;` and explicit `$LASTEXITCODE` checks |
 | 2026-02-08 | self | OpenNext Cloudflare runtime may fail with older Workers compatibility date after adapter updates | Keep `wrangler.jsonc` compatibility_date at least `2025-05-05` for FinalizationRegistry support |
 | 2026-02-08 | self | Cloudflare build logs can be fully green while runtime still returns 500 | Treat build logs and runtime logs separately; reproduce with live probes and tail runtime errors |
+| 2026-02-08 | self | Assumed dependency warnings were primary cause of runtime 500 | Prioritize route-level runtime pattern checks (which URLs fail) before attributing outages to package warnings |
+| 2026-02-08 | self | Missed that Cloudflare image quota exhaustion can present as generic 500s | Tail runtime logs and inspect `/_next/image` errors for `IMAGES_TRANSFORM_ERROR` before deeper code rollback |
 
 ## User Preferences
 - Keep responses concise and practical.
@@ -36,16 +38,22 @@
 - Wants blog drafts to use bold emphasis on key words/phrases when it improves clarity.
 - Prefers aligning repo worker name to Cloudflare connected-build expectation (`kermit-floor`) to avoid deploy warnings.
 - Wants optional user-provided inputs for blog generation: own images, short article context, and reference sources/style examples.
+- Wants image delivery to use raw/local image paths rather than Next/Cloudflare image optimization.
 
 ## Patterns That Work
 - Validate assumptions by checking repository files before acting.
 - For this repo, favor static-first features that fit Next.js + Cloudflare/OpenNext deployment.
 - Run `npm.cmd run blog:validate` + `npm.cmd run typecheck` before full build to catch schema/typing issues early.
+- For Cloudflare incidents, probe route groups (`/`, `/about`, `/blog`, `/sitemap.xml`) to isolate failing feature paths quickly.
+- If `wrangler tail` seems "stuck", treat it as active stream mode; trigger requests from another terminal and read emitted logs.
 
 ## Patterns That Don't Work
 - Guessing environment behavior without verifying local config/scripts.
+- Treating successful build logs as proof of runtime health on Workers.
 
 ## Domain Notes
 - Deploy target is Cloudflare Workers using OpenNext.
 - Product scope: SPC flooring, wall panels, and skirting boards.
 - Seed blog posts are placeholders and expected to be replaced by editorial content later.
+- A route can fail on Workers runtime while unrelated routes stay healthy; this often points to feature-specific runtime dependencies.
+- Cloudflare Images free unique transformation limits can trigger `IMAGES_TRANSFORM_ERROR 9422` for `/_next/image` requests.

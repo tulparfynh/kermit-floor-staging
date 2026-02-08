@@ -1,6 +1,5 @@
 import {cache} from 'react';
 import path from 'node:path';
-import {readdir, readFile} from 'node:fs/promises';
 import matter from 'gray-matter';
 import MarkdownIt from 'markdown-it';
 import {z} from 'zod';
@@ -16,7 +15,27 @@ import {
   type BlogTagIndex,
 } from './types';
 
-const BLOG_TOPICS_ROOT = path.join(process.cwd(), 'content', 'blog', 'topics');
+type FsPromisesModule = typeof import('node:fs/promises');
+
+let fsPromisesModulePromise: Promise<FsPromisesModule | null> | null = null;
+
+function getBlogTopicsRoot(): string {
+  const cwd =
+    typeof process !== 'undefined' && typeof process.cwd === 'function'
+      ? process.cwd()
+      : '.';
+  return path.join(cwd, 'content', 'blog', 'topics');
+}
+
+async function getFsPromisesModule(): Promise<FsPromisesModule | null> {
+  if (!fsPromisesModulePromise) {
+    fsPromisesModulePromise = import('node:fs/promises').catch((error: unknown) => {
+      console.error('Unable to load node:fs/promises for blog content.', error);
+      return null;
+    });
+  }
+  return fsPromisesModulePromise;
+}
 
 const markdown = new MarkdownIt({
   html: false,
@@ -112,8 +131,13 @@ function sortPostsDescending(posts: BlogPost[]): BlogPost[] {
 }
 
 async function readTopicDirectories(): Promise<string[]> {
+  const fsPromises = await getFsPromisesModule();
+  if (!fsPromises) {
+    return [];
+  }
+
   try {
-    const entries = await readdir(BLOG_TOPICS_ROOT, {withFileTypes: true});
+    const entries = await fsPromises.readdir(getBlogTopicsRoot(), {withFileTypes: true});
     return entries
       .filter((entry) => entry.isDirectory())
       .map((entry) => entry.name)
@@ -128,8 +152,13 @@ async function readTopicDirectories(): Promise<string[]> {
 }
 
 async function parseTopicLocaleFile(topicId: string, locale: BlogLocale): Promise<BlogPost> {
-  const filePath = path.join(BLOG_TOPICS_ROOT, topicId, `${locale}.mdx`);
-  const raw = await readFile(filePath, 'utf8');
+  const fsPromises = await getFsPromisesModule();
+  if (!fsPromises) {
+    throw new Error('Blog filesystem access is unavailable in this runtime.');
+  }
+
+  const filePath = path.join(getBlogTopicsRoot(), topicId, `${locale}.mdx`);
+  const raw = await fsPromises.readFile(filePath, 'utf8');
   const parsed = matter(raw);
   const frontmatter = frontmatterSchema.parse(parsed.data);
 
@@ -166,22 +195,29 @@ async function parseTopicLocaleFile(topicId: string, locale: BlogLocale): Promis
 }
 
 const loadAllBlogPostPairs = cache(async (): Promise<BlogPostPair[]> => {
-  const topicIds = await readTopicDirectories();
-  const pairs: BlogPostPair[] = [];
+  try {
+    const topicIds = await readTopicDirectories();
+    const pairs: BlogPostPair[] = [];
 
-  for (const topicId of topicIds) {
-    const [en, tr] = await Promise.all([
-      parseTopicLocaleFile(topicId, 'en'),
-      parseTopicLocaleFile(topicId, 'tr'),
-    ]);
-    pairs.push({topicId, en, tr});
+    for (const topicId of topicIds) {
+      const [en, tr] = await Promise.all([
+        parseTopicLocaleFile(topicId, 'en'),
+        parseTopicLocaleFile(topicId, 'tr'),
+      ]);
+      pairs.push({topicId, en, tr});
+    }
+
+    return pairs.sort((a, b) => {
+      const aNewest = Math.max(a.en.publishedAtDate.getTime(), a.tr.publishedAtDate.getTime());
+      const bNewest = Math.max(b.en.publishedAtDate.getTime(), b.tr.publishedAtDate.getTime());
+      return bNewest - aNewest;
+    });
+  } catch (error) {
+    // Cloudflare Workers runtime can reject filesystem reads used by repo-managed blog content.
+    // Fail safely to avoid site-wide 500 responses on pages that list blog content.
+    console.error('Blog content loading failed; returning an empty dataset.', error);
+    return [];
   }
-
-  return pairs.sort((a, b) => {
-    const aNewest = Math.max(a.en.publishedAtDate.getTime(), a.tr.publishedAtDate.getTime());
-    const bNewest = Math.max(b.en.publishedAtDate.getTime(), b.tr.publishedAtDate.getTime());
-    return bNewest - aNewest;
-  });
 });
 
 export async function getAllBlogPostPairs(): Promise<BlogPostPair[]> {
