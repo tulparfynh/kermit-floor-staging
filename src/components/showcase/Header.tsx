@@ -107,9 +107,10 @@ export function NavMenu({ isMobile = false }) {
 
 type HeaderProps = {
   pageType?: 'spc-wall-panels' | 'spc-3d-wall-panels-model-a' | 'spc-3d-wall-panels-model-b' | 'spc-parquet-natural-collection' | 'spc-parquet-stone-collection' | 'full-natural-collection' | 'skirting-alpha-140-mm' | 'skirting-berlin-100-mm' | 'skirting-elite-100-mm' | 'skirting-moderna-100-mm' | 'skirting-optima-60-mm' | 'skirting-optima-90-mm' | 'skirting-solid-80-mm' | 'skirting-x-line-100-mm';
+  languageSwitcherHrefs?: Partial<Record<'en' | 'tr', string>>;
 }
 
-export function Header({ pageType }: HeaderProps) {
+export function Header({ pageType, languageSwitcherHrefs }: HeaderProps) {
   const t = useTranslations('Header');
   
   let pageTitle;
@@ -187,12 +188,12 @@ export function Header({ pageType }: HeaderProps) {
             <div className="flex-1 flex justify-end items-center gap-4">
                 <NavMenu />
                 <div className="hidden md:flex">
-                    <LanguageSwitcher />
+                    <LanguageSwitcher alternateHrefs={languageSwitcherHrefs} />
                 </div>
             </div>
 
             <div className="md:hidden flex flex-1 justify-end">
-              <MobileMenu />
+              <MobileMenu languageSwitcherHrefs={languageSwitcherHrefs} />
             </div>
           </div>
         </div>

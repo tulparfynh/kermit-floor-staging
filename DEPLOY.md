@@ -30,13 +30,3 @@ OpenNext may hit permission or spawn errors on Windows. Prefer **WSL** or **Clou
 ### Content updates
 
 Product and resource pages are **statically generated at build time**. Changes to product lists (e.g. `public/images/*/products.json`) or to the resources library require a **new build and deploy** to appear on the site. There is no ISR or on-demand revalidation on Cloudflare for this app.
-
-### Optional: Firebase / standalone Node
-
-For Firebase App Hosting or running the app as a Node server, use the standalone build:
-
-```bash
-npm run build:standalone
-```
-
-Then start with `npm run start` (requires the standalone output).

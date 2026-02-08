@@ -19,6 +19,7 @@ export function Footer() {
       { href: '/resources', label: t('supportCatalogue') },
       { href: '/resources', label: t('supportInstallation') },
       { href: '/resources', label: t('supportTechnical') },
+      { href: '/blog', label: t('supportBlog') },
     ];
 
     const phoneRaw = t('phone').replace(/[^0-9+]/g, '');

@@ -35,13 +35,22 @@ const languages = [
     { code: 'tr', name: 'Türkçe', flag: <TRFlag /> },
 ];
 
-export function LanguageSwitcher() {
+type LanguageSwitcherProps = {
+  alternateHrefs?: Partial<Record<'en' | 'tr', string>>;
+};
+
+export function LanguageSwitcher({ alternateHrefs }: LanguageSwitcherProps) {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
 
   const handleLanguageChange = (newLocale: string) => {
-    router.replace(pathname, {locale: newLocale});
+    const overrideHref = alternateHrefs?.[newLocale as 'en' | 'tr'];
+    if (overrideHref) {
+      router.replace(overrideHref as any, { locale: newLocale });
+      return;
+    }
+    router.replace(pathname as any, {locale: newLocale});
   };
 
   const currentLanguage = languages.find(lang => lang.code === locale);

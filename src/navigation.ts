@@ -14,6 +14,18 @@ export const pathnames = {
     en: '/resources',
     tr: '/kaynaklar'
   },
+  '/blog': {
+    en: '/blog',
+    tr: '/blog'
+  },
+  '/blog/[slug]': {
+    en: '/blog/[slug]',
+    tr: '/blog/[slug]'
+  },
+  '/blog/tag/[tag]': {
+    en: '/blog/tag/[tag]',
+    tr: '/blog/tag/[tag]'
+  },
   '/about': {
     en: '/about',
     tr: '/hakkimizda'

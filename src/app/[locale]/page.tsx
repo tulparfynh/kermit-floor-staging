@@ -14,6 +14,8 @@ import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
 import { getInstagramPosts } from '@/lib/instagram-data';
 import type { InstagramPost } from '@/lib/instagram-data';
+import { getPublishedBlogPostsByLocale } from '@/lib/blog/content';
+import BlogCard from '@/components/blog/BlogCard';
 
 const Chatbox = dynamic(
   () => import('@/components/showcase/Chatbox').then((m) => m.Chatbox),
@@ -114,6 +116,7 @@ export default async function Home({
   const t = await getTranslations('HomePage');
   const starterPacks = await getStarterPacks();
   const instagramPosts = getInstagramPosts();
+  const latestBlogPosts = (await getPublishedBlogPostsByLocale(locale)).slice(0, 3);
 
   const productLines: {
     name: string;
@@ -228,9 +231,27 @@ export default async function Home({
           {/* 4. News Section */}
           <section className="container mx-auto px-4 text-center">
             <h2 className="font-headline text-3xl font-bold text-foreground mb-4">{t('newsTitle')}</h2>
-            <div className="bg-muted/50 rounded-lg py-16">
-              <p className="text-muted-foreground font-semibold">{t('comingSoon')}</p>
-            </div>
+            {latestBlogPosts.length > 0 ? (
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 text-left">
+                  {latestBlogPosts.map((post) => (
+                    <BlogCard key={`${post.locale}-${post.slug}`} post={post} locale={locale} />
+                  ))}
+                </div>
+                <div className="mt-8">
+                  <Button asChild size="lg" variant="outline">
+                    <Link href="/blog">
+                      {locale === 'tr' ? 'Tum yazilari gor' : 'View all posts'}
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
+                </div>
+              </>
+            ) : (
+              <div className="bg-muted/50 rounded-lg py-16">
+                <p className="text-muted-foreground font-semibold">{t('comingSoon')}</p>
+              </div>
+            )}
           </section>
 
           {/* 5. Resources Teaser */}

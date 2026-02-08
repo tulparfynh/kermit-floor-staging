@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bilingual Blog Generator"
+  short_description: "Generate paired EN/TR SEO blog posts with claim checks."
+  default_prompt: "Use $blog-post-generator to create a bilingual EN/TR blog topic with auto-planned inline images, optional user video placement, and validated frontmatter."

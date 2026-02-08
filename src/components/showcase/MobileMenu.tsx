@@ -9,7 +9,11 @@ import { Link } from '@/navigation';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { Separator } from '../ui/separator';
 
-export function MobileMenu() {
+type MobileMenuProps = {
+  languageSwitcherHrefs?: Partial<Record<'en' | 'tr', string>>;
+};
+
+export function MobileMenu({ languageSwitcherHrefs }: MobileMenuProps) {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -37,7 +41,7 @@ export function MobileMenu() {
           </div>
           <Separator />
           <div className="p-6">
-            <LanguageSwitcher />
+            <LanguageSwitcher alternateHrefs={languageSwitcherHrefs} />
           </div>
         </div>
       </SheetContent>

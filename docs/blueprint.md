@@ -1,18 +1,52 @@
-# **App Name**: Kermit Wall Panel Showcase
+# App Name: Kermit Floor Corporate Website
 
-## Core Features:
+## Product Purpose
 
-- Panel Specs Display: Display panel specifications accurately as outlined (4mm thickness, 960x2800mm size, Waterproof, Anti-Bacterial).
-- Image Gallery: Implement an image gallery to showcase the panels in various settings, as displayed at www.kermitfloor.com/spc-wall-panels/.
-- Material Information: Present material information including SPC (Stone Polymer Composite) details.
-- Inquiry Form: Allow users to send an inquiry with name, email, and message about specific panels. Form submissions trigger an email to the administrators.
+- Present Kermit Floor as a manufacturer of a complete SPC interior finishing system.
+- Showcase three connected product families: SPC flooring, SPC wall panels (including 3D), and SPC skirting boards.
+- Convert website traffic into commercial conversations via contact channels (phone, email, WhatsApp).
+- Provide practical technical and marketing resources for installers, dealers, architects, and project buyers.
 
-## Style Guidelines:
+## Core Experiences
 
-- Primary color: Soft green (#89ad8c) to connect the design to nature, flooring, and the company's pre-existing branding; creates a sense of tranquility.
-- Background color: Light grey (#f0f2f0) provides a modern, neutral backdrop that allows the product images and content to stand out, while maintaining a sense of sophistication.
-- Accent color: Forest green (#2d422f) offers contrast for call-to-action elements and highlights important details.
-- Header font: 'Montserrat' sans-serif for headers to bring clarity.
-- Body font: 'Inter' sans-serif for body text provides optimal readability.
-- Use a grid layout similar to the reference website to display product details and images effectively.
-- Crisp, modern icons for panel features to reflect functionality at a glance.
+- Home: brand positioning, product family overview, starter pack request entry points, social proof, and contact CTA.
+- Product collections: rich catalog browsing with variant-level visuals, specs, feature highlights, and application videos.
+- Resources: downloadable catalogs and technical documents grouped by product line and document type, plus starter packs by audience.
+- About: company story, manufacturing mindset, system approach, footprint, and sustainability positioning.
+- Contact: multi-location company contact details and map embed for direct outreach.
+- Legal: localized privacy policy and terms pages.
+
+## Information Architecture
+
+- Bilingual structure: English and Turkish with localized paths.
+- Product taxonomy:
+  - Flooring: natural collection, stone collection, full natural range.
+  - Walls: SPC wall panels, 3D model A, 3D model B.
+  - Skirting: multiple profile families under dedicated routes.
+- Data model is asset-driven: product variants are sourced from collection manifests and image folders.
+- Legacy URL mapping is preserved through permanent redirects for migration continuity and SEO protection.
+
+## UX and Design Direction
+
+- Visual identity: clean industrial-modern look with nature-linked greens and light neutral surfaces.
+- Brand palette:
+  - Primary: forest green `#2d422f`
+  - Secondary: soft green `#89ad8c`
+  - Background: light grey `#f0f2f0`
+- Typography:
+  - Headings: Montserrat
+  - Body: Inter
+- Experience style: image-led cards, clear specs, lightweight motion, strong CTA clarity, and mobile-first usability.
+
+## Functional Principles
+
+- Informational and lead-generation focused (not ecommerce).
+- Deployment target is Cloudflare Workers; OpenNext is the adapter layer that enables reliable Next.js runtime/build output on Cloudflare.
+- Static-first product content for fast delivery, aligned with the Cloudflare + OpenNext deployment model.
+- Contact-first conversions: email, phone, and WhatsApp rather than checkout flows.
+- SEO fundamentals: localized metadata, sitemap/robots, legacy redirects, and stable route architecture.
+
+## Non-Goals
+
+- No cart, checkout, or account system.
+- No on-site transactional purchasing flow.

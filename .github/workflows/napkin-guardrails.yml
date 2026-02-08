@@ -1,0 +1,28 @@
+name: Napkin Guardrails
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - staging
+
+jobs:
+  napkin:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate repo contracts
+        shell: pwsh
+        run: |
+          ./scripts/check-napkin-setup.ps1 -RepoOnly -SkipCodexBinaryCheck
+
+      - name: Install frozen napkin skill into temp CODEX_HOME
+        shell: pwsh
+        run: |
+          $env:CODEX_HOME = Join-Path $env:RUNNER_TEMP "codex-home"
+          ./scripts/install-napkin-skill.ps1
+          ./scripts/check-napkin-setup.ps1 -CodexHome $env:CODEX_HOME -SkipCodexBinaryCheck
+
