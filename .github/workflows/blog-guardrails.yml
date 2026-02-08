@@ -26,5 +26,11 @@ jobs:
       - name: Validate blog content
         run: npm run blog:validate
 
+      - name: Generate blog manifest
+        run: npm run blog:build-manifest
+
+      - name: Verify manifest is committed
+        run: git diff --exit-code -- src/generated/blog-manifest.json
+
       - name: Typecheck
         run: npm run typecheck

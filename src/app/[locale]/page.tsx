@@ -1,5 +1,5 @@
 import * as React from 'react';
-import dynamic from 'next/dynamic';
+import nextDynamic from 'next/dynamic';
 import { Link } from '@/navigation';
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/showcase/Header';
@@ -17,17 +17,20 @@ import type { InstagramPost } from '@/lib/instagram-data';
 import { getPublishedBlogPostsByLocale } from '@/lib/blog/content';
 import BlogCard from '@/components/blog/BlogCard';
 
-const Chatbox = dynamic(
+export const dynamic = 'force-static';
+export const revalidate = false;
+
+const Chatbox = nextDynamic(
   () => import('@/components/showcase/Chatbox').then((m) => m.Chatbox),
   { ssr: true }
 );
 
-const HomeInstagramSection = dynamic(
+const HomeInstagramSection = nextDynamic(
   () => import('@/components/showcase/HomeInstagramSection').then((m) => m.default),
   { ssr: true }
 );
 
-const StarterPackDialog = dynamic(
+const StarterPackDialog = nextDynamic(
   () => import('@/components/showcase/StarterPackDialog').then((m) => m.StarterPackDialog),
   { ssr: true }
 );

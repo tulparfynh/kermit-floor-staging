@@ -44,10 +44,29 @@ export type BlogPost = BlogFrontmatter & {
   updatedAtDate: Date;
 };
 
+export type BlogManifestPost = BlogFrontmatter & {
+  path: string;
+  content: string;
+  contentHtml: string;
+  publishedAtTimestamp: number;
+  updatedAtTimestamp: number;
+};
+
 export type BlogPostPair = {
   topicId: string;
   en: BlogPost;
   tr: BlogPost;
+};
+
+export type BlogManifestPostPair = {
+  topicId: string;
+  en: BlogManifestPost;
+  tr: BlogManifestPost;
+};
+
+export type BlogManifest = {
+  schemaVersion: 1;
+  topics: BlogManifestPostPair[];
 };
 
 export type BlogTagIndex = Array<{

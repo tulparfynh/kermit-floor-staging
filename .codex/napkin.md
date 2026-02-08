@@ -18,6 +18,8 @@
 | 2026-02-08 | self | Cloudflare build logs can be fully green while runtime still returns 500 | Treat build logs and runtime logs separately; reproduce with live probes and tail runtime errors |
 | 2026-02-08 | self | Assumed dependency warnings were primary cause of runtime 500 | Prioritize route-level runtime pattern checks (which URLs fail) before attributing outages to package warnings |
 | 2026-02-08 | self | Missed that Cloudflare image quota exhaustion can present as generic 500s | Tail runtime logs and inspect `/_next/image` errors for `IMAGES_TRANSFORM_ERROR` before deeper code rollback |
+| 2026-02-08 | self | Added `export const dynamic` in a file already importing `dynamic` from `next/dynamic`, causing a TS declaration conflict | Alias `next/dynamic` import (e.g., `nextDynamic`) when using route config export `dynamic` |
+| 2026-02-08 | self | Ran `rg` with shell-escaped regex that broke in PowerShell | Prefer simple fixed-string `rg` patterns in PowerShell unless regex is necessary |
 
 ## User Preferences
 - Keep responses concise and practical.
@@ -46,6 +48,7 @@
 - Run `npm.cmd run blog:validate` + `npm.cmd run typecheck` before full build to catch schema/typing issues early.
 - For Cloudflare incidents, probe route groups (`/`, `/about`, `/blog`, `/sitemap.xml`) to isolate failing feature paths quickly.
 - If `wrangler tail` seems "stuck", treat it as active stream mode; trigger requests from another terminal and read emitted logs.
+- For Workers-hosted content pages, compile repo content into a deterministic build artifact instead of reading filesystem at runtime.
 
 ## Patterns That Don't Work
 - Guessing environment behavior without verifying local config/scripts.

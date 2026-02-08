@@ -10,6 +10,9 @@ import {
   toAbsoluteUrl,
 } from '@/lib/blog/seo';
 
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 function buildStaticRouteEntries(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
   const routeKeys = Object.keys(pathnames) as Array<keyof typeof pathnames>;

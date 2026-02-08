@@ -15,6 +15,9 @@ import {
 } from '@/lib/blog/seo';
 import type {BlogLocale} from '@/lib/blog/types';
 
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 function toBlogLocale(locale: string): BlogLocale | null {
   return locale === 'en' || locale === 'tr' ? locale : null;
 }
